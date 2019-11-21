@@ -22,7 +22,7 @@ return [
     'category/delete' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/category/delete']], [], []],
     'category/edit' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/category/edit']], [], []],
     'index' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/']], [], []],
-    'post/show' => [['id'], ['_controller' => 'App\\Controller\\MainController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/main/showPost']], [], []],
+    'post/show' => [['slug'], ['_controller' => 'App\\Controller\\MainController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/main/showPost']], [], []],
     'posts' => [[], ['_controller' => 'App\\Controller\\PostController::index'], [], [['text', '/admin/posts']], [], []],
     'create/post' => [[], ['_controller' => 'App\\Controller\\PostController::create'], [], [['text', '/admin/post/create']], [], []],
     'post/delete' => [['id'], ['_controller' => 'App\\Controller\\PostController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/post/delete']], [], []],

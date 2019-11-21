@@ -67,7 +67,7 @@ return [
         259 => [[['_route' => 'post/delete', '_controller' => 'App\\Controller\\PostController::delete'], ['id'], null, null, false, true, null]],
         280 => [[['_route' => 'admin/post/edit', '_controller' => 'App\\Controller\\PostController::edit'], ['id'], null, null, false, true, null]],
         313 => [
-            [['_route' => 'post/show', '_controller' => 'App\\Controller\\MainController::show'], ['id'], null, null, false, true, null],
+            [['_route' => 'post/show', '_controller' => 'App\\Controller\\MainController::show'], ['slug'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

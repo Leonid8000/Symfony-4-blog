@@ -21,16 +21,17 @@
     {% for post in posts %}
     <div class="d-flex justify-content-center flex-column news-wrapper mt-3">
         <div class="news-title">
-            <h1 href="#">{{ post.title }}</h1>
+            <h1>{{ post.title }}</h1>
             <hr>
         </div>
         <div class="news-img">
-            <img src="../main/images/news.png" alt="img"></a>
+            <img src="../main/images/news.png" alt="img">
         </div>
         <div class="news-content">
             <p href="#">{{ post.content }}</p>
         </div>
-        <th scope="col"><a href="/main/showPost/{{ post.id }}" class="btn btn-sm btn-secondary">show Post</a></th>
+        {#<th scope="col"><a href="/main/showPost/{{ post.id }}" class="btn btn-sm btn-secondary">show Post</a></th>#}
+        <th scope="col"><a href="/main/showPost/{{ post.slug }}" class="btn btn-sm btn-secondary">show Post</a></th>
     </div>
     {% endfor %}
 {% endblock %}

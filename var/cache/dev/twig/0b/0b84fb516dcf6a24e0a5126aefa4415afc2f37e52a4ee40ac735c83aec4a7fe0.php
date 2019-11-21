@@ -56,26 +56,32 @@ class __TwigTemplate_1128f49015e135f220c5f3074b6663312b989b249ff543f709e6eed9cbd
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
         echo "\">Home <span class=\"sr-only\">(current)</span></a>
                 </li>
+                <li class=\"nav-item active\">
+                    <a class=\"nav-link text-light\" href=\"";
+        // line 15
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
+        echo "\">Blog <span class=\"sr-only\">(current)</span></a>
+                </li>
 
                 ";
-        // line 16
+        // line 19
         echo "                <li class=\"nav-item\">
                     <a class=\"nav-link text-light header-navigation\" href=\"#\">Create New</a>
                 </li>
 
                 ";
-        // line 20
+        // line 23
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 21
+            // line 24
             echo "                    <li class=\"nav-item\">
                         <a class=\"nav-link text-light\" href=\"";
-            // line 22
+            // line 25
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\">Logout</a>
                     </li>
                 ";
         }
-        // line 25
+        // line 28
         echo "            </ul>
         </div>
     </nav>
@@ -100,7 +106,7 @@ class __TwigTemplate_1128f49015e135f220c5f3074b6663312b989b249ff543f709e6eed9cbd
 
     public function getDebugInfo()
     {
-        return array (  79 => 25,  73 => 22,  70 => 21,  68 => 20,  62 => 16,  56 => 12,  43 => 1,);
+        return array (  85 => 28,  79 => 25,  76 => 24,  74 => 23,  68 => 19,  62 => 15,  56 => 12,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -118,6 +124,9 @@ class __TwigTemplate_1128f49015e135f220c5f3074b6663312b989b249ff543f709e6eed9cbd
                 <li class=\"nav-item active\">
                     <a class=\"nav-link text-light\" href=\"{{ path('admin') }}\">Home <span class=\"sr-only\">(current)</span></a>
                 </li>
+                <li class=\"nav-item active\">
+                    <a class=\"nav-link text-light\" href=\"{{ path('index') }}\">Blog <span class=\"sr-only\">(current)</span></a>
+                </li>
 
                 {# Show small screen #}
                 <li class=\"nav-item\">
@@ -132,6 +141,6 @@ class __TwigTemplate_1128f49015e135f220c5f3074b6663312b989b249ff543f709e6eed9cbd
             </ul>
         </div>
     </nav>
-</header>", "admin/layouts/header.html.twig", "/var/www/harvesting/templates/admin/layouts/header.html.twig");
+</header>", "admin/layouts/header.html.twig", "/var/www/symfony4blog/templates/admin/layouts/header.html.twig");
     }
 }

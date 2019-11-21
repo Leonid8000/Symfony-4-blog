@@ -123,14 +123,14 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
             // line 22
             echo "    <div class=\"d-flex justify-content-center flex-column news-wrapper mt-3\">
         <div class=\"news-title\">
-            <h1 href=\"#\">";
+            <h1>";
             // line 24
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 24), "html", null, true);
             echo "</h1>
             <hr>
         </div>
         <div class=\"news-img\">
-            <img src=\"../main/images/news.png\" alt=\"img\"></a>
+            <img src=\"../main/images/news.png\" alt=\"img\">
         </div>
         <div class=\"news-content\">
             <p href=\"#\">";
@@ -138,9 +138,10 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 31), "html", null, true);
             echo "</p>
         </div>
-        <th scope=\"col\"><a href=\"/main/showPost/";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 33), "html", null, true);
+        ";
+            // line 34
+            echo "        <th scope=\"col\"><a href=\"/main/showPost/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 34), "html", null, true);
             echo "\" class=\"btn btn-sm btn-secondary\">show Post</a></th>
     </div>
     ";
@@ -168,7 +169,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
 
     public function getDebugInfo()
     {
-        return array (  143 => 33,  138 => 31,  128 => 24,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  143 => 34,  138 => 31,  128 => 24,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -196,16 +197,17 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
     {% for post in posts %}
     <div class=\"d-flex justify-content-center flex-column news-wrapper mt-3\">
         <div class=\"news-title\">
-            <h1 href=\"#\">{{ post.title }}</h1>
+            <h1>{{ post.title }}</h1>
             <hr>
         </div>
         <div class=\"news-img\">
-            <img src=\"../main/images/news.png\" alt=\"img\"></a>
+            <img src=\"../main/images/news.png\" alt=\"img\">
         </div>
         <div class=\"news-content\">
             <p href=\"#\">{{ post.content }}</p>
         </div>
-        <th scope=\"col\"><a href=\"/main/showPost/{{ post.id }}\" class=\"btn btn-sm btn-secondary\">show Post</a></th>
+        {#<th scope=\"col\"><a href=\"/main/showPost/{{ post.id }}\" class=\"btn btn-sm btn-secondary\">show Post</a></th>#}
+        <th scope=\"col\"><a href=\"/main/showPost/{{ post.slug }}\" class=\"btn btn-sm btn-secondary\">show Post</a></th>
     </div>
     {% endfor %}
 {% endblock %}", "main/index.html.twig", "/var/www/symfony4blog/templates/main/index.html.twig");

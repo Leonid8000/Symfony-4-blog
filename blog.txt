@@ -1,0 +1,140 @@
+composer create-project symfony/website-skeleton my_project_name
+
+sbloguser
+sblogpass
+sblogdb
+
+php app/console generate:bundle 
+
+Создание АВТОРИЗАЦИИ И РЕГИСТРАЦИИ:
+----------------------------------------------------------------------------
+composer require security
+composer require symfony/security-bundle
+
+composer update symfony/maker-bundle
+
+php bin/console make:user
+User - yes - 3 вопрос по чем проверять юзера (в данном случае я использ email) pass-no
+
+ created: src/Entity/User.php
+ created: src/Repository/UserRepository.php
+ updated: src/Entity/User.php
+ updated: config/packages/security.yaml
+
+php bin/console make:entity User
+
+добавляем field firstName в User entity
+
+в config/doctrine.yml поменять версию
+-------------------------------------------------------------------------
+
+--php bin/console посмореть все console команды
+
+СТАРТОВАЯ СТРАНИЦА в config/route.yml
+
+make ArticleController и делаем метод для перехода на стартовую страницу
+
+--Вернуть респонс
+    /**
+     * @Route("/responce", name="responce")
+     */
+    public function show()
+    {
+        return new Response('This is sparta? ...No this is RESPONCE PAGE:-)');
+    }
+---------------------
+
+composer require annotations
+    /**
+     * @Route("/", name="article")
+     */
+Если добавить анотацию route.yml можно закоментировать
+
+
+--SLUG-это часть URL, когда вы получаете доступ к ресурсу.
+--------------------------------------------
+    /**
+     * @Route("/news/{slug}")
+     */
+    public function show($slug)
+    {
+        return new Response(sprintf(
+            'Future page to show the article: "%s"',
+            $slug
+        ));
+    }
+в БРАУЗЕРЕ /news/все-что-написано-здесь-будет-слагом
+
+
+--Сервер рецептов Symfony
+--symfony.sh
+
+composer require sensiolabs/security-checker
+php bin/console security:check
+
+При написании slug в урле все будет выводиться на странице
+----------------------------------------------------------------
+    /**
+     * @Route("/news/{slug}")
+     */
+    public function show($slug)
+    {
+        return $this->render('article/show.html.twig', [
+            'title' => ucwords(str_replace('-',' ',$slug)),
+        ]);
+    }
+
+twig
+{{ title }}
+
+    /**
+     * @Route("/news/{slug}", name="news1")
+     */
+    public function show($slug)
+    {
+        $coment = 'Coment 1';
+        return $this->render('article/show.html.twig', [
+            'title' => ucwords(str_replace('-',' ',$slug)),
+            'coment' => $coment,
+        ]);
+    }
+
+ <a href="{{ path('news1', {slug: 'slug for news 1'} ) }}">news 1</a>
+----------------------------------------------------------------
+
+symfonytwig.com
+--дока по твиг
+
+блок внизу это профайлер debug toolbar
+    public function show($slug, Environment $twigEnvioment)
+    {
+        $coment = 'Coment 1';
+        $html = $twigEnvioment->render('article/show.html.twig', [
+            'title' => ucwords(str_replace('-',' ',$slug)),
+            'coment' => $coment,
+            'slug' => $slug,
+        ]);
+        return new Response($html);
+    }
+
+composer require knplabs/knp-markdown-bundle
+
+https://symfonycasts.com/screencast/symfony-fundamentals/caching#play
+
+Entity Post
+-------------------
+title slug content-type-text publishedAt
+
+!!! https://habr.com/ru/post/301760/
+
+1 Отображение поста на слаге
+2 Связи тег пост
+3 Вывод по категориям
+4 Круд с выбором категорий и тегов
+5 Вывод по тегам
+6 Система коментариев
+7 Пост: img timestapm short-description
+8 Версткаss
+
+
+

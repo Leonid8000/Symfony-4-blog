@@ -115,7 +115,68 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         }
         // line 20
         echo "
-<h1>Show Post</h1>
+<div class=\"d-flex justify-content-center flex-column post-wrapper\">
+    ";
+        // line 23
+        echo "    ";
+        // line 24
+        echo "    <div class=\"container\">
+        <div class=\"row bootstrap snippets\">
+            <div class=\"col-md-6  col-sm-10\">
+                <div class=\"comment-wrapper\">
+                    <div class=\"panel panel-info\">
+                        <div class=\"panel-heading\">
+                            Comment panel
+                        </div>
+                        <div class=\"panel-body\">
+                            <textarea class=\"form-control\" placeholder=\"write a comment...\" rows=\"3\"></textarea>
+                            <br>
+                            <button type=\"button\" class=\"btn btn-info pull-right\">Post</button>
+                            <div class=\"clearfix\"></div>
+                            <hr>
+                            <ul class=\"media-list\">
+                                <li class=\"media\">
+                                    <a href=\"#\" class=\"pull-left\">
+                                        <img src=\"https://bootdey.com/img/Content/user_1.jpg\" alt=\"\" class=\"img-circle\">
+                                    </a>
+                                    <div class=\"media-body\">
+                                <span class=\"text-muted pull-right\">
+                                    <small class=\"text-muted\">30 min ago</small>
+                                </span>
+                                        <strong class=\"text-success\">@MartinoMont</strong>
+
+                                        ";
+        // line 50
+        echo "                                        ";
+        // line 51
+        echo "                                        ";
+        // line 52
+        echo "                                        ";
+        // line 53
+        echo "                                        ";
+        // line 54
+        echo "                                        ";
+        // line 55
+        echo "                                        ";
+        // line 56
+        echo "
+                                        <span class=\"pl-2 article-details\">
+                                <span class=\"js-like-article-count\">0</span>
+                                    <a href=\"#\" class=\"fa fa-heart-o like-article js-like-article\"></a>
+                                            ";
+        // line 61
+        echo "                                </span>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 ";
         
@@ -138,7 +199,7 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
 
     public function getDebugInfo()
     {
-        return array (  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  168 => 61,  162 => 56,  160 => 55,  158 => 54,  156 => 53,  154 => 52,  152 => 51,  150 => 50,  123 => 24,  121 => 23,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -163,7 +224,58 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
 
     {% endif %}
 
-<h1>Show Post</h1>
+<div class=\"d-flex justify-content-center flex-column post-wrapper\">
+    {#<h1 class=\"text-center\">{{ post.title }}</h1>#}
+    {#<p>{{ post.content }}</p>#}
+    <div class=\"container\">
+        <div class=\"row bootstrap snippets\">
+            <div class=\"col-md-6  col-sm-10\">
+                <div class=\"comment-wrapper\">
+                    <div class=\"panel panel-info\">
+                        <div class=\"panel-heading\">
+                            Comment panel
+                        </div>
+                        <div class=\"panel-body\">
+                            <textarea class=\"form-control\" placeholder=\"write a comment...\" rows=\"3\"></textarea>
+                            <br>
+                            <button type=\"button\" class=\"btn btn-info pull-right\">Post</button>
+                            <div class=\"clearfix\"></div>
+                            <hr>
+                            <ul class=\"media-list\">
+                                <li class=\"media\">
+                                    <a href=\"#\" class=\"pull-left\">
+                                        <img src=\"https://bootdey.com/img/Content/user_1.jpg\" alt=\"\" class=\"img-circle\">
+                                    </a>
+                                    <div class=\"media-body\">
+                                <span class=\"text-muted pull-right\">
+                                    <small class=\"text-muted\">30 min ago</small>
+                                </span>
+                                        <strong class=\"text-success\">@MartinoMont</strong>
+
+                                        {#<p>{{ coment }}</p>#}
+                                        {# Likes #}
+                                        {#<div class=\"show-article-title-container d-inline-block pl-3 align-middle\">#}
+                                        {#<span class=\"pl-2 fa fa-heart-o article-details js-like-article\">#}
+                                        {#<a href=\"{{ path('article_toggle_heart', {slug: slug} )}}\" class=\"fa fa-heart-o like-article js-like-article\"></a>#}
+                                        {#</span>#}
+                                        {#</div>#}
+
+                                        <span class=\"pl-2 article-details\">
+                                <span class=\"js-like-article-count\">0</span>
+                                    <a href=\"#\" class=\"fa fa-heart-o like-article js-like-article\"></a>
+                                            {#{{ path('article_toggle_heart', {slug: slug} )}}#}
+                                </span>
+
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}", "main/showPost.html.twig", "/var/www/symfony4blog/templates/main/showPost.html.twig");
     }

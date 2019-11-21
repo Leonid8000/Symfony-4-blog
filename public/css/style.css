@@ -175,3 +175,11 @@ nav{
     margin-right:10%;
     padding:10px;
 }
+
+/* Post block */
+.post-wrapper{
+    background: #E3E1CD;
+    margin-left:10%;
+    margin-right:10%;
+    padding:10px;
+}
