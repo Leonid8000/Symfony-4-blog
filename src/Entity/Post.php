@@ -8,6 +8,7 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 
 use App\Entity\Category;
+use App\Entity\Tag;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\PostRepository")
@@ -40,6 +41,7 @@ class Post
 //     * @ORM\Column(type="datetime", nullable=true)
 //     */
 //    private $publishedAt;
+//Category relationship
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Category", mappedBy="posts")
      */
@@ -48,6 +50,7 @@ class Post
     public function __construct()
     {
         $this->categories = new ArrayCollection();
+        $this->tags = new ArrayCollection();
     }
 
     /**
@@ -73,7 +76,36 @@ class Post
         }
         return $this;
     }
+//Tag relationship
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Tag", inversedBy="posts")
+     */
+    public $tags;
 
+    /**
+     * @return Collection|Post[]
+     */
+    public function getTags(): Collection
+    {
+        return $this->tags;
+    }
+
+    public function addTag(Tag $tag): self
+    {
+        if (!$this->tags->contains($tag)) {
+            $this->tags[] = $tag;
+            $tag->addPost($this);
+        }
+        return $this;
+    }
+    public function removeTag(Tag $tag): self
+    {
+        if ($this->tags->contains($tag)) {
+            $this->tags->removeElement($tag);
+        }
+        return $this;
+    }
+//-------------------------------------------------
     public function getId(): int
     {
         return $this->id;

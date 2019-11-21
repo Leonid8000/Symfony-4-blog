@@ -6,6 +6,11 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+
+use App\Entity\Post;
+
 /**
  * @ORM\Entity(repositoryClass="App\Repository\TagRepository")
  */
@@ -27,6 +32,39 @@ class Tag
      * @ORM\Column(type="string", length=100, unique=true)
      */
     private $slug;
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Post", mappedBy="tags")
+     */
+    private $categories;
+
+    public function __construct()
+    {
+        $this->posts = new ArrayCollection();
+    }
+
+    /**
+     * @return Collection|Post[]
+     */
+    public function getPost(): Collection
+    {
+        return $this->posts;
+    }
+
+    public function addPost(Post $post): self
+    {
+        if (!$this->posts->contains($post)) {
+            $this->posts[] = $post;
+            $post->addTag($this);
+        }
+        return $this;
+    }
+    public function removePOst(Post $post): self
+    {
+        if ($this->posts->contains($post)) {
+            $this->posts->removeElement($post);
+        }
+        return $this;
+    }
 
     public function getId(): ?int
     {
