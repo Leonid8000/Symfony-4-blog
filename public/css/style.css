@@ -1,0 +1,159 @@
+a{
+    font-family: 'Anton', sans-serif;
+}
+h1{
+    font-family: 'Anton', sans-serif;
+}
+a:hover{
+    text-underline: none;
+}
+/* Fonts */
+.plays-font{
+    font-family: 'Playfair Display', serif;
+}
+.anton-font{
+    font-family: 'Anton', sans-serif;
+}
+.lobster-font{
+    font-family: 'Lobster', cursive;
+}
+/* Admin panel */
+.logo{
+    color:firebrick;
+    font-size:14px;
+    font-weight: 600;
+}
+.logo span{
+    color:greenyellow;
+}
+.start_survey_btn{
+    font-size:28px;
+}
+.admin-route{
+    background: green;
+    padding: 10px;
+    color: #1e272e;
+    border-radius:45%;
+}
+.admin-route:hover{
+    text-decoration: none;
+    transition: 0.7s;
+    color:#485460;
+    background: greenyellow;
+}
+.label-text{
+    font-size: 14px;
+    font-weight: 600;
+}
+.poll-title{
+    font-size:23px;
+    font-family: 'Lobster', cursive;
+    color:#222f3e;
+    padding:4px;
+}
+.poll-block{
+    margin:10px 10%;
+    padding:10px;
+    background: #95afc0;
+    -webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);;
+}
+.poll-ul{
+    list-style-type: none;
+    display:inline-block;
+    color: lightcyan;
+}
+.checkbox-round {
+    width: 1.1em;
+    height: 1.1em;
+}
+/* Header and Sidebar */
+#footer{
+    position:fixed;
+    bottom:0;
+    height:50px;
+    width:100%;
+    z-index: 2;
+}
+.sidebar{
+    height: 850px;
+    width: 160px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding-top: 16px;
+    z-index: 1;
+}
+.nav-item .header-navigation{
+    display:none;
+}
+.sidebar{
+    background: lightcyan;
+    position:absolute;
+    left:0;
+    width:30%;
+    border-right: 1px solid black;
+    box-shadow: -5px 0 10px -5px #333;
+}
+@media screen and (max-width: 983px) {
+    .nav-item .header-navigation{
+        display:block;
+    }
+    .sidebar{
+        display: none;
+    }
+}
+.sidebar-block{
+    border-bottom:1px solid black;
+    padding:10px;
+}
+.sidebar-block a{
+    color: black;
+    font-size: 15px;
+}
+.sidebar-block:hover a{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.sidebar-block:hover{
+    background: black;
+    cursor: pointer;
+    transition: 0.5s ease;
+}
+.sidebar-block i{
+    font-size: 18px;
+    color:black;
+}
+.sidebar-block:hover i{
+    color:whitesmoke;
+}
+#footer strong{
+    padding:10px;
+    margin:10px 5px;
+    display: flex;
+    justify-content: center;
+    color:greenyellow;
+    font-size:14px;
+}
+nav{
+    box-shadow: 0 8px 8px -8px #333;
+}
+.form-block{
+    padding:40px;
+    margin-top:50px;
+    border-radius: 10%;
+    background: lightgrey;
+    box-shadow: 2px 2px 2px 2px #222;
+}
+.side-tgl-btn{
+    color:gray;
+}
+.btn-link:hover a{
+    text-decoration: none;
+}
+.card-header:hover{
+    background: gray;
+}

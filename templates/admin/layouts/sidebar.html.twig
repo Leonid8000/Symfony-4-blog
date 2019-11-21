@@ -1,0 +1,49 @@
+<div class="sidebar ">
+    <!--Accordion wrapper-->
+    <div class="accordion md-accordion accordion-4" id="accordionEx2" role="tablist" aria-multiselectable="true">
+        <!-- Accordion card -->
+        <div class="card">
+{# Posts #}
+            <div class="card-header z-depth-1 teal lighten-3" role="tab" id="heading11">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse11"
+                   aria-expanded="false" aria-controls="collapse11">
+                    <p class="mb-0 text-center font-weight-bold text-uppercase">
+                        Post
+                    </p>
+                </a>
+            </div>
+
+            <div id="collapse11" class="collapse" role="tabpanel" aria-labelledby="heading11"
+                 data-parent="#accordionEx2">
+                <div class="card-body rgba-teal-strong white-text">
+                    <a href="{{ path('posts') }}" class="text-center"><p>Show</p></a>
+                    <a href="{{ path('create/post') }}" class="text-center"><p>Create</p></a>
+                </div>
+            </div>
+        </div>
+{# Category #}
+        <div class="card">
+            <div class="card-header z-depth-1 teal lighten-2" role="tab" id="heading12">
+                <a class="collapsed" data-toggle="collapse" data-parent="#accordionEx2" href="#collapse12"
+                   aria-expanded="false" aria-controls="collapse12">
+                    <p class="mb-0 black-text text-center font-weight-bold text-uppercase">
+                        Category
+                    </p>
+                </a>
+            </div>
+
+            <div id="collapse12" class="collapse" role="tabpanel" aria-labelledby="heading12"
+                 data-parent="#accordionEx2">
+                <div class="card-body rgba-teal-strong white-text">
+                    <a href="{{ path('category') }}" class="text-center"><p>Show</p></a>
+                    <a href="{{ path('category/create') }}" class="text-center"><p>Create</p></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Accordion card -->
+        </div>
+        <!-- Accordion card -->
+    </div>
+    <!--/.Accordion wrapper-->
+</div>

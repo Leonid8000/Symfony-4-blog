@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AdminController!{% endblock %}
+
+{% block body %}
+    {{ include('admin/layouts/header.html.twig') }}
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3">
+                {{ include('admin/layouts/sidebar.html.twig') }}
+            </div>
+
+            <div class="main">
+                <h1 class="text-center anton-font text-dark">Categories</h1>
+            </div>
+
+            <div>
+                <table class="table" id="category_table">
+                    <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Category</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% if categories %}
+                    {% for category in categories %}
+                        <tr>
+                            <th scope="row">{{ category.id }}</th>
+                            <td>{{ category.title }}</td>
+                            <th scope="col"><button class="btn btn-sm btn-secondary">edit</button></th>
+                            <th scope="col"><button class="btn btn-sm btn-danger category-delete" data-id="{{ category.id }}">delete</button></th>
+                        </tr>
+                    {% endfor %}
+                    {% else %}
+                        <h3 class="text-center">no categories</h3>
+                    {% endif %}
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    {{ include('admin/layouts/footer.html.twig') }}
+{% endblock %}
