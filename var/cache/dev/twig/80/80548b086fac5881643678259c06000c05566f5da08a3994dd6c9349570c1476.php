@@ -108,16 +108,16 @@ class __TwigTemplate_fec43a431b77306476730c78dc124a106062b87bb082ee0a09577a12a9d
     <div class=\"d-flex justify-content-center\">
         ";
         // line 22
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 22, $this->source); })()), 'form_start');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["postForm"]) || array_key_exists("postForm", $context) ? $context["postForm"] : (function () { throw new RuntimeError('Variable "postForm" does not exist.', 22, $this->source); })()), 'form_start');
         echo "
         ";
         // line 23
-        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 23, $this->source); })()), 'widget');
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["postForm"]) || array_key_exists("postForm", $context) ? $context["postForm"] : (function () { throw new RuntimeError('Variable "postForm" does not exist.', 23, $this->source); })()), 'widget');
         echo "
         <button type=\"submit\" class=\"btn btn-primary\">Save</button>
         ";
         // line 25
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 25, $this->source); })()), 'form_end');
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["postForm"]) || array_key_exists("postForm", $context) ? $context["postForm"] : (function () { throw new RuntimeError('Variable "postForm" does not exist.', 25, $this->source); })()), 'form_end');
         echo "
     </div>
 
@@ -172,13 +172,13 @@ class __TwigTemplate_fec43a431b77306476730c78dc124a106062b87bb082ee0a09577a12a9d
     </div>
 
     <div class=\"d-flex justify-content-center\">
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
+        {{ form_start(postForm) }}
+        {{ form_widget(postForm) }}
         <button type=\"submit\" class=\"btn btn-primary\">Save</button>
-        {{ form_end(form) }}
+        {{ form_end(postForm) }}
     </div>
 
     {{ include('admin/layouts/footer.html.twig') }}
-{% endblock %}", "admin/post/create.html.twig", "/var/www/harvesting/templates/admin/post/create.html.twig");
+{% endblock %}", "admin/post/create.html.twig", "/var/www/symfony4blog/templates/admin/post/create.html.twig");
     }
 }

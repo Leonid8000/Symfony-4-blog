@@ -19,10 +19,10 @@
     </div>
 
     <div class="d-flex justify-content-center">
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
+        {{ form_start(postForm) }}
+        {{ form_widget(postForm) }}
         <button type="submit" class="btn btn-primary">Save</button>
-        {{ form_end(form) }}
+        {{ form_end(postForm) }}
     </div>
 
     {{ include('admin/layouts/footer.html.twig') }}

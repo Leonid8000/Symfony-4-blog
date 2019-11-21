@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Index page!{% endblock %}
+
+{% block body %}
+    {{ include('main/layouts/header.html.twig') }}
+
+    <h3 class="text-dark mt-2 ml-3 text-left home-logo">NEWS<span class="yellow-text">BLOG</span></h3>
+    <hr>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="d-flex justify-content-center">
+            <a href="{{ path('admin') }}" class="admin-route text-dark  anton-font text-center mt-4">Admin Panel</a><br />
+        </div>
+    {% endif %}
+
+    {% if is_granted('ROLE_USER') %}
+
+    {% endif %}
+
+<h1>Show Post</h1>
+
+{% endblock %}

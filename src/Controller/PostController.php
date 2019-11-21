@@ -10,6 +10,8 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use App\Entity\Post;
 
 use App\Form\PostFormType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
  * @IsGranted("ROLE_ADMIN")
@@ -21,8 +23,10 @@ class PostController extends AbstractController
      */
     public function index()
     {
+        $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
+
         return $this->render('admin/post/index.html.twig', [
-            
+            'posts' => $posts,
         ]);
     }
     /**
@@ -30,56 +34,60 @@ class PostController extends AbstractController
      */
     public function create(Request $request)
     {
-        $post = new Post();
+        $postForm = $this->createForm(PostFormType::class);
 
-        $form = $this->createForm(PostFormType::class);
-
-        if ($form->isSubmitted() && $form->isValid()) {
-            $post = $form->getData();
-            dd($post);
-
+        $postForm->handleRequest($request);
+        if ($postForm->isSubmitted() && $postForm->isValid()) {
             $entityManager = $this->getDoctrine()->getManager();
-            $entityManager->persist($post);
+            $entityManager->persist($postForm->getData());
             $entityManager->flush();
+            $this->addFlash('success', 'Post created!');
 
-            return $this->redirectToRoute('admin');
+            return $this->redirectToRoute('posts');
         }
-
         return $this->render('admin/post/create.html.twig', [
-            'form' => $form->createView()
+            'postForm' => $postForm->createView(),
         ]);
-        
-//        $form = $this->createForm(PostFormType::class);
-//
-//        $form->handleRequest($request);
-//        if ($form->isSubmitted() && $form->isValid()) {
-
-//            dd($request->request);
-
-//            $data = $form->getData();
-//            $post = new Post();
-//            $post->setTitle('title');
-//            $post->setContent('content');
-//            $post->setSlug('slug');
-//
-//            $entityManager = $this->getDoctrine()->getManager();
-//            $entityManager->persist($post);
-//            $entityManager->flush();
-//            $this->addFlash('success', 'Post created!');
-//
-//            return $this->redirectToRoute('admin');
-//        }
-//        return $this->render('admin/post/create.html.twig', [
-//            'form' => $form->createView(),
-//        ]);
     }
+    /**
+     * @Route("/admin/post/delete/{id}", name="post/delete")
+     * Method({"DELETE"})
+     */
+    public function delete(Request $request, $id){
+        $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
+        $entityManager = $this->getDoctrine()->getManager();
+        $entityManager->remove($post);
+        $entityManager->flush();
+        $response = new Response();
+        $response->send();
+    }
+    /**
+     * @Route("/admin/post/edit/{id}", name="admin/post/edit")
+     * Method({"GET", "POST"})
+     */
+    public function edit(Request $request, $id){
+
+        $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
+
+        $form = $this->createFormBuilder($post)
+            ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('slug', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('content', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('save', SubmitType::class, array(
+                'label' => 'Update',
+                'attr' => array('class' => 'btn btn-primary mt-3')
+            ))
+            ->getForm();
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->flush();
+            return $this->redirectToRoute('posts');
+        }
+        return $this->render('admin/post/edit.html.twig', [
+            'editForm' => $form->createView()
+        ]);
+    }
+
 }
-//$form = $this->createFormBuilder($post)
-//    ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
-//    ->add('body', TextareaType::class, array('required' => false,
-//        'attr' => array('class' => 'form-control')))
-//    ->add('save', SubmitType::class, array(
-//        'label' => 'Create',
-//        'attr' => array('class' => 'btn btn-primary mt-3')
-//    ))
-//    ->getForm();

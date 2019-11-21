@@ -41,10 +41,17 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/admin/category/(?'
-                    .'|delete/([^/]++)(*:203)'
-                    .'|edit/([^/]++)(*:224)'
+                .'|/admin/(?'
+                    .'|category/(?'
+                        .'|delete/([^/]++)(*:206)'
+                        .'|edit/([^/]++)(*:227)'
+                    .')'
+                    .'|post/(?'
+                        .'|delete/([^/]++)(*:259)'
+                        .'|edit/([^/]++)(*:280)'
+                    .')'
                 .')'
+                .'|/main/showPost/([^/]++)(*:313)'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -55,9 +62,12 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception::showAction'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception::cssAction'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        203 => [[['_route' => 'category/delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], null, null, false, true, null]],
-        224 => [
-            [['_route' => 'category/edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], null, null, false, true, null],
+        206 => [[['_route' => 'category/delete', '_controller' => 'App\\Controller\\CategoryController::delete'], ['id'], null, null, false, true, null]],
+        227 => [[['_route' => 'category/edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], null, null, false, true, null]],
+        259 => [[['_route' => 'post/delete', '_controller' => 'App\\Controller\\PostController::delete'], ['id'], null, null, false, true, null]],
+        280 => [[['_route' => 'admin/post/edit', '_controller' => 'App\\Controller\\PostController::edit'], ['id'], null, null, false, true, null]],
+        313 => [
+            [['_route' => 'post/show', '_controller' => 'App\\Controller\\MainController::show'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

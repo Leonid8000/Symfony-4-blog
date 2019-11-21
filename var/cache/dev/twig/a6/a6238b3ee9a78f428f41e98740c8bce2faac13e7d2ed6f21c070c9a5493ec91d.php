@@ -85,73 +85,69 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div class=\"header bg-dark \">
-        ";
-        // line 7
-        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 8
-            echo "            <div class=\"d-flex justify-content-end\">
-                <a href=\"";
-            // line 9
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\" class=\"btn btn-dark m-3\">Log Out</a>
-            </div>
-        ";
-        } else {
-            // line 12
-            echo "            <div class=\"d-flex justify-content-end\">
-                <a href=\"";
-            // line 13
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            echo "\" class=\"btn btn-dark m-2\">Login</a>
-                <a href=\"";
-            // line 14
-            echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
-            echo "\" class=\"btn btn-dark m-2\">Sign Up</a>
-            </div>
-        ";
-        }
-        // line 17
-        echo "        ";
-        $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 17, $this->source); })()));
-        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 18
-            echo "            <a href=\"#\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "title", [], "any", false, false, false, 18), "html", null, true);
-            echo "</a>
-        ";
-        }
-        $_parent = $context['_parent'];
-        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
-        $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
-        echo "    </div>
+        echo "    ";
+        echo twig_include($this->env, $context, "main/layouts/header.html.twig");
+        echo "
 
-    <h3 class=\"text-dark mt-4 anton-font text-center\">Harvesting</h3>
+    <h3 class=\"text-dark mt-2 ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3>
     <hr>
 
     ";
-        // line 25
+        // line 11
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 26
+            // line 12
             echo "        <div class=\"d-flex justify-content-center\">
             <a href=\"";
-            // line 27
+            // line 13
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
             echo "\" class=\"admin-route text-dark  anton-font text-center mt-4\">Admin Panel</a><br />
         </div>
     ";
         }
-        // line 30
+        // line 16
         echo "
     ";
-        // line 31
+        // line 17
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 32
+            // line 18
             echo "
     ";
         }
+        // line 20
+        echo "
+    ";
+        // line 21
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 21, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
+            // line 22
+            echo "    <div class=\"d-flex justify-content-center flex-column news-wrapper mt-3\">
+        <div class=\"news-title\">
+            <h1 href=\"#\">";
+            // line 24
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 24), "html", null, true);
+            echo "</h1>
+            <hr>
+        </div>
+        <div class=\"news-img\">
+            <img src=\"../main/images/news.png\" alt=\"img\"></a>
+        </div>
+        <div class=\"news-content\">
+            <p href=\"#\">";
+            // line 31
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 31), "html", null, true);
+            echo "</p>
+        </div>
+        <th scope=\"col\"><a href=\"/main/showPost/";
+            // line 33
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 33), "html", null, true);
+            echo "\" class=\"btn btn-sm btn-secondary\">show Post</a></th>
+    </div>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -172,7 +168,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
 
     public function getDebugInfo()
     {
-        return array (  152 => 32,  150 => 31,  147 => 30,  141 => 27,  138 => 26,  136 => 25,  129 => 20,  120 => 18,  115 => 17,  109 => 14,  105 => 13,  102 => 12,  96 => 9,  93 => 8,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  143 => 33,  138 => 31,  128 => 24,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -182,23 +178,9 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
 {% block title %}Index page!{% endblock %}
 
 {% block body %}
-    <div class=\"header bg-dark \">
-        {% if is_granted('ROLE_USER') %}
-            <div class=\"d-flex justify-content-end\">
-                <a href=\"{{ path('app_logout') }}\" class=\"btn btn-dark m-3\">Log Out</a>
-            </div>
-        {% else %}
-            <div class=\"d-flex justify-content-end\">
-                <a href=\"{{ path('app_login') }}\" class=\"btn btn-dark m-2\">Login</a>
-                <a href=\"{{ path('register') }}\" class=\"btn btn-dark m-2\">Sign Up</a>
-            </div>
-        {% endif %}
-        {% for category in categories %}
-            <a href=\"#\">{{ category.title }}</a>
-        {% endfor %}
-    </div>
+    {{ include('main/layouts/header.html.twig') }}
 
-    <h3 class=\"text-dark mt-4 anton-font text-center\">Harvesting</h3>
+    <h3 class=\"text-dark mt-2 ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3>
     <hr>
 
     {% if is_granted('ROLE_ADMIN') %}
@@ -210,6 +192,22 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
     {% if is_granted('ROLE_USER') %}
 
     {% endif %}
-{% endblock %}", "main/index.html.twig", "/var/www/harvesting/templates/main/index.html.twig");
+
+    {% for post in posts %}
+    <div class=\"d-flex justify-content-center flex-column news-wrapper mt-3\">
+        <div class=\"news-title\">
+            <h1 href=\"#\">{{ post.title }}</h1>
+            <hr>
+        </div>
+        <div class=\"news-img\">
+            <img src=\"../main/images/news.png\" alt=\"img\"></a>
+        </div>
+        <div class=\"news-content\">
+            <p href=\"#\">{{ post.content }}</p>
+        </div>
+        <th scope=\"col\"><a href=\"/main/showPost/{{ post.id }}\" class=\"btn btn-sm btn-secondary\">show Post</a></th>
+    </div>
+    {% endfor %}
+{% endblock %}", "main/index.html.twig", "/var/www/symfony4blog/templates/main/index.html.twig");
     }
 }

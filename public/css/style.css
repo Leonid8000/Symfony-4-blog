@@ -157,3 +157,21 @@ nav{
 .card-header:hover{
     background: gray;
 }
+
+.home-logo{
+    font-weight: 800;
+    font-size:28px;
+    font-family: 'Abril Fatface', cursive;
+}
+.yellow-text{
+    color: #ECEC12;
+    font-family: 'Abril Fatface', cursive;
+}
+
+/* News */
+.news-wrapper{
+    background: #E3E1CD;
+    margin-left:10%;
+    margin-right:10%;
+    padding:10px;
+}

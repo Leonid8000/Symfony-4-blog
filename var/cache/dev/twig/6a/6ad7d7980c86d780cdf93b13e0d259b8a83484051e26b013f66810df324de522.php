@@ -131,7 +131,10 @@ class __TwigTemplate_cb51a6c7c0a7500f4d122c9c5e3158fc3453985f5da6c88fdc0a298df7d
                 // line 33
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "title", [], "any", false, false, false, 33), "html", null, true);
                 echo "</td>
-                            <th scope=\"col\"><button class=\"btn btn-sm btn-secondary\">edit</button></th>
+                            <th scope=\"col\"><a href=\"/admin/category/edit/";
+                // line 34
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 34), "html", null, true);
+                echo "\" class=\"btn btn-sm btn-secondary\">edit</a></th>
                             <th scope=\"col\"><button class=\"btn btn-sm btn-danger category-delete\" data-id=\"";
                 // line 35
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "id", [], "any", false, false, false, 35), "html", null, true);
@@ -182,7 +185,7 @@ class __TwigTemplate_cb51a6c7c0a7500f4d122c9c5e3158fc3453985f5da6c88fdc0a298df7d
 
     public function getDebugInfo()
     {
-        return array (  162 => 48,  153 => 41,  149 => 39,  146 => 38,  137 => 35,  132 => 33,  128 => 32,  125 => 31,  120 => 30,  118 => 29,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  165 => 48,  156 => 41,  152 => 39,  149 => 38,  140 => 35,  136 => 34,  132 => 33,  128 => 32,  125 => 31,  120 => 30,  118 => 29,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -220,7 +223,7 @@ class __TwigTemplate_cb51a6c7c0a7500f4d122c9c5e3158fc3453985f5da6c88fdc0a298df7d
                         <tr>
                             <th scope=\"row\">{{ category.id }}</th>
                             <td>{{ category.title }}</td>
-                            <th scope=\"col\"><button class=\"btn btn-sm btn-secondary\">edit</button></th>
+                            <th scope=\"col\"><a href=\"/admin/category/edit/{{ category.id }}\" class=\"btn btn-sm btn-secondary\">edit</a></th>
                             <th scope=\"col\"><button class=\"btn btn-sm btn-danger category-delete\" data-id=\"{{ category.id }}\">delete</button></th>
                         </tr>
                     {% endfor %}
@@ -236,6 +239,6 @@ class __TwigTemplate_cb51a6c7c0a7500f4d122c9c5e3158fc3453985f5da6c88fdc0a298df7d
 
     {{ include('admin/layouts/footer.html.twig') }}
 {% endblock %}
-", "admin/category/index.html.twig", "/var/www/harvesting/templates/admin/category/index.html.twig");
+", "admin/category/index.html.twig", "/var/www/symfony4blog/templates/admin/category/index.html.twig");
     }
 }

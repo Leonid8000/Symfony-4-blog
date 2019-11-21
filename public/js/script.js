@@ -1,4 +1,4 @@
-// Delete question
+// Delete category
 const category = document.getElementById('category_table');
 
 if(category){
@@ -14,22 +14,22 @@ if(category){
     }
 });
 }
-// // Delete answer
-// const answer = document.getElementById('answer_table');
-//
-// if(answer){
-//     answer.addEventListener('click', e => {
-//         if(e.target.className === 'btn btn-danger answer-delete'){
-//         if(confirm('Are you sure?')){
-//             const id = e.target.getAttribute('data-id');
-//
-//             fetch(`/admin/answer/delete/${id}`,{
-//                 method: 'DELETE'
-//             }).then(res => window.location.reload());
-//         }
-//     }
-// });
-// }
+// Delete post
+const post = document.getElementById('post_table');
+
+if(post){
+    post.addEventListener('click', e => {
+        if(e.target.className === 'btn btn-sm btn-danger post-delete'){
+        if(confirm('Deleting Post?')){
+            const id = e.target.getAttribute('data-id');
+
+            fetch(`/admin/post/delete/${id}`,{
+                method: 'DELETE'
+            }).then(res => window.location.reload());
+        }
+    }
+});
+}
 // //Reset poll result
 // const poll = document.getElementById('poll_reset');
 // poll.addEventListener('click', funk = () =>{
