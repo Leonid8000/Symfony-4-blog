@@ -124,40 +124,63 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         // line 23
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 23, $this->source); })()), "content", [], "any", false, false, false, 23), "html", null, true);
         echo "</p>
+
     ";
         // line 25
-        echo "        ";
-        // line 26
-        echo "    ";
-        // line 27
-        echo "    ";
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 27, $this->source); })()), "tags", [], "any", false, false, false, 27));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 25, $this->source); })()), "category", [], "any", false, false, false, 25));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 26
+            echo "        <h2 class=\"post-category\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 26), "html", null, true);
+            echo "</h2>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 28
+        echo "
+    ";
+        // line 29
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 29, $this->source); })()), "tags", [], "any", false, false, false, 29));
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-            // line 28
-            echo "       <a href=\"/main/show-tag/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "slug", [], "any", false, false, false, 28), "html", null, true);
-            echo "\"><h1 class=\"text-success\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "tag", [], "any", false, false, false, 28), "html", null, true);
-            echo "</h1></a>
+            // line 30
+            echo "       ";
+            // line 31
+            echo "    <a href=\"/main/show-tag/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "slug", [], "any", false, false, false, 31), "html", null, true);
+            echo "\"><span class=\"badge badge-secondary col-1\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "tag", [], "any", false, false, false, 31), "html", null, true);
+            echo "</span></a>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 30
+        // line 33
         echo "    <div class=\"container\">
         <div class=\"row bootstrap snippets\">
             <div class=\"col-md-6  col-sm-10\">
                 <div class=\"comment-wrapper\">
                     <div class=\"panel panel-info\">
-                        <div class=\"panel-heading\">
-                            Comment panel
-                        </div>
                         <div class=\"panel-body\">
-                            <textarea class=\"form-control\" placeholder=\"write a comment...\" rows=\"3\"></textarea>
-                            <br>
-                            <button type=\"button\" class=\"btn btn-info pull-right\">Post</button>
+
+                            ";
+        // line 40
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 41
+            echo "                                <div class=\"panel-heading\">
+                                    Comment panel
+                                </div>
+                                <textarea class=\"form-control\" placeholder=\"write a comment...\" rows=\"3\"></textarea>
+                                <br>
+                                <button type=\"button\" class=\"btn btn-info pull-right\">Post</button>
+                            ";
+        }
+        // line 48
+        echo "
                             <div class=\"clearfix\"></div>
                             <hr>
                             <ul class=\"media-list\">
@@ -172,25 +195,25 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
                                         <strong class=\"text-success\">@MartinoMont</strong>
 
                                         ";
-        // line 56
+        // line 63
         echo "                                        ";
-        // line 57
+        // line 64
         echo "                                        ";
-        // line 58
+        // line 65
         echo "                                        ";
-        // line 59
+        // line 66
         echo "                                        ";
-        // line 60
+        // line 67
         echo "                                        ";
-        // line 61
+        // line 68
         echo "                                        ";
-        // line 62
+        // line 69
         echo "
                                         <span class=\"pl-2 article-details\">
                                 <span class=\"js-like-article-count\">0</span>
                                     <a href=\"#\" class=\"fa fa-heart-o like-article js-like-article\"></a>
                                             ";
-        // line 67
+        // line 74
         echo "                                </span>
 
                                     </div>
@@ -225,7 +248,7 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
 
     public function getDebugInfo()
     {
-        return array (  194 => 67,  188 => 62,  186 => 61,  184 => 60,  182 => 59,  180 => 58,  178 => 57,  176 => 56,  149 => 30,  138 => 28,  133 => 27,  131 => 26,  129 => 25,  125 => 23,  121 => 22,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  217 => 74,  211 => 69,  209 => 68,  207 => 67,  205 => 66,  203 => 65,  201 => 64,  199 => 63,  183 => 48,  174 => 41,  172 => 40,  163 => 33,  152 => 31,  150 => 30,  146 => 29,  143 => 28,  134 => 26,  130 => 25,  125 => 23,  121 => 22,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -253,24 +276,31 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
 <div class=\"d-flex justify-content-center flex-column post-wrapper\">
     <h1 class=\"text-center\">{{ post.title }}</h1>
     <p>{{ post.content }}</p>
-    {#{% for category in post.category %}#}
-        {#<h2>{{ category.title }}</h2>#}
-    {#{% endfor %}#}
+
+    {% for category in post.category %}
+        <h2 class=\"post-category\">{{ category.category }}</h2>
+    {% endfor %}
+
     {% for tag in post.tags %}
-       <a href=\"/main/show-tag/{{ tag.slug }}\"><h1 class=\"text-success\">{{ tag.tag }}</h1></a>
+       {#<a href=\"/main/show-tag/{{ tag.slug }}\"><h1 class=\"text-success\">{{ tag.tag }}</h1></a>#}
+    <a href=\"/main/show-tag/{{ tag.slug }}\"><span class=\"badge badge-secondary col-1\">{{ tag.tag }}</span></a>
     {% endfor %}
     <div class=\"container\">
         <div class=\"row bootstrap snippets\">
             <div class=\"col-md-6  col-sm-10\">
                 <div class=\"comment-wrapper\">
                     <div class=\"panel panel-info\">
-                        <div class=\"panel-heading\">
-                            Comment panel
-                        </div>
                         <div class=\"panel-body\">
-                            <textarea class=\"form-control\" placeholder=\"write a comment...\" rows=\"3\"></textarea>
-                            <br>
-                            <button type=\"button\" class=\"btn btn-info pull-right\">Post</button>
+
+                            {% if is_granted('ROLE_USER') %}
+                                <div class=\"panel-heading\">
+                                    Comment panel
+                                </div>
+                                <textarea class=\"form-control\" placeholder=\"write a comment...\" rows=\"3\"></textarea>
+                                <br>
+                                <button type=\"button\" class=\"btn btn-info pull-right\">Post</button>
+                            {% endif %}
+
                             <div class=\"clearfix\"></div>
                             <hr>
                             <ul class=\"media-list\">

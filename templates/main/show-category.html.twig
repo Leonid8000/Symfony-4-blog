@@ -39,7 +39,7 @@
                     {#<h2>{{ category.categ }}</h2>#}
                 {#{% endfor %}#}
                 {% for tag in post.tags %}
-                    <button class="btn btn-success col-1">{{ tag.tag }}</button>
+                    <a href="/main/show-tag/{{ tag.slug }}"><span class="badge badge-secondary col-1">{{ tag.tag }}</span></a>
                 {% endfor %}
             </div>
         </a>

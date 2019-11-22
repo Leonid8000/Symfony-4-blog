@@ -162,9 +162,11 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["post"], "tags", [], "any", false, false, false, 41));
             foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
                 // line 42
-                echo "                    <button class=\"btn btn-success col-1\">";
+                echo "                    <a href=\"/main/show-tag/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "slug", [], "any", false, false, false, 42), "html", null, true);
+                echo "\"><span class=\"badge badge-secondary col-1\">";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "tag", [], "any", false, false, false, 42), "html", null, true);
-                echo "</button>
+                echo "</span></a>
                 ";
             }
             $_parent = $context['_parent'];
@@ -203,7 +205,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 
     public function getDebugInfo()
     {
-        return array (  182 => 47,  174 => 44,  165 => 42,  160 => 41,  158 => 40,  156 => 39,  151 => 36,  145 => 33,  135 => 26,  128 => 23,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  184 => 47,  176 => 44,  165 => 42,  160 => 41,  158 => 40,  156 => 39,  151 => 36,  145 => 33,  135 => 26,  128 => 23,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -249,7 +251,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
                     {#<h2>{{ category.categ }}</h2>#}
                 {#{% endfor %}#}
                 {% for tag in post.tags %}
-                    <button class=\"btn btn-success col-1\">{{ tag.tag }}</button>
+                    <a href=\"/main/show-tag/{{ tag.slug }}\"><span class=\"badge badge-secondary col-1\">{{ tag.tag }}</span></a>
                 {% endfor %}
             </div>
         </a>

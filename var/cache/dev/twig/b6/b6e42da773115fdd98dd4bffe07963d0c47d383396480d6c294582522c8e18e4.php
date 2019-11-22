@@ -157,7 +157,7 @@ class __TwigTemplate_99dfb406599ea2b6ae37fd323ccef4b673ac7ba82cbcfa19a416b9ad12a
             $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["post"], "category", [], "any", false, false, false, 38));
             foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
                 // line 39
-                echo "                <h2>";
+                echo "                <h2 class=\"post-category\">";
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 39), "html", null, true);
                 echo "</h2>
                 ";
@@ -167,11 +167,23 @@ class __TwigTemplate_99dfb406599ea2b6ae37fd323ccef4b673ac7ba82cbcfa19a416b9ad12a
             $context = array_intersect_key($context, $_parent) + $_parent;
             // line 41
             echo "                ";
-            // line 42
-            echo "                    ";
-            // line 43
-            echo "                ";
-            // line 44
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["post"], "tags", [], "any", false, false, false, 41));
+            foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+                // line 42
+                echo "                    ";
+                // line 43
+                echo "                    <a href=\"/main/show-tag/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "slug", [], "any", false, false, false, 43), "html", null, true);
+                echo "\"><span class=\"badge badge-secondary col-1\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "tag", [], "any", false, false, false, 43), "html", null, true);
+                echo "</span></a>
+                ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 45
             echo "            </div>
         </a>
     ";
@@ -179,7 +191,7 @@ class __TwigTemplate_99dfb406599ea2b6ae37fd323ccef4b673ac7ba82cbcfa19a416b9ad12a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 48
         echo "
 ";
         
@@ -202,7 +214,7 @@ class __TwigTemplate_99dfb406599ea2b6ae37fd323ccef4b673ac7ba82cbcfa19a416b9ad12a
 
     public function getDebugInfo()
     {
-        return array (  183 => 47,  175 => 44,  173 => 43,  171 => 42,  169 => 41,  160 => 39,  156 => 38,  151 => 36,  148 => 35,  146 => 34,  144 => 33,  135 => 26,  128 => 23,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  195 => 48,  187 => 45,  176 => 43,  174 => 42,  169 => 41,  160 => 39,  156 => 38,  151 => 36,  148 => 35,  146 => 34,  144 => 33,  135 => 26,  128 => 23,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -245,11 +257,12 @@ class __TwigTemplate_99dfb406599ea2b6ae37fd323ccef4b673ac7ba82cbcfa19a416b9ad12a
                     <p href=\"#\">{{ post.content }}</p>
                 </div>
                 {% for category in post.category %}
-                <h2>{{ category.category }}</h2>
+                <h2 class=\"post-category\">{{ category.category }}</h2>
                 {% endfor %}
-                {#{% for tag in post.tags %}#}
+                {% for tag in post.tags %}
                     {#<button class=\"btn btn-success col-1\">{{ tag.tag }}</button>#}
-                {#{% endfor %}#}
+                    <a href=\"/main/show-tag/{{ tag.slug }}\"><span class=\"badge badge-secondary col-1\">{{ tag.tag }}</span></a>
+                {% endfor %}
             </div>
         </a>
     {% endfor %}

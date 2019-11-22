@@ -121,65 +121,56 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
         $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 21, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 22
-            echo "        <a href=\"/main/showPost/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 22), "html", null, true);
-            echo "\" id=\"post-link\">
-    <div class=\"d-flex justify-content-center flex-column news-wrapper mt-3\">
-        <div class=\"news-title\">
-            <h1>";
-            // line 25
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 25), "html", null, true);
-            echo "</h1>
-            <hr>
+            echo "    <div class=\"container news-wrapper mt-3\">
+    <div class=\"row\">
+        <div class=\"news-img col-4\">
+            <img src=\"../main/images/news.png\" alt=\"img\">
         </div>
+
+        <div class=\"col-8\">
         ";
-            // line 28
+            // line 29
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["post"], "category", [], "any", false, false, false, 28));
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["post"], "category", [], "any", false, false, false, 29));
             foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-                // line 29
-                echo "            <p class=\"text-primary\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 29), "html", null, true);
-                echo "</p>
+                // line 30
+                echo "            <a href=\"/main/show-category/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, false, 30), "html", null, true);
+                echo "\" class=\"post-category\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 30), "html", null, true);
+                echo "</a>
         ";
             }
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 31
-            echo "        <div class=\"news-img\">
-            <img src=\"../main/images/news.png\" alt=\"img\">
+            // line 32
+            echo "        <a href=\"/main/showPost/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 32), "html", null, true);
+            echo "\" id=\"post-link\">
+        <div class=\"news-title\">
+            <h3>";
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 34), "html", null, true);
+            echo "</h3>
+            <hr>
         </div>
         <div class=\"news-content\">
             <p href=\"#\">Desc:";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 35), "html", null, true);
-            echo "</p>
-        </div>
-        <div class=\"news-content\">
-            <p href=\"#\">";
             // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 38), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 38), "html", null, true);
             echo "</p>
         </div>
+        </a>
         ";
-            // line 41
-            echo "            ";
             // line 42
-            echo "        ";
+            echo "            ";
             // line 43
             echo "        ";
             // line 44
-            echo "            ";
-            // line 45
-            echo "        ";
-            // line 46
-            echo "        ";
-            // line 47
-            echo "        ";
-            // line 48
-            echo "    </div>
-        </a>
+            echo "        </div>
+    </div>
+    </div>
     ";
         }
         $_parent = $context['_parent'];
@@ -205,7 +196,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
 
     public function getDebugInfo()
     {
-        return array (  181 => 48,  179 => 47,  177 => 46,  175 => 45,  173 => 44,  171 => 43,  169 => 42,  167 => 41,  162 => 38,  156 => 35,  150 => 31,  141 => 29,  137 => 28,  131 => 25,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  171 => 44,  169 => 43,  167 => 42,  161 => 38,  154 => 34,  148 => 32,  137 => 30,  133 => 29,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -231,34 +222,31 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
     {% endif %}
 
     {% for post in posts %}
-        <a href=\"/main/showPost/{{ post.slug }}\" id=\"post-link\">
-    <div class=\"d-flex justify-content-center flex-column news-wrapper mt-3\">
-        <div class=\"news-title\">
-            <h1>{{ post.title }}</h1>
-            <hr>
-        </div>
-        {% for category in post.category %}
-            <p class=\"text-primary\">{{ category.category }}</p>
-        {% endfor %}
-        <div class=\"news-img\">
+    <div class=\"container news-wrapper mt-3\">
+    <div class=\"row\">
+        <div class=\"news-img col-4\">
             <img src=\"../main/images/news.png\" alt=\"img\">
+        </div>
+
+        <div class=\"col-8\">
+        {% for category in post.category %}
+            <a href=\"/main/show-category/{{ category.slug }}\" class=\"post-category\">{{ category.category }}</a>
+        {% endfor %}
+        <a href=\"/main/showPost/{{ post.slug }}\" id=\"post-link\">
+        <div class=\"news-title\">
+            <h3>{{ post.title }}</h3>
+            <hr>
         </div>
         <div class=\"news-content\">
             <p href=\"#\">Desc:{{ post.description }}</p>
         </div>
-        <div class=\"news-content\">
-            <p href=\"#\">{{ post.content }}</p>
-        </div>
-        {#{% for category in post.category %}#}
-            {#<h2>{{ category.title }}</h2>#}
-        {#{% endfor %}#}
-        {#{% for tag in post.tags %}#}
-            {#<h1 class=\"text-success\">{{ tag.tag }}</h1>#}
-        {#{% endfor %}#}
-        {#<th scope=\"col\"><a href=\"/main/showPost/{{ post.id }}\" class=\"btn btn-sm btn-secondary\">show Post</a></th>#}
-        {#<th scope=\"col\"><a href=\"/main/showPost/{{ post.slug }}\" class=\"btn btn-sm btn-secondary\">show Post</a></th>#}
-    </div>
         </a>
+        {#<div class=\"news-content\">#}
+            {#<p href=\"#\">{{ post.content }}</p>#}
+        {#</div>#}
+        </div>
+    </div>
+    </div>
     {% endfor %}
 {% endblock %}", "main/index.html.twig", "/var/www/symfony4blog/templates/main/index.html.twig");
     }

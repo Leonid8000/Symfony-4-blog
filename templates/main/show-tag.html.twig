@@ -36,11 +36,12 @@
                     <p href="#">{{ post.content }}</p>
                 </div>
                 {% for category in post.category %}
-                <h2>{{ category.category }}</h2>
+                <h2 class="post-category">{{ category.category }}</h2>
                 {% endfor %}
-                {#{% for tag in post.tags %}#}
+                {% for tag in post.tags %}
                     {#<button class="btn btn-success col-1">{{ tag.tag }}</button>#}
-                {#{% endfor %}#}
+                    <a href="/main/show-tag/{{ tag.slug }}"><span class="badge badge-secondary col-1">{{ tag.tag }}</span></a>
+                {% endfor %}
             </div>
         </a>
     {% endfor %}

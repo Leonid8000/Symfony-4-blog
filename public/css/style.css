@@ -170,10 +170,12 @@ nav{
 
 /* News */
 .news-wrapper{
-    background: #E3E1CD;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
     margin-left:10%;
     margin-right:10%;
     padding:10px;
+    background: snow;
 }
 
 /* Post block */
@@ -189,5 +191,14 @@ nav{
 }
 
 #post-link:hover{
+    text-decoration: none;
+}
+.post-category{
+    font-size:18px;
+    color:grey;
+}
+.post-category:hover{
+    color:#222222;
+    transition: 0.7s ease;
     text-decoration: none;
 }
