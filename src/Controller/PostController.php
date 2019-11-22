@@ -8,9 +8,13 @@ use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 
 use App\Entity\Post;
+use App\Entity\Category;
+use App\Entity\Tag;
 
 use App\Form\PostFormType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
@@ -35,6 +39,7 @@ class PostController extends AbstractController
     public function create(Request $request)
     {
         $postForm = $this->createForm(PostFormType::class);
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
 
         $postForm->handleRequest($request);
         if ($postForm->isSubmitted() && $postForm->isValid()) {
@@ -47,6 +52,7 @@ class PostController extends AbstractController
         }
         return $this->render('admin/post/create.html.twig', [
             'postForm' => $postForm->createView(),
+            'categories' => $categories
         ]);
     }
     /**
@@ -73,6 +79,19 @@ class PostController extends AbstractController
             ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('slug', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('content', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('description', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('category',EntityType::class,[
+                'class' => Category::class,
+                'choice_label' => 'category',
+                'multiple' => true,
+                'expanded' => true,
+            ])
+            ->add('tag',EntityType::class,[
+                'class' => Tag::class,
+                'choice_label' => 'tag',
+                'multiple' => true,
+                'expanded' => true,
+            ])
             ->add('save', SubmitType::class, array(
                 'label' => 'Update',
                 'attr' => array('class' => 'btn btn-primary mt-3')

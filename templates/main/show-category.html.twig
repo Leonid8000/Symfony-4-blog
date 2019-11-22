@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Index page!{% endblock %}
+
+{% block body %}
+    {{ include('main/layouts/header.html.twig') }}
+
+    <h3 class="text-dark mt-2 ml-3 text-left home-logo">NEWS<span class="yellow-text">BLOG</span></h3>
+    <hr>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <div class="d-flex justify-content-center">
+            <a href="{{ path('admin') }}" class="admin-route text-dark  anton-font text-center mt-4">Admin Panel</a><br />
+        </div>
+    {% endif %}
+
+    {% if is_granted('ROLE_USER') %}
+
+    {% endif %}
+
+    <h2 class="text-center">{{ category.category }}</h2>
+    {% for post in category.posts %}
+        <a href="/main/showPost/{{ post.slug }}" id="post-link">
+            <div class="d-flex justify-content-center flex-column news-wrapper mt-3">
+                <div class="news-title">
+                    <h1>{{ post.title }}</h1>
+                    <hr>
+                </div>
+                <div class="news-img">
+                    <img src="../main/images/news.png" alt="img">
+                </div>
+                <div class="news-content">
+                    <p href="#">Desc:{{ post.description }}</p>
+                </div>
+                <div class="news-content">
+                    <p href="#">{{ post.content }}</p>
+                </div>
+                {#{% for category in post.category %}#}
+                    {#<h2>{{ category.categ }}</h2>#}
+                {#{% endfor %}#}
+                {% for tag in post.tags %}
+                    <button class="btn btn-success col-1">{{ tag.tag }}</button>
+                {% endfor %}
+            </div>
+        </a>
+    {% endfor %}
+
+
+
+{% endblock %}

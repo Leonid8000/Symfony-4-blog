@@ -23,6 +23,8 @@ return [
     'category/edit' => [['id'], ['_controller' => 'App\\Controller\\CategoryController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/category/edit']], [], []],
     'index' => [[], ['_controller' => 'App\\Controller\\MainController::index'], [], [['text', '/']], [], []],
     'post/show' => [['slug'], ['_controller' => 'App\\Controller\\MainController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/main/showPost']], [], []],
+    'category/show' => [['slug'], ['_controller' => 'App\\Controller\\MainController::showCategoryPosts'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/main/show-category']], [], []],
+    'tag/show' => [['slug'], ['_controller' => 'App\\Controller\\MainController::showTagPosts'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/main/show-tag']], [], []],
     'posts' => [[], ['_controller' => 'App\\Controller\\PostController::index'], [], [['text', '/admin/posts']], [], []],
     'create/post' => [[], ['_controller' => 'App\\Controller\\PostController::create'], [], [['text', '/admin/post/create']], [], []],
     'post/delete' => [['id'], ['_controller' => 'App\\Controller\\PostController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/post/delete']], [], []],
@@ -30,5 +32,8 @@ return [
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
     'register' => [[], ['_controller' => 'App\\Controller\\SecurityController::register'], [], [['text', '/register']], [], []],
-    'tag' => [[], ['_controller' => 'App\\Controller\\TagController::index'], [], [['text', '/tag']], [], []],
+    'tags' => [[], ['_controller' => 'App\\Controller\\TagController::index'], [], [['text', '/admin/tag/index']], [], []],
+    'tag/create' => [[], ['_controller' => 'App\\Controller\\TagController::create'], [], [['text', '/admin/tag/create']], [], []],
+    'tag/delete' => [['id'], ['_controller' => 'App\\Controller\\TagController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/tag/delete']], [], []],
+    'tag/edit' => [['id'], ['_controller' => 'App\\Controller\\TagController::edit'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/tag/edit']], [], []],
 ];

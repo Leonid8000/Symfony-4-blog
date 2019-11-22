@@ -21,6 +21,12 @@
 <div class="d-flex justify-content-center flex-column post-wrapper">
     <h1 class="text-center">{{ post.title }}</h1>
     <p>{{ post.content }}</p>
+    {#{% for category in post.category %}#}
+        {#<h2>{{ category.title }}</h2>#}
+    {#{% endfor %}#}
+    {% for tag in post.tags %}
+       <a href="/main/show-tag/{{ tag.slug }}"><h1 class="text-success">{{ tag.tag }}</h1></a>
+    {% endfor %}
     <div class="container">
         <div class="row bootstrap snippets">
             <div class="col-md-6  col-sm-10">

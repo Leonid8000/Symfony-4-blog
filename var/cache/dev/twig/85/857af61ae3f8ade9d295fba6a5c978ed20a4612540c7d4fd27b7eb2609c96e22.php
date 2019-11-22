@@ -98,46 +98,53 @@ class __TwigTemplate_1e094e8f0928ac2dc4ded4c9d8879b0f7364756a12ae200b267ede02f1b
         echo "
             </div>
 
-            <div class=\"main\">
+            <div class=\"offset-lg-2 col-lg-8\">
                 <h1 class=\"text-center anton-font text-dark\">Posts</h1>
-            </div>
-
-            <div>
                 <table class=\"table\" id=\"post_table\">
                     <thead class=\"thead-dark\">
                     <tr>
                         <th scope=\"col\">#</th>
-                        <th scope=\"col\">Category</th>
+                        <th scope=\"col\">Post</th>
+                        <th scope=\"col\">Slug</th>
+                        <th scope=\"col\">Desc</th>
                         <th scope=\"col\">Edit</th>
                         <th scope=\"col\">Delete</th>
                     </tr>
                     </thead>
                     <tbody>
                     ";
-        // line 29
-        if ((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 29, $this->source); })())) {
-            // line 30
+        // line 28
+        if ((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 28, $this->source); })())) {
+            // line 29
             echo "                        ";
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 30, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 29, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-                // line 31
+                // line 30
                 echo "                            <tr>
                                 <th scope=\"row\">";
-                // line 32
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 32), "html", null, true);
+                // line 31
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 31), "html", null, true);
                 echo "</th>
                                 <td>";
+                // line 32
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 32), "html", null, true);
+                echo "</td>
+                                <td>";
                 // line 33
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 33), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 33), "html", null, true);
+                echo "</td>
+                                <td>";
+                // line 34
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 34), "html", null, true);
                 echo "</td>
                                 <th scope=\"col\"><a href=\"/admin/post/edit/";
-                // line 34
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 34), "html", null, true);
-                echo "\" class=\"btn btn-sm btn-secondary\">edit</a></th>
-                                <th scope=\"col\"><button class=\"btn btn-sm btn-danger post-delete\" data-id=\"";
                 // line 35
                 echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 35), "html", null, true);
+                echo "\" class=\"btn btn-sm btn-secondary\">edit</a></th>
+                                <th scope=\"col\"><button class=\"btn btn-sm btn-danger post-delete\" data-id=\"";
+                // line 36
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "id", [], "any", false, false, false, 36), "html", null, true);
                 echo "\">delete</button></th>
                             </tr>
                         ";
@@ -145,14 +152,14 @@ class __TwigTemplate_1e094e8f0928ac2dc4ded4c9d8879b0f7364756a12ae200b267ede02f1b
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 38
+            // line 39
             echo "                    ";
         } else {
-            // line 39
+            // line 40
             echo "                        <h3 class=\"text-center\">no posts</h3>
                     ";
         }
-        // line 41
+        // line 42
         echo "                    </tbody>
                 </table>
 
@@ -161,7 +168,7 @@ class __TwigTemplate_1e094e8f0928ac2dc4ded4c9d8879b0f7364756a12ae200b267ede02f1b
     </div>
 
     ";
-        // line 48
+        // line 49
         echo twig_include($this->env, $context, "admin/layouts/footer.html.twig");
         echo "
 ";
@@ -185,7 +192,7 @@ class __TwigTemplate_1e094e8f0928ac2dc4ded4c9d8879b0f7364756a12ae200b267ede02f1b
 
     public function getDebugInfo()
     {
-        return array (  165 => 48,  156 => 41,  152 => 39,  149 => 38,  140 => 35,  136 => 34,  132 => 33,  128 => 32,  125 => 31,  120 => 30,  118 => 29,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  172 => 49,  163 => 42,  159 => 40,  156 => 39,  147 => 36,  143 => 35,  139 => 34,  135 => 33,  131 => 32,  127 => 31,  124 => 30,  119 => 29,  117 => 28,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -203,16 +210,15 @@ class __TwigTemplate_1e094e8f0928ac2dc4ded4c9d8879b0f7364756a12ae200b267ede02f1b
                 {{ include('admin/layouts/sidebar.html.twig') }}
             </div>
 
-            <div class=\"main\">
+            <div class=\"offset-lg-2 col-lg-8\">
                 <h1 class=\"text-center anton-font text-dark\">Posts</h1>
-            </div>
-
-            <div>
                 <table class=\"table\" id=\"post_table\">
                     <thead class=\"thead-dark\">
                     <tr>
                         <th scope=\"col\">#</th>
-                        <th scope=\"col\">Category</th>
+                        <th scope=\"col\">Post</th>
+                        <th scope=\"col\">Slug</th>
+                        <th scope=\"col\">Desc</th>
                         <th scope=\"col\">Edit</th>
                         <th scope=\"col\">Delete</th>
                     </tr>
@@ -223,6 +229,8 @@ class __TwigTemplate_1e094e8f0928ac2dc4ded4c9d8879b0f7364756a12ae200b267ede02f1b
                             <tr>
                                 <th scope=\"row\">{{ post.id }}</th>
                                 <td>{{ post.title }}</td>
+                                <td>{{ post.slug }}</td>
+                                <td>{{ post.description }}</td>
                                 <th scope=\"col\"><a href=\"/admin/post/edit/{{ post.id }}\" class=\"btn btn-sm btn-secondary\">edit</a></th>
                                 <th scope=\"col\"><button class=\"btn btn-sm btn-danger post-delete\" data-id=\"{{ post.id }}\">delete</button></th>
                             </tr>

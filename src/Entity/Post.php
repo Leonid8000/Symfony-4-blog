@@ -33,6 +33,11 @@ class Post
     private $slug;
 
     /**
+     * @ORM\Column(type="string", length=100, unique=true)
+     */
+    private $description;
+
+    /**
      * @ORM\Column(type="text", nullable=true)
      */
     private $content;
@@ -43,7 +48,7 @@ class Post
 //    private $publishedAt;
 //Category relationship
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Category", mappedBy="posts")
+     * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="posts")
      */
     private $categories;
 
@@ -54,7 +59,7 @@ class Post
     }
 
     /**
-     * @return Collection|Category[]
+     * @return Collection|Post[]
      */
     public function getCategory(): Collection
     {
@@ -85,7 +90,7 @@ class Post
     /**
      * @return Collection|Post[]
      */
-    public function getTags(): Collection
+    public function getTag(): Collection
     {
         return $this->tags;
     }
@@ -146,6 +151,18 @@ class Post
 
         return $this;
     }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+{
+    $this->description = $description;
+
+    return $this;
+}
 //
 //    public function getPublishedAt(): \DateTimeInterface
 //    {

@@ -40,8 +40,7 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "main/layouts/header.html.twig"));
 
         // line 1
-        echo "
-    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+        echo " <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
@@ -49,20 +48,22 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
             <ul class=\"navbar-nav \">
                 <li class=\"nav-item active\">
                     <a class=\"nav-link\" href=\"";
-        // line 9
+        // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
         echo "\">Home <span class=\"sr-only\">(current)</span></a>
                 </li>
                 ";
-        // line 11
+        // line 10
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 11, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 10, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 12
+            // line 11
             echo "                    <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">";
-            // line 13
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "title", [], "any", false, false, false, 13), "html", null, true);
+                        <a class=\"nav-link\" href=\"/main/show-category/";
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, false, 12), "html", null, true);
+            echo "\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 12), "html", null, true);
             echo "</a>
                     </li>
                 ";
@@ -70,36 +71,36 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 16
+        // line 15
         echo "            </ul>
         </div>
         ";
-        // line 18
+        // line 17
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 19
+            // line 18
             echo "            <div class=\"d-flex justify-content-end\">
                 <a href=\"";
-            // line 20
+            // line 19
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\" class=\"btn btn-dark m-3\">Log Out</a>
             </div>
         ";
         } else {
-            // line 23
+            // line 22
             echo "            <li class=\"d-flex justify-content-end\">
                 <a href=\"";
-            // line 24
+            // line 23
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\" class=\"btn btn-dark m-2\">Login</a>
                 <a href=\"";
-            // line 25
+            // line 24
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
             echo "\" class=\"btn btn-dark m-2\">Sign Up</a>
             </li>
         ";
         }
-        // line 28
-        echo "    </nav>
+        // line 27
+        echo "</nav>
 
 ";
         
@@ -122,13 +123,12 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
 
     public function getDebugInfo()
     {
-        return array (  102 => 28,  96 => 25,  92 => 24,  89 => 23,  83 => 20,  80 => 19,  78 => 18,  74 => 16,  65 => 13,  62 => 12,  58 => 11,  53 => 9,  43 => 1,);
+        return array (  103 => 27,  97 => 24,  93 => 23,  90 => 22,  84 => 19,  81 => 18,  79 => 17,  75 => 15,  64 => 12,  61 => 11,  57 => 10,  52 => 8,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("
-    <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
+        return new Source(" <nav class=\"navbar navbar-expand-lg navbar-dark bg-dark\">
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
@@ -139,7 +139,7 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
                 </li>
                 {% for category in categories %}
                     <li class=\"nav-item\">
-                        <a class=\"nav-link\" href=\"#\">{{ category.title }}</a>
+                        <a class=\"nav-link\" href=\"/main/show-category/{{ category.slug }}\">{{ category.category }}</a>
                     </li>
                 {% endfor %}
             </ul>
@@ -154,7 +154,7 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
                 <a href=\"{{ path('register') }}\" class=\"btn btn-dark m-2\">Sign Up</a>
             </li>
         {% endif %}
-    </nav>
+</nav>
 
 ", "main/layouts/header.html.twig", "/var/www/symfony4blog/templates/main/layouts/header.html.twig");
     }

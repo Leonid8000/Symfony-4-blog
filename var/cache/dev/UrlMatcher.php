@@ -23,7 +23,8 @@ return [
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
         '/register' => [[['_route' => 'register', '_controller' => 'App\\Controller\\SecurityController::register'], null, null, null, false, false, null]],
-        '/tag' => [[['_route' => 'tag', '_controller' => 'App\\Controller\\TagController::index'], null, null, null, false, false, null]],
+        '/admin/tag/index' => [[['_route' => 'tags', '_controller' => 'App\\Controller\\TagController::index'], null, null, null, false, false, null]],
+        '/admin/tag/create' => [[['_route' => 'tag/create', '_controller' => 'App\\Controller\\TagController::create'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -51,8 +52,18 @@ return [
                         .'|delete/([^/]++)(*:259)'
                         .'|edit/([^/]++)(*:280)'
                     .')'
+                    .'|tag/(?'
+                        .'|delete/([^/]++)(*:311)'
+                        .'|edit/([^/]++)(*:332)'
+                    .')'
                 .')'
-                .'|/main/showPost/([^/]++)(*:313)'
+                .'|/main/show(?'
+                    .'|Post/([^/]++)(*:368)'
+                    .'|\\-(?'
+                        .'|category/([^/]++)(*:398)'
+                        .'|tag/([^/]++)(*:418)'
+                    .')'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -67,8 +78,12 @@ return [
         227 => [[['_route' => 'category/edit', '_controller' => 'App\\Controller\\CategoryController::edit'], ['id'], null, null, false, true, null]],
         259 => [[['_route' => 'post/delete', '_controller' => 'App\\Controller\\PostController::delete'], ['id'], null, null, false, true, null]],
         280 => [[['_route' => 'admin/post/edit', '_controller' => 'App\\Controller\\PostController::edit'], ['id'], null, null, false, true, null]],
-        313 => [
-            [['_route' => 'post/show', '_controller' => 'App\\Controller\\MainController::show'], ['slug'], null, null, false, true, null],
+        311 => [[['_route' => 'tag/delete', '_controller' => 'App\\Controller\\TagController::delete'], ['id'], null, null, false, true, null]],
+        332 => [[['_route' => 'tag/edit', '_controller' => 'App\\Controller\\TagController::edit'], ['id'], null, null, false, true, null]],
+        368 => [[['_route' => 'post/show', '_controller' => 'App\\Controller\\MainController::show'], ['slug'], null, null, false, true, null]],
+        398 => [[['_route' => 'category/show', '_controller' => 'App\\Controller\\MainController::showCategoryPosts'], ['slug'], null, null, false, true, null]],
+        418 => [
+            [['_route' => 'tag/show', '_controller' => 'App\\Controller\\MainController::showTagPosts'], ['slug'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

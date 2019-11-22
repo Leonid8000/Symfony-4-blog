@@ -183,3 +183,11 @@ nav{
     margin-right:10%;
     padding:10px;
 }
+
+#post-link{
+    color:black;
+}
+
+#post-link:hover{
+    text-decoration: none;
+}

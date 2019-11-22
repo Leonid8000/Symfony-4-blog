@@ -26,7 +26,7 @@ class Tag
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $name;
+    private $tag;
 
     /**
      * @ORM\Column(type="string", length=100, unique=true)
@@ -35,7 +35,7 @@ class Tag
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Post", mappedBy="tags")
      */
-    private $categories;
+    private $posts;
 
     public function __construct()
     {
@@ -58,7 +58,7 @@ class Tag
         }
         return $this;
     }
-    public function removePOst(Post $post): self
+    public function removePost(Post $post): self
     {
         if ($this->posts->contains($post)) {
             $this->posts->removeElement($post);
@@ -71,14 +71,14 @@ class Tag
         return $this->id;
     }
 
-    public function getName(): ?string
+    public function getTag(): ?string
     {
-        return $this->name;
+        return $this->tag;
     }
 
-    public function setName(string $name): self
+    public function setTag(string $tag): self
     {
-        $this->name = $name;
+        $this->tag = $tag;
 
         return $this;
     }

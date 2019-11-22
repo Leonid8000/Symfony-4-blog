@@ -24,10 +24,15 @@ class Category
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $title;
+    private $category;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Post", inversedBy="categories")
+     * @ORM\Column(type="string", length=100, unique=true)
+     */
+    private $slug;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="App\Entity\Post", mappedBy="categories")
      */
     public $posts;
 
@@ -37,9 +42,9 @@ class Category
     }
 
     /**
-     * @return Collection|Category[]
+     * @return Collection|Post[]
      */
-    public function getPosts(): Collection
+    public function getPost(): Collection
     {
         return $this->posts;
     }
@@ -65,15 +70,27 @@ class Category
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getCategory(): ?string
     {
-        return $this->title;
+        return $this->category;
     }
 
-    public function setTitle(string $title): self
+    public function setCategory(string $category): self
     {
-        $this->title = $title;
+        $this->category = $category;
 
         return $this;
+    }
+
+    public function getSlug(): ?string
+    {
+        return $this->slug;
+    }
+
+    public function setSlug(string $slug): self
+    {
+    $this->slug = $slug;
+
+    return $this;
     }
 }

@@ -30,6 +30,22 @@ if(post){
     }
 });
 }
+// Delete tag
+const tag = document.getElementById('post_table');
+
+if(tag){
+    tag.addEventListener('click', e => {
+        if(e.target.className === 'btn btn-sm btn-danger tag-delete'){
+            if(confirm('Deleting Tag?')){
+                const id = e.target.getAttribute('data-id');
+
+                fetch(`/admin/tag/delete/${id}`,{
+                    method: 'DELETE'
+                }).then(res => window.location.reload());
+            }
+        }
+    });
+}
 // //Reset poll result
 // const poll = document.getElementById('poll_reset');
 // poll.addEventListener('click', funk = () =>{

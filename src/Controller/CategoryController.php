@@ -10,8 +10,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
 use App\Form\CategoryType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 use App\Entity\Category;
+use App\Entity\Post;
 
 /**
  * @IsGranted("ROLE_ADMIN")
@@ -71,6 +73,7 @@ class CategoryController extends AbstractController
         
         $form = $this->createFormBuilder($category)
             ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('slug', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('save', SubmitType::class, array(
                 'label' => 'Update',
                 'attr' => array('class' => 'btn btn-primary mt-3')

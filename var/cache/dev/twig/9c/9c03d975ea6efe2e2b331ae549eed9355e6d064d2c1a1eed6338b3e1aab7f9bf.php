@@ -116,10 +116,36 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         // line 20
         echo "
 <div class=\"d-flex justify-content-center flex-column post-wrapper\">
-    ";
+    <h1 class=\"text-center\">";
+        // line 22
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 22, $this->source); })()), "title", [], "any", false, false, false, 22), "html", null, true);
+        echo "</h1>
+    <p>";
         // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 23, $this->source); })()), "content", [], "any", false, false, false, 23), "html", null, true);
+        echo "</p>
+    ";
+        // line 25
+        echo "        ";
+        // line 26
         echo "    ";
-        // line 24
+        // line 27
+        echo "    ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 27, $this->source); })()), "tags", [], "any", false, false, false, 27));
+        foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+            // line 28
+            echo "       <a href=\"/main/show-tag/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "slug", [], "any", false, false, false, 28), "html", null, true);
+            echo "\"><h1 class=\"text-success\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "tag", [], "any", false, false, false, 28), "html", null, true);
+            echo "</h1></a>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 30
         echo "    <div class=\"container\">
         <div class=\"row bootstrap snippets\">
             <div class=\"col-md-6  col-sm-10\">
@@ -146,25 +172,25 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
                                         <strong class=\"text-success\">@MartinoMont</strong>
 
                                         ";
-        // line 50
-        echo "                                        ";
-        // line 51
-        echo "                                        ";
-        // line 52
-        echo "                                        ";
-        // line 53
-        echo "                                        ";
-        // line 54
-        echo "                                        ";
-        // line 55
-        echo "                                        ";
         // line 56
+        echo "                                        ";
+        // line 57
+        echo "                                        ";
+        // line 58
+        echo "                                        ";
+        // line 59
+        echo "                                        ";
+        // line 60
+        echo "                                        ";
+        // line 61
+        echo "                                        ";
+        // line 62
         echo "
                                         <span class=\"pl-2 article-details\">
                                 <span class=\"js-like-article-count\">0</span>
                                     <a href=\"#\" class=\"fa fa-heart-o like-article js-like-article\"></a>
                                             ";
-        // line 61
+        // line 67
         echo "                                </span>
 
                                     </div>
@@ -199,7 +225,7 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
 
     public function getDebugInfo()
     {
-        return array (  168 => 61,  162 => 56,  160 => 55,  158 => 54,  156 => 53,  154 => 52,  152 => 51,  150 => 50,  123 => 24,  121 => 23,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  194 => 67,  188 => 62,  186 => 61,  184 => 60,  182 => 59,  180 => 58,  178 => 57,  176 => 56,  149 => 30,  138 => 28,  133 => 27,  131 => 26,  129 => 25,  125 => 23,  121 => 22,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -225,8 +251,14 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
     {% endif %}
 
 <div class=\"d-flex justify-content-center flex-column post-wrapper\">
-    {#<h1 class=\"text-center\">{{ post.title }}</h1>#}
-    {#<p>{{ post.content }}</p>#}
+    <h1 class=\"text-center\">{{ post.title }}</h1>
+    <p>{{ post.content }}</p>
+    {#{% for category in post.category %}#}
+        {#<h2>{{ category.title }}</h2>#}
+    {#{% endfor %}#}
+    {% for tag in post.tags %}
+       <a href=\"/main/show-tag/{{ tag.slug }}\"><h1 class=\"text-success\">{{ tag.tag }}</h1></a>
+    {% endfor %}
     <div class=\"container\">
         <div class=\"row bootstrap snippets\">
             <div class=\"col-md-6  col-sm-10\">

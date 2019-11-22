@@ -6,7 +6,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 use App\Entity\Category;
 use App\Entity\Post;
-//use App\Repository\PostRepository;
+use App\Entity\Tag;
 
 class MainController extends AbstractController
 {
@@ -38,9 +38,41 @@ class MainController extends AbstractController
         return $this->render('main/showPost.html.twig', [
             'posts' => $posts,
             'categories' => $categories,
-//            'slug' => $slug,
             'post' => $post,
+        ]);
+    }
 
+    /**
+     * @Route("main/show-category/{slug}", name="category/show",)
+     */
+    public function showCategoryPosts($slug){
+
+        $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
+        $category = $this->getDoctrine()->getRepository(Category::class)->findOneBy(['slug' => $slug]);
+
+        return $this->render('main/show-category.html.twig', [
+            'posts' => $posts,
+            'category' => $category,
+            'categories' => $categories,
+        ]);
+    }
+
+    /**
+     * @Route("main/show-tag/{slug}", name="tag/show",)
+     */
+    public function showTagPosts($slug){
+
+        $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
+        $tags = $this->getDoctrine()->getRepository(Tag::class)->findAll();
+        $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
+        $tag = $this->getDoctrine()->getRepository(Tag::class)->findOneBy(['slug' => $slug]);
+
+        return $this->render('main/show-tag.html.twig', [
+            'posts' => $posts,
+            'tag' => $tag,
+            'tags' => $tags,
+            'categories' => $categories
         ]);
     }
 }

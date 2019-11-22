@@ -12,7 +12,7 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
             'targetEntity' => [
                 'App\\Entity\\Post',
             ],
-            'inversedBy' => [
+            'mappedBy' => [
                 'categories',
             ],
         ],

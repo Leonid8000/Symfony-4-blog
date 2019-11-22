@@ -99,7 +99,7 @@ class __TwigTemplate_e2247c51a103f7b938879b1abf16aa2cbba8974b87d680b46027f3ee320
             </div>
 
             <div class=\"main\">
-                <h1 class=\"text-center anton-font text-dark\">Edit Category</h1>
+                <h1 class=\"text-center anton-font text-dark\">Edit Post</h1>
             </div>
         </div>
     </div>
@@ -163,7 +163,7 @@ class __TwigTemplate_e2247c51a103f7b938879b1abf16aa2cbba8974b87d680b46027f3ee320
             </div>
 
             <div class=\"main\">
-                <h1 class=\"text-center anton-font text-dark\">Edit Category</h1>
+                <h1 class=\"text-center anton-font text-dark\">Edit Post</h1>
             </div>
         </div>
     </div>

@@ -19,19 +19,33 @@
     {% endif %}
 
     {% for post in posts %}
+        <a href="/main/showPost/{{ post.slug }}" id="post-link">
     <div class="d-flex justify-content-center flex-column news-wrapper mt-3">
         <div class="news-title">
             <h1>{{ post.title }}</h1>
             <hr>
         </div>
+        {% for category in post.category %}
+            <p class="text-primary">{{ category.category }}</p>
+        {% endfor %}
         <div class="news-img">
             <img src="../main/images/news.png" alt="img">
         </div>
         <div class="news-content">
+            <p href="#">Desc:{{ post.description }}</p>
+        </div>
+        <div class="news-content">
             <p href="#">{{ post.content }}</p>
         </div>
+        {#{% for category in post.category %}#}
+            {#<h2>{{ category.title }}</h2>#}
+        {#{% endfor %}#}
+        {#{% for tag in post.tags %}#}
+            {#<h1 class="text-success">{{ tag.tag }}</h1>#}
+        {#{% endfor %}#}
         {#<th scope="col"><a href="/main/showPost/{{ post.id }}" class="btn btn-sm btn-secondary">show Post</a></th>#}
-        <th scope="col"><a href="/main/showPost/{{ post.slug }}" class="btn btn-sm btn-secondary">show Post</a></th>
+        {#<th scope="col"><a href="/main/showPost/{{ post.slug }}" class="btn btn-sm btn-secondary">show Post</a></th>#}
     </div>
+        </a>
     {% endfor %}
 {% endblock %}
