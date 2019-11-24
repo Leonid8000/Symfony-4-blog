@@ -121,28 +121,58 @@ class __TwigTemplate_a8eeebc76ecfcc386ac211a1de4f34c915c88c684e0573b3bc957365fbe
         $context['_seq'] = twig_ensure_traversable((isset($context["posts"]) || array_key_exists("posts", $context) ? $context["posts"] : (function () { throw new RuntimeError('Variable "posts" does not exist.', 21, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 22
-            echo "    <div class=\"d-flex justify-content-center flex-column news-wrapper mt-3\">
+            echo "    <div class=\"container news-wrapper mt-3\">
+    <div class=\"row\">
+        <div class=\"col-4\">
+            <img src=\"";
+            // line 25
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["post"], "img", [], "any", false, false, false, 25))), "html", null, true);
+            echo "\" alt=\"img\" class=\"news-img\">
+        </div>
+
+        <div class=\"col-8\">
+        ";
+            // line 29
+            $context['_parent'] = $context;
+            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["post"], "category", [], "any", false, false, false, 29));
+            foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+                // line 30
+                echo "            <a href=\"/main/show-category/";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, false, 30), "html", null, true);
+                echo "\" class=\"post-category\">";
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 30), "html", null, true);
+                echo "</a>
+        ";
+            }
+            $_parent = $context['_parent'];
+            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+            $context = array_intersect_key($context, $_parent) + $_parent;
+            // line 32
+            echo "        <a href=\"/main/showPost/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 32), "html", null, true);
+            echo "\" id=\"post-link\">
         <div class=\"news-title\">
-            <h1>";
-            // line 24
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 24), "html", null, true);
-            echo "</h1>
+            <h3>";
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 34), "html", null, true);
+            echo "</h3>
             <hr>
         </div>
-        <div class=\"news-img\">
-            <img src=\"../main/images/news.png\" alt=\"img\">
-        </div>
         <div class=\"news-content\">
-            <p href=\"#\">";
-            // line 31
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 31), "html", null, true);
+            <p href=\"#\">Desc:";
+            // line 38
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 38), "html", null, true);
             echo "</p>
         </div>
+        </a>
         ";
-            // line 34
-            echo "        <th scope=\"col\"><a href=\"/main/showPost/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 34), "html", null, true);
-            echo "\" class=\"btn btn-sm btn-secondary\">show Post</a></th>
+            // line 42
+            echo "            ";
+            // line 43
+            echo "        ";
+            // line 44
+            echo "        </div>
+    </div>
     </div>
     ";
         }
@@ -169,7 +199,7 @@ class __TwigTemplate_a8eeebc76ecfcc386ac211a1de4f34c915c88c684e0573b3bc957365fbe
 
     public function getDebugInfo()
     {
-        return array (  143 => 34,  138 => 31,  128 => 24,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  174 => 44,  172 => 43,  170 => 42,  164 => 38,  157 => 34,  151 => 32,  140 => 30,  136 => 29,  129 => 25,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -195,19 +225,30 @@ class __TwigTemplate_a8eeebc76ecfcc386ac211a1de4f34c915c88c684e0573b3bc957365fbe
     {% endif %}
 
     {% for post in posts %}
-    <div class=\"d-flex justify-content-center flex-column news-wrapper mt-3\">
+    <div class=\"container news-wrapper mt-3\">
+    <div class=\"row\">
+        <div class=\"col-4\">
+            <img src=\"{{ asset('uploads/' ~ post.img) }}\" alt=\"img\" class=\"news-img\">
+        </div>
+
+        <div class=\"col-8\">
+        {% for category in post.category %}
+            <a href=\"/main/show-category/{{ category.slug }}\" class=\"post-category\">{{ category.category }}</a>
+        {% endfor %}
+        <a href=\"/main/showPost/{{ post.slug }}\" id=\"post-link\">
         <div class=\"news-title\">
-            <h1>{{ post.title }}</h1>
+            <h3>{{ post.title }}</h3>
             <hr>
         </div>
-        <div class=\"news-img\">
-            <img src=\"../main/images/news.png\" alt=\"img\">
-        </div>
         <div class=\"news-content\">
-            <p href=\"#\">{{ post.content }}</p>
+            <p href=\"#\">Desc:{{ post.description }}</p>
         </div>
-        {#<th scope=\"col\"><a href=\"/main/showPost/{{ post.id }}\" class=\"btn btn-sm btn-secondary\">show Post</a></th>#}
-        <th scope=\"col\"><a href=\"/main/showPost/{{ post.slug }}\" class=\"btn btn-sm btn-secondary\">show Post</a></th>
+        </a>
+        {#<div class=\"news-content\">#}
+            {#<p href=\"#\">{{ post.content }}</p>#}
+        {#</div>#}
+        </div>
+    </div>
     </div>
     {% endfor %}
 {% endblock %}", "main/index.html.twig", "/var/www/Symfony-4-blog/templates/main/index.html.twig");

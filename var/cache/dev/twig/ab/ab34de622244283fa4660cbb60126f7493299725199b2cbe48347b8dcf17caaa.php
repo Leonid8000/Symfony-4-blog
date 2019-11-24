@@ -129,7 +129,7 @@ class __TwigTemplate_cc2c55707d4cc3ae02d5481811a26c84d2c3cb471353c31b3e54e84da34
                 echo "</th>
                             <td>";
                 // line 33
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "title", [], "any", false, false, false, 33), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 33), "html", null, true);
                 echo "</td>
                             <th scope=\"col\"><a href=\"/admin/category/edit/";
                 // line 34
@@ -222,7 +222,7 @@ class __TwigTemplate_cc2c55707d4cc3ae02d5481811a26c84d2c3cb471353c31b3e54e84da34
                     {% for category in categories %}
                         <tr>
                             <th scope=\"row\">{{ category.id }}</th>
-                            <td>{{ category.title }}</td>
+                            <td>{{ category.category }}</td>
                             <th scope=\"col\"><a href=\"/admin/category/edit/{{ category.id }}\" class=\"btn btn-sm btn-secondary\">edit</a></th>
                             <th scope=\"col\"><button class=\"btn btn-sm btn-danger category-delete\" data-id=\"{{ category.id }}\">delete</button></th>
                         </tr>

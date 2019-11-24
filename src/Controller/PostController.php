@@ -15,6 +15,7 @@ use App\Form\PostFormType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 /**
@@ -38,11 +39,18 @@ class PostController extends AbstractController
      */
     public function create(Request $request)
     {
-        $postForm = $this->createForm(PostFormType::class);
+        $upload = new Post();
+        $postForm = $this->createForm(PostFormType::class, $upload);
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
 
         $postForm->handleRequest($request);
         if ($postForm->isSubmitted() && $postForm->isValid()) {
+
+            $file = $postForm->get('img')->getData();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('upload_directory'), $fileName);
+            $upload->setImg($fileName);
+
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($postForm->getData());
             $entityManager->flush();
@@ -75,6 +83,8 @@ class PostController extends AbstractController
 
         $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
 
+        $upload = new Post();
+
         $form = $this->createFormBuilder($post)
             ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('slug', TextType::class, array('attr' => array('class' => 'form-control')))
@@ -91,6 +101,13 @@ class PostController extends AbstractController
                 'choice_label' => 'tag',
                 'multiple' => true,
                 'expanded' => true,
+            ])
+            ->add('img', FileType::class,[
+                'label' => 'Image',
+                'mapped' => false,
+                'required' => false,
+                'constraints' => [
+                ]
             ])
             ->add('save', SubmitType::class, array(
                 'label' => 'Update',

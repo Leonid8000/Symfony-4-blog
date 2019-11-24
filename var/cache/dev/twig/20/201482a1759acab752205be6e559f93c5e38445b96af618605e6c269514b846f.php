@@ -120,22 +120,78 @@ class __TwigTemplate_24306e3192f65d2d6e6e46d0a98e665cdc4af4bf5e931e1a3d1babfcce1
         // line 22
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 22, $this->source); })()), "title", [], "any", false, false, false, 22), "html", null, true);
         echo "</h1>
+    <div class=\"\">
+        <img src=\"";
+        // line 24
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 24, $this->source); })()), "img", [], "any", false, false, false, 24))), "html", null, true);
+        echo "\" alt=\"img\" class=\"post-img\">
+    </div>
     <p>";
-        // line 23
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 23, $this->source); })()), "content", [], "any", false, false, false, 23), "html", null, true);
+        // line 26
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 26, $this->source); })()), "content", [], "any", false, false, false, 26), "html", null, true);
         echo "</p>
-    <div class=\"container\">
+
+    ";
+        // line 28
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 28, $this->source); })()), "category", [], "any", false, false, false, 28));
+        foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
+            // line 29
+            echo "      <a href=\"/main/show-category/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, false, 29), "html", null, true);
+            echo "\" class=\"post-category\">
+          <h2 class=\"post-category\">";
+            // line 30
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 30), "html", null, true);
+            echo "</h2>
+      </a>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 33
+        echo "
+    ";
+        // line 34
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 34, $this->source); })()), "tags", [], "any", false, false, false, 34));
+        foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
+            // line 35
+            echo "       ";
+            // line 36
+            echo "    <a href=\"/main/show-tag/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "slug", [], "any", false, false, false, 36), "html", null, true);
+            echo "\"><span class=\"badge badge-secondary col-1\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "tag", [], "any", false, false, false, 36), "html", null, true);
+            echo "</span></a>
+    ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 38
+        echo "    <div class=\"container\">
         <div class=\"row bootstrap snippets\">
             <div class=\"col-md-6  col-sm-10\">
                 <div class=\"comment-wrapper\">
                     <div class=\"panel panel-info\">
-                        <div class=\"panel-heading\">
-                            Comment panel
-                        </div>
                         <div class=\"panel-body\">
-                            <textarea class=\"form-control\" placeholder=\"write a comment...\" rows=\"3\"></textarea>
-                            <br>
-                            <button type=\"button\" class=\"btn btn-info pull-right\">Post</button>
+
+                            ";
+        // line 45
+        if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
+            // line 46
+            echo "                                <div class=\"panel-heading\">
+                                    Comment panel
+                                </div>
+                                <textarea class=\"form-control\" placeholder=\"write a comment...\" rows=\"3\"></textarea>
+                                <br>
+                                <button type=\"button\" class=\"btn btn-info pull-right\">Post</button>
+                            ";
+        }
+        // line 53
+        echo "
                             <div class=\"clearfix\"></div>
                             <hr>
                             <ul class=\"media-list\">
@@ -150,25 +206,25 @@ class __TwigTemplate_24306e3192f65d2d6e6e46d0a98e665cdc4af4bf5e931e1a3d1babfcce1
                                         <strong class=\"text-success\">@MartinoMont</strong>
 
                                         ";
-        // line 50
+        // line 68
         echo "                                        ";
-        // line 51
+        // line 69
         echo "                                        ";
-        // line 52
+        // line 70
         echo "                                        ";
-        // line 53
+        // line 71
         echo "                                        ";
-        // line 54
+        // line 72
         echo "                                        ";
-        // line 55
+        // line 73
         echo "                                        ";
-        // line 56
+        // line 74
         echo "
                                         <span class=\"pl-2 article-details\">
                                 <span class=\"js-like-article-count\">0</span>
                                     <a href=\"#\" class=\"fa fa-heart-o like-article js-like-article\"></a>
                                             ";
-        // line 61
+        // line 79
         echo "                                </span>
 
                                     </div>
@@ -203,7 +259,7 @@ class __TwigTemplate_24306e3192f65d2d6e6e46d0a98e665cdc4af4bf5e931e1a3d1babfcce1
 
     public function getDebugInfo()
     {
-        return array (  172 => 61,  166 => 56,  164 => 55,  162 => 54,  160 => 53,  158 => 52,  156 => 51,  154 => 50,  125 => 23,  121 => 22,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  228 => 79,  222 => 74,  220 => 73,  218 => 72,  216 => 71,  214 => 70,  212 => 69,  210 => 68,  194 => 53,  185 => 46,  183 => 45,  174 => 38,  163 => 36,  161 => 35,  157 => 34,  154 => 33,  145 => 30,  140 => 29,  136 => 28,  131 => 26,  126 => 24,  121 => 22,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -230,19 +286,37 @@ class __TwigTemplate_24306e3192f65d2d6e6e46d0a98e665cdc4af4bf5e931e1a3d1babfcce1
 
 <div class=\"d-flex justify-content-center flex-column post-wrapper\">
     <h1 class=\"text-center\">{{ post.title }}</h1>
+    <div class=\"\">
+        <img src=\"{{ asset('uploads/' ~ post.img) }}\" alt=\"img\" class=\"post-img\">
+    </div>
     <p>{{ post.content }}</p>
+
+    {% for category in post.category %}
+      <a href=\"/main/show-category/{{ category.slug }}\" class=\"post-category\">
+          <h2 class=\"post-category\">{{ category.category }}</h2>
+      </a>
+    {% endfor %}
+
+    {% for tag in post.tags %}
+       {#<a href=\"/main/show-tag/{{ tag.slug }}\"><h1 class=\"text-success\">{{ tag.tag }}</h1></a>#}
+    <a href=\"/main/show-tag/{{ tag.slug }}\"><span class=\"badge badge-secondary col-1\">{{ tag.tag }}</span></a>
+    {% endfor %}
     <div class=\"container\">
         <div class=\"row bootstrap snippets\">
             <div class=\"col-md-6  col-sm-10\">
                 <div class=\"comment-wrapper\">
                     <div class=\"panel panel-info\">
-                        <div class=\"panel-heading\">
-                            Comment panel
-                        </div>
                         <div class=\"panel-body\">
-                            <textarea class=\"form-control\" placeholder=\"write a comment...\" rows=\"3\"></textarea>
-                            <br>
-                            <button type=\"button\" class=\"btn btn-info pull-right\">Post</button>
+
+                            {% if is_granted('ROLE_USER') %}
+                                <div class=\"panel-heading\">
+                                    Comment panel
+                                </div>
+                                <textarea class=\"form-control\" placeholder=\"write a comment...\" rows=\"3\"></textarea>
+                                <br>
+                                <button type=\"button\" class=\"btn btn-info pull-right\">Post</button>
+                            {% endif %}
+
                             <div class=\"clearfix\"></div>
                             <hr>
                             <ul class=\"media-list\">

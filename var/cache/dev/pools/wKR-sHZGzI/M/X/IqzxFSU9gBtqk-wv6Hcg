@@ -10,10 +10,10 @@ return $getExpiry ? PHP_INT_MAX : Hydrator::hydrate(
     [
         'Symfony\\Component\\Routing\\Annotation\\Route' => [
             'path' => [
-                '/tag',
+                'admin/tag/index',
             ],
             'name' => [
-                'tag',
+                'tags',
             ],
         ],
     ],

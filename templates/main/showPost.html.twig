@@ -20,10 +20,15 @@
 
 <div class="d-flex justify-content-center flex-column post-wrapper">
     <h1 class="text-center">{{ post.title }}</h1>
+    <div class="">
+        <img src="{{ asset('uploads/' ~ post.img) }}" alt="img" class="post-img">
+    </div>
     <p>{{ post.content }}</p>
 
     {% for category in post.category %}
-        <h2 class="post-category">{{ category.category }}</h2>
+      <a href="/main/show-category/{{ category.slug }}" class="post-category">
+          <h2 class="post-category">{{ category.category }}</h2>
+      </a>
     {% endfor %}
 
     {% for tag in post.tags %}

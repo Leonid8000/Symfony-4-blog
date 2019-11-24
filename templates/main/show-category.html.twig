@@ -26,8 +26,8 @@
                     <h1>{{ post.title }}</h1>
                     <hr>
                 </div>
-                <div class="news-img">
-                    <img src="../main/images/news.png" alt="img">
+                <div class="col-4">
+                    <img src="{{ asset('uploads/' ~ post.img) }}" alt="img" class="news-img">
                 </div>
                 <div class="news-content">
                     <p href="#">Desc:{{ post.description }}</p>

@@ -202,3 +202,12 @@ nav{
     transition: 0.7s ease;
     text-decoration: none;
 }
+
+.news-img{
+    height:150px;
+    width:auto;
+}
+.post-img{
+    height:500px;
+    width:auto;
+}

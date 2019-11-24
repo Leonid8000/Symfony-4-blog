@@ -132,11 +132,17 @@ title slug content-type-text publishedAt
 3 Вывод по категориям
 4 Круд с выбором категорий и тегов
 5 Вывод по тегам
+6 Create img
+
+edit img
 
 6 Система коментариев
-7 Пост: img timestapm short-description
+7 Пост: timestapm
 8 Версткаss
 9 Lazy loading
+10 Ошибки проверки и flash
+11 Видео на главной
+12 Кемнты коментов
 Admin Lte
 
 Post

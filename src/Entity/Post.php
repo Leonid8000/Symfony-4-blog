@@ -88,6 +88,11 @@ class Post
     public $tags;
 
     /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $img;
+
+    /**
      * @return Collection|Post[]
      */
     public function getTag(): Collection
@@ -163,6 +168,18 @@ class Post
 
     return $this;
 }
+
+    public function getImg()
+    {
+        return $this->img;
+    }
+
+    public function setImg($img)
+    {
+        $this->img = $img;
+
+        return $this;
+    }
 //
 //    public function getPublishedAt(): \DateTimeInterface
 //    {

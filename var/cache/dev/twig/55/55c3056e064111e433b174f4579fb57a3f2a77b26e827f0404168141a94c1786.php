@@ -114,15 +114,19 @@ class __TwigTemplate_0e07b57a4f733e08e4c0c1e246b2c0a6b6d0ca1fcf2c6067000904868cb
         // line 23
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["postForm"]) || array_key_exists("postForm", $context) ? $context["postForm"] : (function () { throw new RuntimeError('Variable "postForm" does not exist.', 23, $this->source); })()), 'widget');
         echo "
+        ";
+        // line 24
+        echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock(twig_get_attribute($this->env, $this->source, (isset($context["postForm"]) || array_key_exists("postForm", $context) ? $context["postForm"] : (function () { throw new RuntimeError('Variable "postForm" does not exist.', 24, $this->source); })()), "img", [], "any", false, false, false, 24), 'row');
+        echo "
         <button type=\"submit\" class=\"btn btn-primary\">Save</button>
         ";
-        // line 25
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["postForm"]) || array_key_exists("postForm", $context) ? $context["postForm"] : (function () { throw new RuntimeError('Variable "postForm" does not exist.', 25, $this->source); })()), 'form_end');
+        // line 26
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["postForm"]) || array_key_exists("postForm", $context) ? $context["postForm"] : (function () { throw new RuntimeError('Variable "postForm" does not exist.', 26, $this->source); })()), 'form_end');
         echo "
     </div>
 
     ";
-        // line 28
+        // line 29
         echo twig_include($this->env, $context, "admin/layouts/footer.html.twig");
         echo "
 ";
@@ -146,7 +150,7 @@ class __TwigTemplate_0e07b57a4f733e08e4c0c1e246b2c0a6b6d0ca1fcf2c6067000904868cb
 
     public function getDebugInfo()
     {
-        return array (  126 => 28,  120 => 25,  115 => 23,  111 => 22,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  130 => 29,  124 => 26,  119 => 24,  115 => 23,  111 => 22,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -174,6 +178,7 @@ class __TwigTemplate_0e07b57a4f733e08e4c0c1e246b2c0a6b6d0ca1fcf2c6067000904868cb
     <div class=\"d-flex justify-content-center\">
         {{ form_start(postForm) }}
         {{ form_widget(postForm) }}
+        {{ form_row(postForm.img) }}
         <button type=\"submit\" class=\"btn btn-primary\">Save</button>
         {{ form_end(postForm) }}
     </div>
