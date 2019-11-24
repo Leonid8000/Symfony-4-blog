@@ -41,11 +41,7 @@ class Post
      * @ORM\Column(type="text", nullable=true)
      */
     private $content;
-//
-//    /**
-//     * @ORM\Column(type="datetime", nullable=true)
-//     */
-//    private $publishedAt;
+
 //Category relationship
     /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Category", inversedBy="posts")
@@ -56,6 +52,7 @@ class Post
     {
         $this->categories = new ArrayCollection();
         $this->tags = new ArrayCollection();
+        $this->coments = new ArrayCollection();
     }
 
     /**
@@ -91,6 +88,11 @@ class Post
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $img;
+
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\Coment", mappedBy="post")
+     */
+    private $coments;
 
     /**
      * @return Collection|Post[]
@@ -180,6 +182,38 @@ class Post
 
         return $this;
     }
+
+// Coment get set add
+    /**
+     * @return Collection|Coment[]
+     */
+    public function getComents(): Collection
+    {
+        return $this->coments;
+    }
+
+    public function addComent(Coment $coment): self
+    {
+        if (!$this->coments->contains($coment)) {
+            $this->coments[] = $coment;
+            $coment->setPost($this);
+        }
+
+        return $this;
+    }
+
+    public function removeComent(Coment $coment): self
+    {
+        if ($this->coments->contains($coment)) {
+            $this->coments->removeElement($coment);
+            // set the owning side to null (unless already changed)
+            if ($coment->getPost() === $this) {
+                $coment->setPost(null);
+            }
+        }
+
+        return $this;
+    }
 //
 //    public function getPublishedAt(): \DateTimeInterface
 //    {
@@ -192,4 +226,9 @@ class Post
 //
 //        return $this;
 //    }
+//
+//    /**
+//     * @ORM\Column(type="datetime", nullable=true)
+//     */
+//    private $publishedAt;
 }

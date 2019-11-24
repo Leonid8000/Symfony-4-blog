@@ -54,6 +54,8 @@
                             <div class="clearfix"></div>
                             <hr>
                             <ul class="media-list">
+                                <h3>All coments: {{ post.coments |length }}</h3>
+                                {% for coment in post.coments %}
                                 <li class="media">
                                     <a href="#" class="pull-left">
                                         <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
@@ -62,7 +64,9 @@
                                 <span class="text-muted pull-right">
                                     <small class="text-muted">30 min ago</small>
                                 </span>
-                                        <strong class="text-success">@MartinoMont</strong>
+
+                                            <strong class="text-success">{{ coment.author }}</strong>
+                                            <p>{{ coment.coment }}</p>
 
                                         {#<p>{{ coment }}</p>#}
                                         {# Likes #}
@@ -80,6 +84,7 @@
 
                                     </div>
                                 </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>

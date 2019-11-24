@@ -195,7 +195,17 @@ class __TwigTemplate_24306e3192f65d2d6e6e46d0a98e665cdc4af4bf5e931e1a3d1babfcce1
                             <div class=\"clearfix\"></div>
                             <hr>
                             <ul class=\"media-list\">
-                                <li class=\"media\">
+                                <h3>All coments: ";
+        // line 57
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 57, $this->source); })()), "coments", [], "any", false, false, false, 57)), "html", null, true);
+        echo "</h3>
+                                ";
+        // line 58
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 58, $this->source); })()), "coments", [], "any", false, false, false, 58));
+        foreach ($context['_seq'] as $context["_key"] => $context["coment"]) {
+            // line 59
+            echo "                                <li class=\"media\">
                                     <a href=\"#\" class=\"pull-left\">
                                         <img src=\"https://bootdey.com/img/Content/user_1.jpg\" alt=\"\" class=\"img-circle\">
                                     </a>
@@ -203,33 +213,47 @@ class __TwigTemplate_24306e3192f65d2d6e6e46d0a98e665cdc4af4bf5e931e1a3d1babfcce1
                                 <span class=\"text-muted pull-right\">
                                     <small class=\"text-muted\">30 min ago</small>
                                 </span>
-                                        <strong class=\"text-success\">@MartinoMont</strong>
+
+                                            <strong class=\"text-success\">";
+            // line 68
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coment"], "author", [], "any", false, false, false, 68), "html", null, true);
+            echo "</strong>
+                                            <p>";
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coment"], "coment", [], "any", false, false, false, 69), "html", null, true);
+            echo "</p>
 
                                         ";
-        // line 68
-        echo "                                        ";
-        // line 69
-        echo "                                        ";
-        // line 70
-        echo "                                        ";
-        // line 71
-        echo "                                        ";
-        // line 72
-        echo "                                        ";
-        // line 73
-        echo "                                        ";
-        // line 74
-        echo "
+            // line 72
+            echo "                                        ";
+            // line 73
+            echo "                                        ";
+            // line 74
+            echo "                                        ";
+            // line 75
+            echo "                                        ";
+            // line 76
+            echo "                                        ";
+            // line 77
+            echo "                                        ";
+            // line 78
+            echo "
                                         <span class=\"pl-2 article-details\">
                                 <span class=\"js-like-article-count\">0</span>
                                     <a href=\"#\" class=\"fa fa-heart-o like-article js-like-article\"></a>
                                             ";
-        // line 79
-        echo "                                </span>
+            // line 83
+            echo "                                </span>
 
                                     </div>
                                 </li>
-                            </ul>
+                                ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['coment'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 88
+        echo "                            </ul>
                         </div>
                     </div>
                 </div>
@@ -259,7 +283,7 @@ class __TwigTemplate_24306e3192f65d2d6e6e46d0a98e665cdc4af4bf5e931e1a3d1babfcce1
 
     public function getDebugInfo()
     {
-        return array (  228 => 79,  222 => 74,  220 => 73,  218 => 72,  216 => 71,  214 => 70,  212 => 69,  210 => 68,  194 => 53,  185 => 46,  183 => 45,  174 => 38,  163 => 36,  161 => 35,  157 => 34,  154 => 33,  145 => 30,  140 => 29,  136 => 28,  131 => 26,  126 => 24,  121 => 22,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  256 => 88,  246 => 83,  240 => 78,  238 => 77,  236 => 76,  234 => 75,  232 => 74,  230 => 73,  228 => 72,  223 => 69,  219 => 68,  208 => 59,  204 => 58,  200 => 57,  194 => 53,  185 => 46,  183 => 45,  174 => 38,  163 => 36,  161 => 35,  157 => 34,  154 => 33,  145 => 30,  140 => 29,  136 => 28,  131 => 26,  126 => 24,  121 => 22,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -320,6 +344,8 @@ class __TwigTemplate_24306e3192f65d2d6e6e46d0a98e665cdc4af4bf5e931e1a3d1babfcce1
                             <div class=\"clearfix\"></div>
                             <hr>
                             <ul class=\"media-list\">
+                                <h3>All coments: {{ post.coments |length }}</h3>
+                                {% for coment in post.coments %}
                                 <li class=\"media\">
                                     <a href=\"#\" class=\"pull-left\">
                                         <img src=\"https://bootdey.com/img/Content/user_1.jpg\" alt=\"\" class=\"img-circle\">
@@ -328,7 +354,9 @@ class __TwigTemplate_24306e3192f65d2d6e6e46d0a98e665cdc4af4bf5e931e1a3d1babfcce1
                                 <span class=\"text-muted pull-right\">
                                     <small class=\"text-muted\">30 min ago</small>
                                 </span>
-                                        <strong class=\"text-success\">@MartinoMont</strong>
+
+                                            <strong class=\"text-success\">{{ coment.author }}</strong>
+                                            <p>{{ coment.coment }}</p>
 
                                         {#<p>{{ coment }}</p>#}
                                         {# Likes #}
@@ -346,6 +374,7 @@ class __TwigTemplate_24306e3192f65d2d6e6e46d0a98e665cdc4af4bf5e931e1a3d1babfcce1
 
                                     </div>
                                 </li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>

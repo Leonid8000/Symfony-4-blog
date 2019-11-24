@@ -7,6 +7,11 @@ use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\Category;
 use App\Entity\Post;
 use App\Entity\Tag;
+use App\Entity\Coment;
+
+use App\Repository\ComentRepository;
+
+
 
 class MainController extends AbstractController
 {
@@ -26,7 +31,7 @@ class MainController extends AbstractController
     /**
      * @Route("main/showPost/{slug}", name="post/show",)
      */
-    public function show($slug)
+    public function show($slug, ComentRepository $comentRepository)
     {
         $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
 //        $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
@@ -35,10 +40,15 @@ class MainController extends AbstractController
         $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['slug' => $slug]);
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
 
+        $coments = $comentRepository->findBy(['post' => $post]);
+
+//        dd($coments);
+
         return $this->render('main/showPost.html.twig', [
             'posts' => $posts,
             'categories' => $categories,
             'post' => $post,
+            'coments' => $coments,
         ]);
     }
 

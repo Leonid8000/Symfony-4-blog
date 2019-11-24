@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+//use Gedmo\Timestampable\Traits\TimestampableEntity;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\ComentRepository")
@@ -25,6 +26,12 @@ class Coment
      * @ORM\Column(type="string", length=500)
      */
     private $coment;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Post", inversedBy="coments")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $post;
 
     public function getId(): ?int
     {
@@ -51,6 +58,18 @@ class Coment
     public function setComent(string $coment): self
     {
         $this->coment = $coment;
+
+        return $this;
+    }
+
+    public function getPost(): ?Post
+    {
+        return $this->post;
+    }
+
+    public function setPost(?Post $post): self
+    {
+        $this->post = $post;
 
         return $this;
     }
