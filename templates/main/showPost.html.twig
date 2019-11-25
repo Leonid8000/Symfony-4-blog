@@ -19,21 +19,20 @@
     {% endif %}
 
 <div class="d-flex justify-content-center flex-column post-wrapper">
-    <h1 class="text-center">{{ post.title }}</h1>
-    <div class="">
+    <h1 class="text-center anton-font">{{ post.title }}</h1>
+    <div class="d-flex justify-content-center mt-2 mb-2">
         <img src="{{ asset('uploads/' ~ post.img) }}" alt="img" class="post-img">
     </div>
     <p>{{ post.content }}</p>
 
     {% for category in post.category %}
-      <a href="/main/show-category/{{ category.slug }}" class="post-category">
-          <h2 class="post-category">{{ category.category }}</h2>
+      <a href="/main/show-category/{{ category.slug }}" class="post-category col-lg-1 col-3 text-center">
+          {{ category.category }}
       </a>
     {% endfor %}
 
     {% for tag in post.tags %}
-       {#<a href="/main/show-tag/{{ tag.slug }}"><h1 class="text-success">{{ tag.tag }}</h1></a>#}
-    <a href="/main/show-tag/{{ tag.slug }}"><span class="badge badge-secondary col-1">{{ tag.tag }}</span></a>
+    <a href="/main/show-tag/{{ tag.slug }}"><span class="badge badge-secondary col-lg-1 col-3">{{ tag.tag }}</span></a>
     {% endfor %}
     <div class="container">
         <div class="row bootstrap snippets">
@@ -43,19 +42,24 @@
                         <div class="panel-body">
 
                             {% if is_granted('ROLE_USER') %}
-                                <div class="panel-heading">
-                                    Comment panel
-                                </div>
-                                <textarea class="form-control" placeholder="write a comment..." rows="3"></textarea>
-                                <br>
-                                <button type="button" class="btn btn-info pull-right">Post</button>
+                               <h4>{{ author.firstName }}</h4>
+                                {# COMENT FORM #}
+                                <form method="POST">
+                                    <div class="panel-heading">
+                                        Comment panel
+                                    </div>
+                                    <textarea class="form-control" placeholder="write a comment..." name="coment" rows="3" required></textarea>
+                                    <br>
+                                    <button type="submit" class="btn btn-info pull-right">Post</button>
+                                </form>
                             {% endif %}
 
+
+                                <h3>All coments: {{ post.coments |length }}</h3>
+                                {% for coment in post.coments %}
                             <div class="clearfix"></div>
                             <hr>
                             <ul class="media-list">
-                                <h3>All coments: {{ post.coments |length }}</h3>
-                                {% for coment in post.coments %}
                                 <li class="media">
                                     <a href="#" class="pull-left">
                                         <img src="https://bootdey.com/img/Content/user_1.jpg" alt="" class="img-circle">
@@ -65,8 +69,12 @@
                                     <small class="text-muted">30 min ago</small>
                                 </span>
 
-                                            <strong class="text-success">{{ coment.author }}</strong>
+                                          <h4><strong class="text-success">{{ coment.author }}</strong></h4>
+                                        {% if coment.isDeleted %}
+                                            <span class="fa fa-close"></span> deleted
+                                        {% else %}
                                             <p>{{ coment.coment }}</p>
+                                        {% endif %}
 
                                         {#<p>{{ coment }}</p>#}
                                         {# Likes #}
@@ -84,8 +92,9 @@
 
                                     </div>
                                 </li>
-                                {% endfor %}
                             </ul>
+                                {% endfor %}
+
                         </div>
                     </div>
                 </div>

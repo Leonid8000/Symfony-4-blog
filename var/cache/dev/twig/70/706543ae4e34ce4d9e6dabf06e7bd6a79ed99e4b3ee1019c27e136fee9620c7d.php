@@ -909,6 +909,6 @@ class __TwigTemplate_c594f53033d184de488bfa8f184bf580fff7445b3ef29aca3b4e3ab7fb7
         {% endautoescape %}</script>
     </div>
 {% endmacro %}
-", "@WebProfiler/Collector/time.html.twig", "/var/www/home30/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
+", "@WebProfiler/Collector/time.html.twig", "/var/www/Symfony-4-blog/vendor/symfony/web-profiler-bundle/Resources/views/Collector/time.html.twig");
     }
 }

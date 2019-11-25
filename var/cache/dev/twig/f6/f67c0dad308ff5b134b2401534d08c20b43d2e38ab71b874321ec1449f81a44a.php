@@ -246,6 +246,6 @@ class __TwigTemplate_e375c49b5a360129aa8e4d6e400eba82385d123458d14b545685221e485
 
     {{ include('admin/layouts/footer.html.twig') }}
 {% endblock %}
-", "admin/tag/index.html.twig", "/var/www/symfony4blog/templates/admin/tag/index.html.twig");
+", "admin/tag/index.html.twig", "/var/www/Symfony-4-blog/templates/admin/tag/index.html.twig");
     }
 }

@@ -208,6 +208,6 @@ class __TwigTemplate_ceea991544cc794e68a201ef8ba14591ea63f85975caa082a4d33c68ba3
     </div>
 
 {% endblock %}
-", "security/login.html.twig", "/var/www/home30/templates/security/login.html.twig");
+", "security/login.html.twig", "/var/www/Symfony-4-blog/templates/security/login.html.twig");
     }
 }

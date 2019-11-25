@@ -1175,6 +1175,6 @@ class __TwigTemplate_f1f6412a2839dde479182d2b9b44a66ab0ddaea9bc138e3d332653c6242
         <span>{{ route|default(controller) }}</span>
     {%- endif %}
 {% endmacro %}
-", "@WebProfiler/Collector/request.html.twig", "/var/www/home30/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
+", "@WebProfiler/Collector/request.html.twig", "/var/www/Symfony-4-blog/vendor/symfony/web-profiler-bundle/Resources/views/Collector/request.html.twig");
     }
 }

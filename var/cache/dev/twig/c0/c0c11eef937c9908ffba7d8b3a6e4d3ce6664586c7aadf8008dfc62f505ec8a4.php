@@ -123,6 +123,6 @@ class __TwigTemplate_c8164fb4413290803b41761f1d9c19206bf64ad125445c8066bfe93827c
     <button>{{ options.button }}</button>
 
 </form>
-", "@KnpPaginator/Pagination/filtration.html.twig", "/var/www/home30/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/filtration.html.twig");
+", "@KnpPaginator/Pagination/filtration.html.twig", "/var/www/Symfony-4-blog/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/filtration.html.twig");
     }
 }

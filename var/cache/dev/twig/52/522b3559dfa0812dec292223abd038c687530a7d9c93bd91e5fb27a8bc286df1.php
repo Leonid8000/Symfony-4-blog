@@ -221,6 +221,6 @@ class __TwigTemplate_f7c362efe960bce010e1236a766e1a66ecf3bf863b4ced6e62743427689
     </div>
 
     {{ include('admin/layouts/footer.html.twig') }}
-{% endblock %}", "admin/users.html.twig", "/var/www/home30/templates/admin/users.html.twig");
+{% endblock %}", "admin/users.html.twig", "/var/www/Symfony-4-blog/templates/admin/users.html.twig");
     }
 }

@@ -3,9 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use DateTime;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
+
+use Symfony\Component\Validator\Constraints as Assert;
 
 use App\Entity\Category;
 use App\Entity\Tag;
@@ -41,6 +44,13 @@ class Post
      * @ORM\Column(type="text", nullable=true)
      */
     private $content;
+
+//    /**
+//     * @var DateTime $created
+//     *
+//     * @ORM\Column(name="created_at", type="datetime", nullable=false)
+//     */
+//    protected $createdAt;
 
 //Category relationship
     /**
@@ -90,7 +100,7 @@ class Post
     private $img;
 
     /**
-     * @ORM\OneToMany(targetEntity="App\Entity\Coment", mappedBy="post")
+     * @ORM\OneToMany(targetEntity="App\Entity\Coment", mappedBy="post", fetch="EXTRA_LAZY")
      */
     private $coments;
 
@@ -214,6 +224,17 @@ class Post
 
         return $this;
     }
+
+//    public function getCreatedAt() :?DateTime
+//    {
+//        return $this->createdAt;
+//    }
+//
+//    public function setCreatedAt(DateTime $createdAt): self
+//{
+//    $this->createdAt = $createdAt;
+//    return $this;
+//}
 //
 //    public function getPublishedAt(): \DateTimeInterface
 //    {

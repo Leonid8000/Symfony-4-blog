@@ -63,6 +63,6 @@ class __TwigTemplate_bafc0470583b4f0f4e2539acb6d61dd0fd6f69e80f7b666f8a4ae8b1990
     public function getSourceContext()
     {
         return new Source("<?php if (\$form->vars['multipart']): ?>enctype=\"multipart/form-data\"<?php endif ?>
-", "@Framework/Form/form_enctype.html.php", "/var/www/home30/vendor/symfony/framework-bundle/Resources/views/Form/form_enctype.html.php");
+", "@Framework/Form/form_enctype.html.php", "/var/www/Symfony-4-blog/vendor/symfony/framework-bundle/Resources/views/Form/form_enctype.html.php");
     }
 }

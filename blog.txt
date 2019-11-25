@@ -133,17 +133,28 @@ title slug content-type-text publishedAt
 4 Круд с выбором категорий и тегов
 5 Вывод по тегам
 6 Create img
-
 edit img
-
 6 Система коментариев
-7 Пост: timestapm
+
+7 Пост: timestapm created-at coment updated-et
+
 8 Версткаss
 9 Lazy loading
 10 Ошибки проверки и flash
 11 Видео на главной
-12 Кемнты коментов
+12 Комнты коментов
 Admin Lte
+
+
+1 Post created at updated at
+2 Form post create/update Admin Lte
+3 Flush and errors
+4 Coments
+5 Design
+
+
+* @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="article", fetch="EXTRA_LAZY")
+* @ORM\OrderBy({"createdAt" = "DESC"}) created-at
 
 Post
     /**
@@ -213,7 +224,107 @@ TAG------------------------------------------
             $this->posts->removeElement($post);
         }
         return $this;
+/---------------------------------------------------
+class Article
+{
+    /**
+     * @return Collection|Comment[]
+     */
+    public function getNonDeletedComments(): Collection
+    {
+        return $this->comments;
     }
+    }
+
+{% for comment in article.nonDeletedComments %}
+                        {% endfor %}
+
+$comments = [];
+
+foreach ($this->getComments() as $comment) {
+    if (!$comment->getIsDeleted()) {
+        $comments[] = $comment;
+    }
+}
+
+return new ArrayCollection($comments)
 https://www.impactbnd.com/
+
+https://codereviewvideos.com/course/let-s-build-a-wallpaper-website-in-symfony-3/video/delete-should-remove-the-wallpaper-image-file
+
+
+ public function edit(Request $request, $id){
+
+        $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
+        $upload = new Post();
+
+        $form = $this->createForm(PostFormType::class, $upload, $post);
+
+//        $form = $this->createFormBuilder($post)
+//            ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
+//            ->add('slug', TextType::class, array('attr' => array('class' => 'form-control')))
+//            ->add('content', TextType::class, array('attr' => array('class' => 'form-control')))
+//            ->add('description', TextType::class, array('attr' => array('class' => 'form-control')))
+//            ->add('category',EntityType::class,[
+//                'class' => Category::class,
+//                'choice_label' => 'category',
+//                'multiple' => true,
+//                'expanded' => true,
+//            ])
+//            ->add('tag',EntityType::class,[
+//                'class' => Tag::class,
+//                'choice_label' => 'tag',
+//                'multiple' => true,
+//                'expanded' => true,
+//            ])
+//            ->add('img', FileType::class,[
+//                'label' => 'Image',
+//                'mapped' => false,
+//                'required' => false,
+//                'constraints' => [
+//                ]
+//            ])
+//            ->add('save', SubmitType::class, array(
+//                'label' => 'Update',
+//                'attr' => array('class' => 'btn btn-primary mt-3')
+//            ))
+//            ->getForm();
+
+//        $form->handleRequest($request);
+//        if ($form->isSubmitted() && $form->isValid()) {
+//            $entityManager = $this->getDoctrine()->getManager();
+//            $entityManager->flush();
+//            return $this->redirectToRoute('posts');
+//        }
+
+        $form->handleRequest($request);
+        if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $post->get('img')->getData();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('upload_directory'), $fileName);
+            $upload->setImg($fileName);
+
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($post->getData());
+            $entityManager->flush();
+            $this->addFlash('success', 'Post created!');
+
+            return $this->redirectToRoute('posts');
+        }
+
+        return $this->render('admin/post/edit.html.twig', [
+            'editForm' => $form->createView()
+        ]);
+    }
+
+https://www.youtube.com/watch?v=4asXONO-AXY
+
+* @Assert\File(mimeTypes={ "image/jpeg" , "image/png" , "image/tiff" , "image/svg+xml"})
+для img
+
+CREATED AT UPDATED AT
+---------------------------------
+composer require stof/doctrine-extensions-bundle
 
 

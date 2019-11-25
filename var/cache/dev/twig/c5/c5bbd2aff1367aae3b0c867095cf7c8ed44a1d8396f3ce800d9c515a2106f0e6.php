@@ -273,6 +273,6 @@ class __TwigTemplate_0a736777991a71eac4ca7d8451a730d4b0bd0b6709d76d698d889047d76
     </div>
     <!--/.Accordion wrapper-->
 </div>
-", "admin/layouts/sidebar.html.twig", "/var/www/symfony4blog/templates/admin/layouts/sidebar.html.twig");
+", "admin/layouts/sidebar.html.twig", "/var/www/Symfony-4-blog/templates/admin/layouts/sidebar.html.twig");
     }
 }

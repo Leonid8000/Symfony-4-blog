@@ -114,15 +114,14 @@ class __TwigTemplate_2381714f498de386ed6451afb94296758a258019191b7dd730f466dd406
         // line 23
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["tagForm"]) || array_key_exists("tagForm", $context) ? $context["tagForm"] : (function () { throw new RuntimeError('Variable "tagForm" does not exist.', 23, $this->source); })()), 'widget');
         echo "
-        <button type=\"submit\" class=\"btn btn-primary\">Save</button>
         ";
-        // line 25
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["tagForm"]) || array_key_exists("tagForm", $context) ? $context["tagForm"] : (function () { throw new RuntimeError('Variable "tagForm" does not exist.', 25, $this->source); })()), 'form_end');
+        // line 24
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["tagForm"]) || array_key_exists("tagForm", $context) ? $context["tagForm"] : (function () { throw new RuntimeError('Variable "tagForm" does not exist.', 24, $this->source); })()), 'form_end');
         echo "
     </div>
 
     ";
-        // line 28
+        // line 27
         echo twig_include($this->env, $context, "admin/layouts/footer.html.twig");
         echo "
 ";
@@ -146,7 +145,7 @@ class __TwigTemplate_2381714f498de386ed6451afb94296758a258019191b7dd730f466dd406
 
     public function getDebugInfo()
     {
-        return array (  126 => 28,  120 => 25,  115 => 23,  111 => 22,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  125 => 27,  119 => 24,  115 => 23,  111 => 22,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -174,11 +173,10 @@ class __TwigTemplate_2381714f498de386ed6451afb94296758a258019191b7dd730f466dd406
     <div class=\"d-flex justify-content-center\">
         {{ form_start(tagForm) }}
         {{ form_widget(tagForm) }}
-        <button type=\"submit\" class=\"btn btn-primary\">Save</button>
         {{ form_end(tagForm) }}
     </div>
 
     {{ include('admin/layouts/footer.html.twig') }}
-{% endblock %}", "admin/tag/create.html.twig", "/var/www/symfony4blog/templates/admin/tag/create.html.twig");
+{% endblock %}", "admin/tag/create.html.twig", "/var/www/Symfony-4-blog/templates/admin/tag/create.html.twig");
     }
 }

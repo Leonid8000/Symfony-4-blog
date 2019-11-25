@@ -197,6 +197,6 @@ class __TwigTemplate_0ad3a8d9a1d4020d374bbf7b0b659bcf0ad00c4d2360aad86af9a9bc0ba
         <a href=\"{{ path('index') }}\"><button  class=\"btn btn-dark  text-center mt-2\">Go back</button></a>
     </div>
 
-{% endblock %}", "security/register.html.twig", "/var/www/home30/templates/security/register.html.twig");
+{% endblock %}", "security/register.html.twig", "/var/www/Symfony-4-blog/templates/security/register.html.twig");
     }
 }

@@ -82,9 +82,7 @@ class PostController extends AbstractController
     public function edit(Request $request, $id){
 
         $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
-
         $upload = new Post();
-
         $form = $this->createFormBuilder($post)
             ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('slug', TextType::class, array('attr' => array('class' => 'form-control')))
@@ -117,7 +115,14 @@ class PostController extends AbstractController
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+
+            $file = $form->get('img')->getData();
+            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+            $file->move($this->getParameter('upload_directory'), $fileName);
+            $post->setImg($fileName);
+
             $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($form->getData());
             $entityManager->flush();
             return $this->redirectToRoute('posts');
         }

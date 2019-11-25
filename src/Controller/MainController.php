@@ -2,12 +2,16 @@
 
 namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
+
+use Knp\Component\Pager\PaginatorInterface;
 
 use App\Entity\Category;
 use App\Entity\Post;
 use App\Entity\Tag;
 use App\Entity\Coment;
+use App\Entity\User;
 
 use App\Repository\ComentRepository;
 
@@ -18,10 +22,12 @@ class MainController extends AbstractController
     /**
      * @Route("/", name="index")
      */
-    public function index()
+    public function index(PaginatorInterface $paginator, Request $request)
     {
+        $allPosts = $this->getDoctrine()->getRepository(Post::class)->findAll();
+        $posts = $paginator->paginate($allPosts,$request->query->getInt('page', 1),4);
+
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
-        $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
         
         return $this->render('main/index.html.twig', [
             'categories' => $categories,
@@ -31,24 +37,37 @@ class MainController extends AbstractController
     /**
      * @Route("main/showPost/{slug}", name="post/show",)
      */
-    public function show($slug, ComentRepository $comentRepository)
+    public function show($slug, ComentRepository $comentRepository, Request $request)
     {
         $posts = $this->getDoctrine()->getRepository(Post::class)->findAll();
-//        $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
-//        $post = $this->getDoctrine()->getRepository(Post::class)->findBy([$id => $this->getId()]);
-//        $slug = $this->getDoctrine()->getRepository(Post::class)->find($slug);
         $post = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['slug' => $slug]);
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
 
         $coments = $comentRepository->findBy(['post' => $post]);
+//        $postId = $this->getDoctrine()->getRepository->findBy(['post' => $post]);
 
-//        dd($coments);
+        $author = $this->getUser();
+        if($author){
+            $aut = $author->getFirstName();
+        }
+
+        if ($request->isMethod('POST')) {
+            $coment = new Coment();
+            $coment->setAuthor($aut);
+            $coment->setComent($request->request->get('coment'));
+            $coment->setPost($post);
+
+                $entityManager = $this->getDoctrine()->getManager();
+                $entityManager->persist($coment);
+                $entityManager->flush();
+        }
 
         return $this->render('main/showPost.html.twig', [
             'posts' => $posts,
             'categories' => $categories,
             'post' => $post,
             'coments' => $coments,
+            'author' => $author
         ]);
     }
 

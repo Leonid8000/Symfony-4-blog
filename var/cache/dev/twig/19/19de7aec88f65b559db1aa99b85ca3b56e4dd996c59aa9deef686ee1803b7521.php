@@ -77,6 +77,6 @@ class __TwigTemplate_9b2996a770f1e1acf6c395b62da2c06d339e25ef6dce7b320c4571fa03a
 <?php printf('%s=\"%s\" ', \$view->escape(\$k), \$view->escape(\$v)) ?>
 <?php endif ?>
 <?php endforeach ?>
-", "@Framework/Form/choice_attributes.html.php", "/var/www/home30/vendor/symfony/framework-bundle/Resources/views/Form/choice_attributes.html.php");
+", "@Framework/Form/choice_attributes.html.php", "/var/www/Symfony-4-blog/vendor/symfony/framework-bundle/Resources/views/Form/choice_attributes.html.php");
     }
 }

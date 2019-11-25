@@ -471,6 +471,6 @@ class __TwigTemplate_f83823ccc8fc74e08a769befce2b0d0b02e1758936feab98572ab574203
         </div>
     {% endif %}
 {% endblock %}
-", "@WebProfiler/Collector/twig.html.twig", "/var/www/home30/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
+", "@WebProfiler/Collector/twig.html.twig", "/var/www/Symfony-4-blog/vendor/symfony/web-profiler-bundle/Resources/views/Collector/twig.html.twig");
     }
 }

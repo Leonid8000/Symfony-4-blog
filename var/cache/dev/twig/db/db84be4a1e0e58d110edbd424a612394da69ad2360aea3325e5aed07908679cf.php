@@ -134,6 +134,6 @@ class __TwigTemplate_37e384a71bbf46d0918746fafe93d640d7096d88f711ee58826aa2246ad
     </span>
     {{ title }}
 </a>
-", "@KnpPaginator/Pagination/font_awesome_sortable_link.html.twig", "/var/www/home30/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/font_awesome_sortable_link.html.twig");
+", "@KnpPaginator/Pagination/font_awesome_sortable_link.html.twig", "/var/www/Symfony-4-blog/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/font_awesome_sortable_link.html.twig");
     }
 }

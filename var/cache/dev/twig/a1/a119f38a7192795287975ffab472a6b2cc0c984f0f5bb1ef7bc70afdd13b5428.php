@@ -326,6 +326,6 @@ class __TwigTemplate_0e72ebae5d62416e5822d45abd71cb1880a65abac85b9cd2db3e5a3a7c6
         </ul>
     </nav>
 {% endif %}
-", "@KnpPaginator/Pagination/bulma_pagination.html.twig", "/var/www/home30/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/bulma_pagination.html.twig");
+", "@KnpPaginator/Pagination/bulma_pagination.html.twig", "/var/www/Symfony-4-blog/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/bulma_pagination.html.twig");
     }
 }

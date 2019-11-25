@@ -1176,6 +1176,6 @@ div.sf-toolbar .sf-toolbar-block a:hover {
         display: none;
     }
 }
-", "@WebProfiler/Profiler/toolbar.css.twig", "/var/www/home30/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar.css.twig");
+", "@WebProfiler/Profiler/toolbar.css.twig", "/var/www/Symfony-4-blog/vendor/symfony/web-profiler-bundle/Resources/views/Profiler/toolbar.css.twig");
     }
 }

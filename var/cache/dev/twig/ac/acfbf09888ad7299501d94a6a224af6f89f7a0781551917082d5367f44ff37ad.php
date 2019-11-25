@@ -136,8 +136,11 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
             echo "</h1>
                     <hr>
                 </div>
-                <div class=\"news-img\">
-                    <img src=\"../main/images/news.png\" alt=\"img\">
+                <div class=\"col-4\">
+                    <img src=\"";
+            // line 30
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["post"], "img", [], "any", false, false, false, 30))), "html", null, true);
+            echo "\" alt=\"img\" class=\"news-img\">
                 </div>
                 <div class=\"news-content\">
                     <p href=\"#\">Desc:";
@@ -205,7 +208,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 
     public function getDebugInfo()
     {
-        return array (  184 => 47,  176 => 44,  165 => 42,  160 => 41,  158 => 40,  156 => 39,  151 => 36,  145 => 33,  135 => 26,  128 => 23,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  187 => 47,  179 => 44,  168 => 42,  163 => 41,  161 => 40,  159 => 39,  154 => 36,  148 => 33,  142 => 30,  135 => 26,  128 => 23,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -238,8 +241,8 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
                     <h1>{{ post.title }}</h1>
                     <hr>
                 </div>
-                <div class=\"news-img\">
-                    <img src=\"../main/images/news.png\" alt=\"img\">
+                <div class=\"col-4\">
+                    <img src=\"{{ asset('uploads/' ~ post.img) }}\" alt=\"img\" class=\"news-img\">
                 </div>
                 <div class=\"news-content\">
                     <p href=\"#\">Desc:{{ post.description }}</p>
@@ -259,6 +262,6 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 
 
 
-{% endblock %}", "main/show-category.html.twig", "/var/www/symfony4blog/templates/main/show-category.html.twig");
+{% endblock %}", "main/show-category.html.twig", "/var/www/Symfony-4-blog/templates/main/show-category.html.twig");
     }
 }

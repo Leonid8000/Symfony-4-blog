@@ -71,6 +71,6 @@ class __TwigTemplate_9ec10a93f573b01f202b5ff75d8bd094fa18854f02f3ecc500a0b9069a0
         <strong>Copyright &copy; 2019 Leonid Web technology corporation. All rights reserved.</strong>
     </div>
 </footer>
-", "admin/layouts/footer.html.twig", "/var/www/home30/templates/admin/layouts/footer.html.twig");
+", "admin/layouts/footer.html.twig", "/var/www/Symfony-4-blog/templates/admin/layouts/footer.html.twig");
     }
 }

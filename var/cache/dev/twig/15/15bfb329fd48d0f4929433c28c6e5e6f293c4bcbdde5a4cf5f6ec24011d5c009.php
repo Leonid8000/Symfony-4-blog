@@ -322,6 +322,6 @@ class __TwigTemplate_8110fa446e1d5e570746395013f09c9da3e9615bc4430f211711005192a
     {% endif %}
     </ul>
 {% endif %}
-", "@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig", "/var/www/home30/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/twitter_bootstrap_v3_pagination.html.twig");
+", "@KnpPaginator/Pagination/twitter_bootstrap_v3_pagination.html.twig", "/var/www/Symfony-4-blog/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/twitter_bootstrap_v3_pagination.html.twig");
     }
 }

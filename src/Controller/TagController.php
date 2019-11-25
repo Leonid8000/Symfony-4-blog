@@ -65,14 +65,7 @@ class TagController extends AbstractController
 
         $tag = $this->getDoctrine()->getRepository(Tag::class)->find($id);
 
-        $form = $this->createFormBuilder($tag)
-            ->add('tag', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('slug', TextType::class, array('attr' => array('class' => 'form-control')))
-            ->add('save', SubmitType::class, array(
-                'label' => 'Update',
-                'attr' => array('class' => 'btn btn-primary mt-3')
-            ))
-            ->getForm();
+        $form = $this->createForm(TagType::class, $tag);
 
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {

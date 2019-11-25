@@ -201,6 +201,6 @@ class __TwigTemplate_44dbdaf0c2580cf2360ae165b7f77770c685f850ad14bc3bc548483471c
         {% endif %}
     </div>
 {% endif %}
-", "@KnpPaginator/Pagination/sliding.html.twig", "/var/www/home30/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/sliding.html.twig");
+", "@KnpPaginator/Pagination/sliding.html.twig", "/var/www/Symfony-4-blog/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/sliding.html.twig");
     }
 }

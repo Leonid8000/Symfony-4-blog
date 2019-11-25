@@ -141,6 +141,6 @@ class __TwigTemplate_1128f49015e135f220c5f3074b6663312b989b249ff543f709e6eed9cbd
             </ul>
         </div>
     </nav>
-</header>", "admin/layouts/header.html.twig", "/var/www/symfony4blog/templates/admin/layouts/header.html.twig");
+</header>", "admin/layouts/header.html.twig", "/var/www/Symfony-4-blog/templates/admin/layouts/header.html.twig");
     }
 }

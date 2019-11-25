@@ -63,6 +63,6 @@ class __TwigTemplate_0b90d4772c367739cfe5a39b117848f0e1cf34fa5d5d7f0ba92a7b6adfd
     public function getSourceContext()
     {
         return new Source("<svg width=\"1792\" height=\"1792\" viewBox=\"0 0 1792 1792\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M1408 960V832q0-26-19-45t-45-19H448q-26 0-45 19t-19 45v128q0 26 19 45t45 19h896q26 0 45-19t19-45zm256-544v960q0 119-84.5 203.5T1376 1664H416q-119 0-203.5-84.5T128 1376V416q0-119 84.5-203.5T416 128h960q119 0 203.5 84.5T1664 416z\"/></svg>
-", "@Twig/images/icon-minus-square.svg", "/var/www/home30/vendor/symfony/twig-bundle/Resources/views/images/icon-minus-square.svg");
+", "@Twig/images/icon-minus-square.svg", "/var/www/Symfony-4-blog/vendor/symfony/twig-bundle/Resources/views/images/icon-minus-square.svg");
     }
 }

@@ -218,6 +218,6 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
 {% endblock %}
 </body>
 </html>
-", "base.html.twig", "/var/www/symfony4blog/templates/base.html.twig");
+", "base.html.twig", "/var/www/Symfony-4-blog/templates/base.html.twig");
     }
 }
