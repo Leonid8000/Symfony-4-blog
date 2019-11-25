@@ -47,10 +47,10 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
         <div class=\"collapse navbar-collapse\" id=\"navbarText\">
             <ul class=\"navbar-nav \">
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link text-dark\" href=\"";
+                    <a class=\"nav-link\" href=\"";
         // line 8
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "\">Home <span class=\"sr-only\">(current)</span></a>
+        echo "\"><h3 class=\"text-dark ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3> <span class=\"sr-only\">(current)</span></a>
                 </li>
                 ";
         // line 10
@@ -59,7 +59,7 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 11
             echo "                    <li class=\"nav-item nav-category-li\">
-                        <a class=\"nav-link nav-category text-dark\" href=\"/main/show-category/";
+                        <a class=\"nav-link nav-category text-dark raleway-font\" href=\"/main/show-category/";
             // line 12
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, false, 12), "html", null, true);
             echo "\">
@@ -67,44 +67,43 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
             // line 13
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 13), "html", null, true);
             echo "
+                            <hr class=\"red-hr\">
                         </a>
-                        <div class=\"red-border\"></div>
-
                     </li>
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 19
+        // line 18
         echo "            </ul>
         </div>
         ";
-        // line 21
+        // line 20
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 22
+            // line 21
             echo "            <div class=\"d-flex justify-content-end\">
                 <a href=\"";
-            // line 23
+            // line 22
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\" class=\"btn btn-dark m-3\">Log Out</a>
             </div>
         ";
         } else {
-            // line 26
+            // line 25
             echo "            <li class=\"d-flex justify-content-end\">
                 <a href=\"";
-            // line 27
+            // line 26
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\" class=\"btn btn-dark m-2\">Login</a>
                 <a href=\"";
-            // line 28
+            // line 27
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
             echo "\" class=\"btn btn-dark m-2\">Sign Up</a>
             </li>
         ";
         }
-        // line 31
+        // line 30
         echo "</nav>
 
 ";
@@ -128,7 +127,7 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
 
     public function getDebugInfo()
     {
-        return array (  108 => 31,  102 => 28,  98 => 27,  95 => 26,  89 => 23,  86 => 22,  84 => 21,  80 => 19,  68 => 13,  64 => 12,  61 => 11,  57 => 10,  52 => 8,  43 => 1,);
+        return array (  107 => 30,  101 => 27,  97 => 26,  94 => 25,  88 => 22,  85 => 21,  83 => 20,  79 => 18,  68 => 13,  64 => 12,  61 => 11,  57 => 10,  52 => 8,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -140,15 +139,14 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
         <div class=\"collapse navbar-collapse\" id=\"navbarText\">
             <ul class=\"navbar-nav \">
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link text-dark\" href=\"{{ path('index') }}\">Home <span class=\"sr-only\">(current)</span></a>
+                    <a class=\"nav-link\" href=\"{{ path('index') }}\"><h3 class=\"text-dark ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3> <span class=\"sr-only\">(current)</span></a>
                 </li>
                 {% for category in categories %}
                     <li class=\"nav-item nav-category-li\">
-                        <a class=\"nav-link nav-category text-dark\" href=\"/main/show-category/{{ category.slug }}\">
+                        <a class=\"nav-link nav-category text-dark raleway-font\" href=\"/main/show-category/{{ category.slug }}\">
                             {{ category.category }}
+                            <hr class=\"red-hr\">
                         </a>
-                        <div class=\"red-border\"></div>
-
                     </li>
                 {% endfor %}
             </ul>

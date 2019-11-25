@@ -5,15 +5,14 @@
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ">
                 <li class="nav-item active">
-                    <a class="nav-link text-dark" href="{{ path('index') }}">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="{{ path('index') }}"><h3 class="text-dark ml-3 text-left home-logo">NEWS<span class="yellow-text">BLOG</span></h3> <span class="sr-only">(current)</span></a>
                 </li>
                 {% for category in categories %}
                     <li class="nav-item nav-category-li">
-                        <a class="nav-link nav-category text-dark" href="/main/show-category/{{ category.slug }}">
+                        <a class="nav-link nav-category text-dark raleway-font" href="/main/show-category/{{ category.slug }}">
                             {{ category.category }}
+                            <hr class="red-hr">
                         </a>
-                        <div class="red-border"></div>
-
                     </li>
                 {% endfor %}
             </ul>

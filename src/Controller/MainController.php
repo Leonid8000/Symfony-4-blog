@@ -27,11 +27,14 @@ class MainController extends AbstractController
         $allPosts = $this->getDoctrine()->getRepository(Post::class)->findAll();
         $posts = $paginator->paginate($allPosts,$request->query->getInt('page', 1),4);
 
+        $first = $this->getDoctrine()->getRepository(Post::class)->findOneBy([]);
+
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
         
         return $this->render('main/index.html.twig', [
             'categories' => $categories,
             'posts' => $posts,
+            'first' => $first,
         ]);
     }
     /**
