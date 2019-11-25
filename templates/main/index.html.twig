@@ -18,34 +18,39 @@
     {% if is_granted('ROLE_USER') %}
 
     {% endif %}
-
+        <a href="/main/showPost/{{ first.slug }}" id="post-link">
     <div class="container first">
         <div class="row">
 
-            <div class="col-lg-7  p-0">
-                <img src="{{ asset('uploads/' ~ first.img) }}" alt="img">
+            <div class="col-lg-7 col-sm-10  p-0">
+                <img src="{{ asset('uploads/' ~ first.img) }}" alt="img" class="img-fluid">
             </div>
 
-            <div class="col-lg-5 col-10">
+            <div class="col-lg-5 col-sm-12">
                 <h1 class="text-dark asap-font">{{ first.title }}</h1>
                 <hr class="bg-danger">
                 <p class="maven-font">{{ first.description }}We are proud to announce that we have just launched Work in the Web 2020 — our fifth and most ambitious event so far.</p>
             </div>
-
         </div>
     </div>
+            </a>
 
-        <div class="container">
-            <div class="row">
-                    {% for post in posts %}
+        {#<div class="container">#}
+            {#<div class="">#}
+                    {#{% for post in posts %}#}
 
-                    <div class="col-3">
-                        {#<img src="{{ asset('uploads/' ~ post.img) }}" alt="img" class="news-img">#}
-                    </div>
+                    {#<div class="col-lg-4 col-sm-10 mt-2">#}
+                        {#<div class="card" style="width: 18rem;">#}
+                            {#<img src="{{ asset('uploads/' ~ post.img) }}" class="card-img-top" alt="...">#}
+                            {#<div class="card-body">#}
+                                {#<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>#}
+                            {#</div>#}
+                        {#</div>#}
+                    {#</div>#}
 
-                    {% endfor %}
-            </div>
-        </div>
+                    {#{% endfor %}#}
+            {#</div>#}
+        {#</div>#}
 
     {#<div class="container">#}
         {#<div class="row">#}
@@ -76,35 +81,36 @@
     {#</div>#}
 
     <hr>
-    {% for post in posts %}
-    <div class="container news-wrapper mt-3">
-    <div class="row">
-        <div class="col-4">
-            <img src="{{ asset('uploads/' ~ post.img) }}" alt="img" class="news-img">
-        </div>
+    {#{% for post in posts %}#}
+    {#<div class="container news-wrapper mt-3">#}
+    {#<div class="row">#}
+        {#<div class="col-4">#}
+            {#<img src="{{ asset('uploads/' ~ post.img) }}" alt="img" class="news-img">#}
+        {#</div>#}
 
-        <div class="col-8">
-        {% for category in post.category %}
-            <a href="/main/show-category/{{ category.slug }}" class="post-category mb-1">{{ category.category }}</a>
-        {% endfor %}
-        <a href="/main/showPost/{{ post.slug }}" id="post-link">
-        <div class="news-title">
-            <h3>{{ post.title }}</h3>
-            <hr>
-        </div>
-        <div class="news-content">
-            <p href="#">{{ post.description }}</p>
-        </div>
-        </a>
-        </div>
-    </div>
-    </div>
-    {% endfor %}
+        {#<div class="col-8">#}
+        {#{% for category in post.category %}#}
+            {#<a href="/main/show-category/{{ category.slug }}" class="post-category mb-1">{{ category.category }}</a>#}
+        {#{% endfor %}#}
+        {#<a href="/main/showPost/{{ post.slug }}" id="post-link">#}
+        {#<div class="news-title">#}
+            {#<h3>{{ post.title }}</h3>#}
+            {#<hr>#}
+        {#</div>#}
+        {#<div class="news-content">#}
+            {#<p href="#">{{ post.description }}</p>#}
+        {#</div>#}
+        {#</a>#}
+        {#</div>#}
+    {#</div>#}
+    {#</div>#}
+    {#{% endfor %}#}
 
+    </section>
     <div class="d-flex justify-content-center">
+        {#<h1 class="text-danger">PAGINATION</h1>#}
         <div class="navigation">
             {{ knp_pagination_render(posts) }}
         </div>
     </div>
-    </section>
 {% endblock %}

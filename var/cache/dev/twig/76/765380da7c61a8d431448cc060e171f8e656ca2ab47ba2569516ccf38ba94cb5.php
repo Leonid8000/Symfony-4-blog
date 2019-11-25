@@ -58,15 +58,15 @@ class __TwigTemplate_ecfd860e6a3d5e29eb0b31e02d6e346012f7f76e3ef8781aa1828e1501c
     ";
         // line 9
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 17
+        // line 18
         echo "</head>
 <body>
 ";
-        // line 19
-        $this->displayBlock('body', $context, $blocks);
         // line 20
+        $this->displayBlock('body', $context, $blocks);
+        // line 21
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 25
+        // line 26
         echo "</body>
 </html>
 ";
@@ -122,6 +122,7 @@ class __TwigTemplate_ecfd860e6a3d5e29eb0b31e02d6e346012f7f76e3ef8781aa1828e1501c
         <link href=\"https://fonts.googleapis.com/css?family=Anton|Lobster|Playfair+Display&display=swap\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap\" rel=\"stylesheet\">
         <link href=\"http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+        <link href=\"https://fonts.googleapis.com/css?family=Asap|Maven+Pro|Raleway&display=swap\" rel=\"stylesheet\">
     ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -131,7 +132,7 @@ class __TwigTemplate_ecfd860e6a3d5e29eb0b31e02d6e346012f7f76e3ef8781aa1828e1501c
 
     }
 
-    // line 19
+    // line 20
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -149,7 +150,7 @@ class __TwigTemplate_ecfd860e6a3d5e29eb0b31e02d6e346012f7f76e3ef8781aa1828e1501c
 
     }
 
-    // line 20
+    // line 21
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -159,16 +160,16 @@ class __TwigTemplate_ecfd860e6a3d5e29eb0b31e02d6e346012f7f76e3ef8781aa1828e1501c
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 21
+        // line 22
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo "\" crossorigin=\"anonymous\"></script>
     <script src=\"";
-        // line 22
+        // line 23
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/script.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 23
+        // line 24
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 ";
@@ -187,7 +188,7 @@ class __TwigTemplate_ecfd860e6a3d5e29eb0b31e02d6e346012f7f76e3ef8781aa1828e1501c
 
     public function getDebugInfo()
     {
-        return array (  172 => 23,  168 => 22,  163 => 21,  153 => 20,  135 => 19,  120 => 12,  116 => 11,  111 => 10,  101 => 9,  82 => 6,  70 => 25,  68 => 20,  66 => 19,  62 => 17,  60 => 9,  54 => 6,  47 => 1,);
+        return array (  173 => 24,  169 => 23,  164 => 22,  154 => 21,  136 => 20,  120 => 12,  116 => 11,  111 => 10,  101 => 9,  82 => 6,  70 => 26,  68 => 21,  66 => 20,  62 => 18,  60 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -207,6 +208,7 @@ class __TwigTemplate_ecfd860e6a3d5e29eb0b31e02d6e346012f7f76e3ef8781aa1828e1501c
         <link href=\"https://fonts.googleapis.com/css?family=Anton|Lobster|Playfair+Display&display=swap\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap\" rel=\"stylesheet\">
         <link href=\"http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
+        <link href=\"https://fonts.googleapis.com/css?family=Asap|Maven+Pro|Raleway&display=swap\" rel=\"stylesheet\">
     {% endblock %}
 </head>
 <body>

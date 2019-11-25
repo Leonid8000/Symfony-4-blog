@@ -286,8 +286,10 @@ background: red;
 
 /* First post */
 .first{
-    margin-top:10%;
+    /*margin-top:10%;*/
+    margin:0;
     background: #FFFFFF;
+    /*background: red;*/
     position: relative;
 }
 .first h1{

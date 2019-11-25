@@ -113,14 +113,15 @@ class __TwigTemplate_046846f62486e2f97f00bbac1777c8823ea57facf94641f9d2a65af53a7
         echo $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->searchAndRenderBlock((isset($context["editForm"]) || array_key_exists("editForm", $context) ? $context["editForm"] : (function () { throw new RuntimeError('Variable "editForm" does not exist.', 21, $this->source); })()), 'widget');
         echo "
         ";
-        // line 22
-        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["editForm"]) || array_key_exists("editForm", $context) ? $context["editForm"] : (function () { throw new RuntimeError('Variable "editForm" does not exist.', 22, $this->source); })()), 'form_end');
+        // line 23
+        echo "        ";
+        echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["editForm"]) || array_key_exists("editForm", $context) ? $context["editForm"] : (function () { throw new RuntimeError('Variable "editForm" does not exist.', 23, $this->source); })()), 'form_end');
         echo "
     </div>
 
 
     ";
-        // line 26
+        // line 27
         echo twig_include($this->env, $context, "admin/layouts/footer.html.twig");
         echo "
 ";
@@ -144,7 +145,7 @@ class __TwigTemplate_046846f62486e2f97f00bbac1777c8823ea57facf94641f9d2a65af53a7
 
     public function getDebugInfo()
     {
-        return array (  124 => 26,  117 => 22,  113 => 21,  109 => 20,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  125 => 27,  117 => 23,  113 => 21,  109 => 20,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -170,6 +171,7 @@ class __TwigTemplate_046846f62486e2f97f00bbac1777c8823ea57facf94641f9d2a65af53a7
     <div class=\"d-flex justify-content-center\">
         {{ form_start(editForm) }}
         {{ form_widget(editForm) }}
+        {#<button type=\"submit\" class=\"btn btn-primary\">Save</button>#}
         {{ form_end(editForm) }}
     </div>
 
