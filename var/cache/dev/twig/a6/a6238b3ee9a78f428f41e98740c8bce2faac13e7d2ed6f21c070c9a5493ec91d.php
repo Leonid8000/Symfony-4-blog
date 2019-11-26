@@ -171,37 +171,41 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
         echo "
         </div>
     </div>
+    ";
+        // line 51
+        echo twig_include($this->env, $context, "main/layouts/footer.html.twig");
+        echo "
 
         ";
-        // line 53
-        echo "        ";
         // line 54
-        echo "    ";
-        // line 55
         echo "        ";
+        // line 55
+        echo "    ";
         // line 56
+        echo "        ";
+        // line 57
         echo "
             ";
-        // line 58
-        echo "                ";
         // line 59
-        echo "            ";
+        echo "                ";
         // line 60
+        echo "            ";
+        // line 61
         echo "
             ";
-        // line 62
-        echo "                ";
         // line 63
         echo "                ";
         // line 64
         echo "                ";
         // line 65
-        echo "            ";
+        echo "                ";
         // line 66
-        echo "        ";
+        echo "            ";
         // line 67
-        echo "    ";
+        echo "        ";
         // line 68
+        echo "    ";
+        // line 69
         echo "         ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -223,7 +227,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
 
     public function getDebugInfo()
     {
-        return array (  205 => 68,  203 => 67,  201 => 66,  199 => 65,  197 => 64,  195 => 63,  193 => 62,  190 => 60,  188 => 59,  186 => 58,  183 => 56,  181 => 55,  179 => 54,  177 => 53,  170 => 48,  160 => 40,  145 => 31,  141 => 30,  135 => 27,  131 => 26,  125 => 22,  121 => 21,  116 => 18,  112 => 16,  110 => 15,  107 => 14,  101 => 11,  98 => 10,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  209 => 69,  207 => 68,  205 => 67,  203 => 66,  201 => 65,  199 => 64,  197 => 63,  194 => 61,  192 => 60,  190 => 59,  187 => 57,  185 => 56,  183 => 55,  181 => 54,  176 => 51,  170 => 48,  160 => 40,  145 => 31,  141 => 30,  135 => 27,  131 => 26,  125 => 22,  121 => 21,  116 => 18,  112 => 16,  110 => 15,  107 => 14,  101 => 11,  98 => 10,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -278,6 +282,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
             {{ knp_pagination_render(posts) }}
         </div>
     </div>
+    {{ include('main/layouts/footer.html.twig') }}
 
         {# First post #}
         {#<a href=\"/main/showPost/{{ first.slug }}\" id=\"post-link\">#}
