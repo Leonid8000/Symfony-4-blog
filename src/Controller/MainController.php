@@ -25,6 +25,7 @@ class MainController extends AbstractController
     public function index(PaginatorInterface $paginator, Request $request)
     {
         $allPosts = $this->getDoctrine()->getRepository(Post::class)->findAll();
+
         $posts = $paginator->paginate($allPosts,$request->query->getInt('page', 1),6);
 
         $first = $this->getDoctrine()->getRepository(Post::class)->findOneBy([]);

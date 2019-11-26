@@ -332,18 +332,28 @@ background: red;
     transition:.4s ease;
 }
 
+.card-img-top{
+    /*margin-left: 5px;*/
+    /*padding-right: 10%;*/
+    /*padding-right: 22%;*/
+}
+@media screen and (max-width: 666px) {
+    .card{
+        /*width:12rem;*/
+    }
+    .card-img-top{
+
+    }
+}
+
 /* show Post */
 .post-wrapper{
     background: #F1F1F1;
 }
-@media screen and (max-width: 667px) {
+@media screen and (max-width: 666px) {
     .post-wrapper{
         margin-left: 5px;
         margin-right: 5px;
-    }
-    .post-img{
-        /*height:300px;*/
-        /*width:100px;*/
     }
 }
 .post-img{
@@ -391,18 +401,36 @@ background: red;
     width: 200px;
     height: 200px;
 }
-/*.post-tag{*/
-    /*font-size:14px;*/
-    /*padding: 5px;*/
-    /*background: grey;*/
-    /*color:whitesmoke;*/
-    /*border:1px solid whitesmoke;*/
-    /*border-radius: 50%;*/
-/*}*/
-/*.post-tag:hover{*/
-    /*color:grey;*/
-    /*transition: 0.7s ease;*/
-    /*text-decoration: none;*/
-    /*background: whitesmoke;*/
-    /*border:1px solid grey;*/
-/*}*/
+/* Costom Pagination*/
+.navigation{
+    margin-bottom: 2%;
+}
+.pagination .current{
+    color:snow;
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    padding:2px 7px;
+    background: black;
+    margin-right: 5px;
+}
+.pagination .page{
+    color:snow;
+    font-family: 'Raleway', sans-serif;
+    font-size: 22px;
+    padding:2px 7px;
+    background: red;
+    margin-right: 5px;
+}
+.pagination .page:hover{
+    background: darkred;
+}
+.pagination a{
+    color:snow;
+}
+.pagination a:hover{
+    text-decoration: none;
+    color: whitesmoke;
+}
+.pagination .next,.pagination .last {
+    display:none;
+}

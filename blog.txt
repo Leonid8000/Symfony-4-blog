@@ -135,22 +135,20 @@ title slug content-type-text publishedAt
 6 Create img
 edit img
 6 Система коментариев
+5 Design
+8 Версткаss
+9 Pagination
 
 7 Пост: timestapm created-at coment updated-et
 
-8 Версткаss
-9 Lazy loading
-10 Ошибки проверки и flash
-11 Видео на главной
-12 Комнты коментов
-Admin Lte
-
+1 Pagination costom
+2 
 
 1 Post created at updated at
 2 Form post create/update Admin Lte
 3 Flush and errors
-4 Coments
-5 Design
+
+
 
 
 * @ORM\OneToMany(targetEntity="App\Entity\Comment", mappedBy="article", fetch="EXTRA_LAZY")
