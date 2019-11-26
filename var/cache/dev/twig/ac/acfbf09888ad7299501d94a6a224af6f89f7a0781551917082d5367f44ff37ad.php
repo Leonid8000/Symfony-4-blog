@@ -85,75 +85,77 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    ";
+        echo "    <section class=\"section-home\">
+    ";
+        // line 7
         echo twig_include($this->env, $context, "main/layouts/header.html.twig");
         echo "
 
     ";
-        // line 8
+        // line 9
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 9
+            // line 10
             echo "        <div class=\"d-flex justify-content-center\">
             <a href=\"";
-            // line 10
+            // line 11
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
             echo "\" class=\"admin-route text-dark  anton-font text-center mt-4\">Admin Panel</a><br />
         </div>
     ";
         }
-        // line 13
+        // line 14
         echo "
     ";
-        // line 14
+        // line 15
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 15
+            // line 16
             echo "
     ";
         }
-        // line 17
-        echo "
-    <h1 class=\"text-center anton-font\">";
         // line 18
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 18, $this->source); })()), "category", [], "any", false, false, false, 18), "html", null, true);
+        echo "
+    <h1 class=\"text-center anton-font mt-4\">";
+        // line 19
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 19, $this->source); })()), "category", [], "any", false, false, false, 19), "html", null, true);
         echo "</h1>
     <hr class=\"bg-danger\">
 
     ";
-        // line 21
+        // line 22
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 21, $this->source); })()), "posts", [], "any", false, false, false, 21));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 22, $this->source); })()), "posts", [], "any", false, false, false, 22));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 22
+            // line 23
             echo "    <div class=\"container news-wrapper mt-3\">
     <div class=\"row\">
     <div class=\"col-4\">
     <img src=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["post"], "img", [], "any", false, false, false, 25))), "html", null, true);
+            // line 26
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["post"], "img", [], "any", false, false, false, 26))), "html", null, true);
             echo "\" alt=\"img\" class=\"category-img img-fluid\">
     </div>
 
     <div class=\"col-8\">
     ";
-            // line 30
-            echo "    ";
             // line 31
             echo "    ";
             // line 32
+            echo "    ";
+            // line 33
             echo "    <a href=\"/main/showPost/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 32), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 33), "html", null, true);
             echo "\" id=\"post-link\">
     <div class=\"news-title\">
     <h3>";
-            // line 34
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 34), "html", null, true);
+            // line 35
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 35), "html", null, true);
             echo "</h3>
     <hr>
     </div>
     <div class=\"news-content\">
     <p href=\"#\">";
-            // line 38
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 38), "html", null, true);
+            // line 39
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 39), "html", null, true);
             echo "</p>
     </div>
     </a>
@@ -165,8 +167,9 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 45
-        echo "
+        // line 46
+        echo "    </section>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -188,7 +191,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 
     public function getDebugInfo()
     {
-        return array (  169 => 45,  156 => 38,  149 => 34,  143 => 32,  141 => 31,  139 => 30,  132 => 25,  127 => 22,  123 => 21,  117 => 18,  114 => 17,  110 => 15,  108 => 14,  105 => 13,  99 => 10,  96 => 9,  94 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  171 => 46,  158 => 39,  151 => 35,  145 => 33,  143 => 32,  141 => 31,  134 => 26,  129 => 23,  125 => 22,  119 => 19,  116 => 18,  112 => 16,  110 => 15,  107 => 14,  101 => 11,  98 => 10,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -198,6 +201,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 {% block title %}Index page!{% endblock %}
 
 {% block body %}
+    <section class=\"section-home\">
     {{ include('main/layouts/header.html.twig') }}
 
     {% if is_granted('ROLE_ADMIN') %}
@@ -210,7 +214,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 
     {% endif %}
 
-    <h1 class=\"text-center anton-font\">{{ category.category }}</h1>
+    <h1 class=\"text-center anton-font mt-4\">{{ category.category }}</h1>
     <hr class=\"bg-danger\">
 
     {% for post in category.posts %}
@@ -237,6 +241,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
     </div>
     </div>
     {% endfor %}
+    </section>
 
 {% endblock %}", "main/show-category.html.twig", "/var/www/Symfony-4-blog/templates/main/show-category.html.twig");
     }

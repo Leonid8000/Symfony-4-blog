@@ -6,6 +6,7 @@ h1{
 }
 a:hover{
     text-underline: none;
+    text-decoration: none;
 }
 /* Fonts */
 .plays-font{
@@ -39,47 +40,16 @@ a:hover{
 .logo span{
     color:greenyellow;
 }
-.start_survey_btn{
-    font-size:28px;
-}
+/* Admin panel link */
 .admin-route{
-    background: green;
+    background: gray;
     padding: 10px;
-    color: #1e272e;
-    border-radius:45%;
+    font-family: 'Red Hat Display', sans-serif;
 }
 .admin-route:hover{
     text-decoration: none;
     transition: 0.7s;
-    color:#485460;
-    background: greenyellow;
-}
-.label-text{
-    font-size: 14px;
-    font-weight: 600;
-}
-.poll-title{
-    font-size:23px;
-    font-family: 'Lobster', cursive;
-    color:#222f3e;
-    padding:4px;
-}
-.poll-block{
-    margin:10px 10%;
-    padding:10px;
-    background: #95afc0;
-    -webkit-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);
-    box-shadow: 10px 10px 5px -3px rgba(0,0,0,0.75);;
-}
-.poll-ul{
-    list-style-type: none;
-    display:inline-block;
-    color: lightcyan;
-}
-.checkbox-round {
-    width: 1.1em;
-    height: 1.1em;
+    background: darkgray;
 }
 /* Header and Sidebar */
 #footer{
@@ -221,9 +191,6 @@ nav{
 }
 @media screen and (max-width: 667px) {
     .home-img{
-        /*display: flex;*/
-        /*flex-wrap: wrap;*/
-        /*width: 180px;*/
         height:250px;
         width: 300px;
     }
@@ -276,17 +243,6 @@ background: red;
 .first p{
     font-size:20px;
 }
-.img-side{
-    /*padding-top:0;*/
-}
-.img-side img{
-    /*position: absolute;*/
-    /*left:-10px;*/
-    /*margin-right: auto;*/
-}
-.content-side{
-
-}
 
 .section-home{
     background: #F1F1F1;
@@ -333,9 +289,7 @@ background: red;
 }
 
 .card-img-top{
-    /*margin-left: 5px;*/
-    /*padding-right: 10%;*/
-    /*padding-right: 22%;*/
+
 }
 @media screen and (max-width: 666px) {
     .card{

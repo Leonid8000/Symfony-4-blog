@@ -138,15 +138,23 @@ edit img
 5 Design
 8 Версткаss
 9 Pagination
-
-7 Пост: timestapm created-at coment updated-et
-
 1 Pagination costom
-2 
 
-1 Post created at updated at
-2 Form post create/update Admin Lte
-3 Flush and errors
+Post:
+	1 Нельзя удалить пока есть коменты
+	2 Timestamp field's
+	3 Update IMG
+	4 ADMIN LTE для text-area
+
+3 Admin Flash
+12 Costom login and register
+
+index Адаптивность
+
+Дома проверить на if когда устанавлюеться репозиторий
+Подключить Admin LTE И КОСТОМИЗИРОВАТЬ ФОРМЫ
+https://habr.com/ru/post/301760/
+
 
 
 
@@ -326,5 +334,60 @@ CREATED AT UPDATED AT
 composer require stof/doctrine-extensions-bundle
 
 https://www.mixd.co.uk/blog/
+
+Валидация данных
+--------------------
+composer require symfony/validator doctrine/annotations
+
+Валидировать можно с помощью анотаций xml php или yaml
+use Symfony\Component\Validator\Constraints as Assert;
+
+     $em = $this->getDoctrine()
+                   ->getManager();
+
+        $blogs = $em->createQueryBuilder()
+                    ->select('b')
+                    ->from('BloggerBlogBundle:Blog',  'b')
+                    ->addOrderBy('b.created', 'DESC')
+                    ->getQuery()
+                    ->getResult();
+
+https://habr.com/en/post/302602/
+
+В репозитори можно создавать запросы к бд с помощью queryBuilder
+
+
+Created Updated
+----------------------------------------------
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $created;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    protected $updated;
+
+    public function __construct()
+    {
+        $this->setCreated(new \DateTime());
+        $this->setUpdated(new \DateTime());
+
+        $this->setApproved(true);
+    }
+
+    /**
+     * @ORM\preUpdate
+     */
+    public function setUpdatedValue()
+    {
+       $this->setUpdated(new \DateTime());
+    }
+
+Сколько времени прошло с создания коментария
+{{comment.created|date (' h:iA Y-m-d')}}.
+
+https://symfonycasts.com/screencast/symfony-doctrine/create-entity#play
 
 

@@ -8,7 +8,9 @@ use Symfony\Flex\Response;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 use App\Security\LoginFormAuthenticator;
 use Symfony\Component\Security\Guard\GuardAuthenticatorHandler;
+
 use App\Entity\User;
+
 class SecurityController extends AbstractController
 {
     /**
@@ -50,7 +52,7 @@ class SecurityController extends AbstractController
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($user);
             $entityManager->flush();
-            return $this->redirectToRoute('index');
+            return $this->redirectToRoute('app_login');
         }
 
         return $this->render('security/register.html.twig', [

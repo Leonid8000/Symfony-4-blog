@@ -72,7 +72,7 @@ class CategoryController extends AbstractController
         $category = $this->getDoctrine()->getRepository(Category::class)->find($id);
         
         $form = $this->createFormBuilder($category)
-            ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
+            ->add('category', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('slug', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('save', SubmitType::class, array(
                 'label' => 'Update',

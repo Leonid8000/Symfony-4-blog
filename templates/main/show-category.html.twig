@@ -3,6 +3,7 @@
 {% block title %}Index page!{% endblock %}
 
 {% block body %}
+    <section class="section-home">
     {{ include('main/layouts/header.html.twig') }}
 
     {% if is_granted('ROLE_ADMIN') %}
@@ -15,7 +16,7 @@
 
     {% endif %}
 
-    <h1 class="text-center anton-font">{{ category.category }}</h1>
+    <h1 class="text-center anton-font mt-4">{{ category.category }}</h1>
     <hr class="bg-danger">
 
     {% for post in category.posts %}
@@ -42,5 +43,6 @@
     </div>
     </div>
     {% endfor %}
+    </section>
 
 {% endblock %}

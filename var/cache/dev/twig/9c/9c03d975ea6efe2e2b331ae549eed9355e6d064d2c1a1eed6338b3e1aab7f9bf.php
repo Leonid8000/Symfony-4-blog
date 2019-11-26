@@ -85,66 +85,63 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    ";
+        echo "    <section class=\"section-home\">
+    ";
+        // line 7
         echo twig_include($this->env, $context, "main/layouts/header.html.twig");
         echo "
 
     ";
         // line 9
-        echo "    ";
-        // line 10
-        echo "
-    ";
-        // line 11
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 12
+            // line 10
             echo "        <div class=\"d-flex justify-content-center\">
             <a href=\"";
-            // line 13
+            // line 11
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
             echo "\" class=\"admin-route text-dark  anton-font text-center mt-4\">Admin Panel</a><br />
         </div>
     ";
         }
-        // line 16
+        // line 14
         echo "
     ";
-        // line 17
+        // line 15
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 18
+            // line 16
             echo "
     ";
         }
-        // line 20
+        // line 18
         echo "
 <div class=\"d-flex justify-content-center flex-column post-wrapper\">
     <div class=\"d-flex justify-content-center mt-2 mb-2\">
         <img src=\"";
-        // line 23
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 23, $this->source); })()), "img", [], "any", false, false, false, 23))), "html", null, true);
+        // line 21
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 21, $this->source); })()), "img", [], "any", false, false, false, 21))), "html", null, true);
         echo "\" alt=\"img\" class=\"post-img img-fluid\">
     </div>
     <h1 class=\"text-center anton-font\">";
-        // line 25
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 25, $this->source); })()), "title", [], "any", false, false, false, 25), "html", null, true);
+        // line 23
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 23, $this->source); })()), "title", [], "any", false, false, false, 23), "html", null, true);
         echo "</h1>
     <p>";
-        // line 26
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 26, $this->source); })()), "content", [], "any", false, false, false, 26), "html", null, true);
+        // line 24
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 24, $this->source); })()), "content", [], "any", false, false, false, 24), "html", null, true);
         echo "</p>
 
     ";
-        // line 28
+        // line 26
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 28, $this->source); })()), "category", [], "any", false, false, false, 28));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 26, $this->source); })()), "category", [], "any", false, false, false, 26));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 29
+            // line 27
             echo "      <a href=\"/main/show-category/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, false, 29), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, false, 27), "html", null, true);
             echo "\" class=\"post-cat col-lg-1 col-sm-2 text-center\">
           ";
-            // line 30
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 30), "html", null, true);
+            // line 28
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 28), "html", null, true);
             echo "
       </a>
     ";
@@ -152,25 +149,25 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 33
+        // line 31
         echo "
     ";
-        // line 34
+        // line 32
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 34, $this->source); })()), "tags", [], "any", false, false, false, 34));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 32, $this->source); })()), "tags", [], "any", false, false, false, 32));
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-            // line 35
+            // line 33
             echo "        <span class=\"\"> <a href=\"/main/show-tag/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "slug", [], "any", false, false, false, 35), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "slug", [], "any", false, false, false, 33), "html", null, true);
             echo "\" class=\"post-tag badge badge-secondary col-lg-1 col-3\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "tag", [], "any", false, false, false, 35), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "tag", [], "any", false, false, false, 33), "html", null, true);
             echo "</a></span>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 37
+        // line 35
         echo "    <div class=\"container\">
         <div class=\"row bootstrap snippets\">
             <div class=\"col-md-6  col-sm-10\">
@@ -179,22 +176,22 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
                         <div class=\"panel-body\">
 
 ";
-        // line 45
+        // line 43
         echo "                            <h4 class=\"mt-2 raleway-font\">LEAVE A COMMENT</h4>
                             <hr>
                             <p class=\"comments-length font-weight-bold\"><span class=\"count-comments\">";
-        // line 47
-        echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 47, $this->source); })()), "coments", [], "any", false, false, false, 47)), "html", null, true);
+        // line 45
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 45, $this->source); })()), "coments", [], "any", false, false, false, 45)), "html", null, true);
         echo "</span> Comments </p>
                             ";
-        // line 48
+        // line 46
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 49
+            // line 47
             echo "                               <h4 class=\"comment-user-name raleway-font\">";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["author"]) || array_key_exists("author", $context) ? $context["author"] : (function () { throw new RuntimeError('Variable "author" does not exist.', 49, $this->source); })()), "firstName", [], "any", false, false, false, 49), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["author"]) || array_key_exists("author", $context) ? $context["author"] : (function () { throw new RuntimeError('Variable "author" does not exist.', 47, $this->source); })()), "firstName", [], "any", false, false, false, 47), "html", null, true);
             echo "</h4>
                                 ";
-            // line 51
+            // line 49
             echo "                                <form method=\"POST\">
                                     <textarea class=\"form-control\" placeholder=\"Start the discussion…\" name=\"coment\" rows=\"3\" required></textarea>
                                     <br>
@@ -202,21 +199,21 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
                                 </form>
                             ";
         }
-        // line 57
+        // line 55
         echo "
                                 ";
-        // line 58
+        // line 56
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 58, $this->source); })()), "coments", [], "any", false, false, false, 58));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 56, $this->source); })()), "coments", [], "any", false, false, false, 56));
         foreach ($context['_seq'] as $context["_key"] => $context["coment"]) {
-            // line 59
+            // line 57
             echo "                            <div class=\"clearfix\"></div>
                             <hr>
                             <ul class=\"media-list\">
                                 <li class=\"media\">
                                     <a href=\"#\" class=\"pull-left\">
                                         <img src=\"";
-            // line 64
+            // line 62
             echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/user.png"), "html", null, true);
             echo "\" alt=\"\" class=\"img-circle img-fluid user-img mr-1\">
                                     </a>
@@ -226,25 +223,29 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
                                 </span>
 
                                           <h5><strong class=\"text-success\">";
-            // line 71
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coment"], "author", [], "any", false, false, false, 71), "html", null, true);
+            // line 69
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coment"], "author", [], "any", false, false, false, 69), "html", null, true);
             echo "</strong></h5>
                                         ";
-            // line 72
-            if (twig_get_attribute($this->env, $this->source, $context["coment"], "isDeleted", [], "any", false, false, false, 72)) {
-                // line 73
+            // line 70
+            if (twig_get_attribute($this->env, $this->source, $context["coment"], "isDeleted", [], "any", false, false, false, 70)) {
+                // line 71
                 echo "                                            <span class=\"fa fa-close\"></span> deleted
                                         ";
             } else {
-                // line 75
+                // line 73
                 echo "                                            <p>";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coment"], "coment", [], "any", false, false, false, 75), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coment"], "coment", [], "any", false, false, false, 73), "html", null, true);
                 echo "</p>
                                         ";
             }
-            // line 77
+            // line 75
             echo "
                                         ";
+            // line 77
+            echo "                                        ";
+            // line 78
+            echo "                                        ";
             // line 79
             echo "                                        ";
             // line 80
@@ -254,21 +255,17 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
             // line 82
             echo "                                        ";
             // line 83
-            echo "                                        ";
-            // line 84
-            echo "                                        ";
-            // line 85
             echo "
                                         ";
-            // line 87
+            // line 85
             echo "                                ";
-            // line 88
+            // line 86
             echo "                                    ";
-            // line 89
+            // line 87
             echo "                                            ";
-            // line 90
+            // line 88
             echo "                                ";
-            // line 91
+            // line 89
             echo "
                                     </div>
                                 </li>
@@ -278,7 +275,7 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['coment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 96
+        // line 94
         echo "
                         </div>
                     </div>
@@ -287,6 +284,7 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         </div>
     </div>
 </div>
+    </section>
 
 ";
         
@@ -309,7 +307,7 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
 
     public function getDebugInfo()
     {
-        return array (  282 => 96,  272 => 91,  270 => 90,  268 => 89,  266 => 88,  264 => 87,  261 => 85,  259 => 84,  257 => 83,  255 => 82,  253 => 81,  251 => 80,  249 => 79,  246 => 77,  240 => 75,  236 => 73,  234 => 72,  230 => 71,  220 => 64,  213 => 59,  209 => 58,  206 => 57,  198 => 51,  193 => 49,  191 => 48,  187 => 47,  183 => 45,  174 => 37,  163 => 35,  159 => 34,  156 => 33,  147 => 30,  142 => 29,  138 => 28,  133 => 26,  129 => 25,  124 => 23,  119 => 20,  115 => 18,  113 => 17,  110 => 16,  104 => 13,  101 => 12,  99 => 11,  96 => 10,  94 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  279 => 94,  269 => 89,  267 => 88,  265 => 87,  263 => 86,  261 => 85,  258 => 83,  256 => 82,  254 => 81,  252 => 80,  250 => 79,  248 => 78,  246 => 77,  243 => 75,  237 => 73,  233 => 71,  231 => 70,  227 => 69,  217 => 62,  210 => 57,  206 => 56,  203 => 55,  195 => 49,  190 => 47,  188 => 46,  184 => 45,  180 => 43,  171 => 35,  160 => 33,  156 => 32,  153 => 31,  144 => 28,  139 => 27,  135 => 26,  130 => 24,  126 => 23,  121 => 21,  116 => 18,  112 => 16,  110 => 15,  107 => 14,  101 => 11,  98 => 10,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -319,10 +317,8 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
 {% block title %}Index page!{% endblock %}
 
 {% block body %}
+    <section class=\"section-home\">
     {{ include('main/layouts/header.html.twig') }}
-
-    {#<h3 class=\"text-dark mt-2 ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3>#}
-    {#<hr>#}
 
     {% if is_granted('ROLE_ADMIN') %}
         <div class=\"d-flex justify-content-center\">
@@ -417,6 +413,7 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         </div>
     </div>
 </div>
+    </section>
 
 {% endblock %}", "main/showPost.html.twig", "/var/www/Symfony-4-blog/templates/main/showPost.html.twig");
     }

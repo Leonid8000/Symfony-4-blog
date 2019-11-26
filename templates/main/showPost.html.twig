@@ -3,10 +3,8 @@
 {% block title %}Index page!{% endblock %}
 
 {% block body %}
+    <section class="section-home">
     {{ include('main/layouts/header.html.twig') }}
-
-    {#<h3 class="text-dark mt-2 ml-3 text-left home-logo">NEWS<span class="yellow-text">BLOG</span></h3>#}
-    {#<hr>#}
 
     {% if is_granted('ROLE_ADMIN') %}
         <div class="d-flex justify-content-center">
@@ -101,5 +99,6 @@
         </div>
     </div>
 </div>
+    </section>
 
 {% endblock %}

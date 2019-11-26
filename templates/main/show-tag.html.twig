@@ -3,6 +3,7 @@
 {% block title %}Index page!{% endblock %}
 
 {% block body %}
+    <section class="section-home">
     {{ include('main/layouts/header.html.twig') }}
 
     {% if is_granted('ROLE_ADMIN') %}
@@ -15,7 +16,8 @@
 
     {% endif %}
 
-    <h2 class="text-center anton-font">{{ tag.tag }}</h2>
+    <h2 class="text-center anton-font mt-4">{{ tag.tag }}</h2>
+
     {% for post in tag.post %}
         <div class="container news-wrapper mt-3">
             <div class="row">
@@ -40,34 +42,6 @@
             </div>
         </div>
     {% endfor %}
-    {#{% for post in tag.post %}#}
-
-            {#<div class="d-flex justify-content-center flex-column news-wrapper mt-3">#}
-       {#<a href="/main/showPost/{{ post.slug }}" id="post-link">#}
-                {#<div class="news-title">#}
-                    {#<h1>{{ post.title }}</h1>#}
-                    {#<hr>#}
-                {#</div>#}
-           {#<div class="col-4">#}
-               {#<img src="{{ asset('uploads/' ~ post.img) }}" alt="img" class="news-img">#}
-           {#</div>#}
-                {#<div class="news-content">#}
-                    {#<p href="#">Desc:{{ post.description }}</p>#}
-                {#</div>#}
-                {#<div class="news-content">#}
-                    {#<p href="#">{{ post.content }}</p>#}
-                {#</div>#}
-        {#</a>#}
-                {#{% for category in post.category %}#}
-                    {#<a href="/main/show-category/{{ category.slug }}">#}
-                        {#<h2 class="post-category col-lg-1 col-4">{{ category.category }}</h2>#}
-                    {#</a>#}
-                {#{% endfor %}#}
-                {#{% for tag in post.tags %}#}
-                    {#<button class="btn btn-success col-1">{{ tag.tag }}</button>#}
-                    {#<a href="/main/show-tag/{{ tag.slug }}"><span class="badge badge-secondary col-lg-1 col-3">{{ tag.tag }}</span></a>#}
-                {#{% endfor %}#}
-            {#</div>#}
-    {#{% endfor %}#}
+</section>
 
 {% endblock %}
