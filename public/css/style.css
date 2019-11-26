@@ -26,6 +26,9 @@ a:hover{
 .maven-font{
     font-family: 'Maven Pro', sans-serif;
 }
+.red-hart-font{
+    font-family: 'Red Hat Display', sans-serif;
+}
 
 /* Admin panel */
 .logo{
@@ -203,25 +206,9 @@ nav{
 #post-link:hover{
     text-decoration: none;
 }
-.post-category{
-    font-size:14px;
-    padding: 3px;
-    background: cornflowerblue;
-}
-
-.post-category:hover{
-    color:darkblue;
-    transition: 0.7s ease;
-    text-decoration: none;
-    background: deepskyblue;
-}
 
 .news-img{
     height:150px;
-    width:auto;
-}
-.post-img{
-    height:500px;
     width:auto;
 }
 
@@ -276,20 +263,11 @@ background: red;
     font-size: 16px;
     color:red;
 }
-/*.wrapper-div{*/
-    /*position:relative;*/
-/*}*/
-
-/*.layout{*/
-    /*position: absolute;*/
-/*}*/
 
 /* First post */
 .first{
-    /*margin-top:10%;*/
-    margin:0;
+    margin-top:8%;
     background: #FFFFFF;
-    /*background: red;*/
     position: relative;
 }
 .first h1{
@@ -329,3 +307,102 @@ background: red;
     background: red;
     width: 0;
 }
+
+/* posts Main page */
+.posts{
+    margin-top: 8%;
+}
+.posts:hover a{
+    text-decoration: none;
+}
+.post-title{
+    font-size: 24px;
+    text-transform: uppercase;
+}
+.text-grey{
+    color:grey;
+}
+.time-text{
+    font-size:18px;
+    position:absolute;
+    bottom:0;
+}
+.card:hover img{
+    opacity:.8;
+    transition:.4s ease;
+}
+
+/* show Post */
+.post-wrapper{
+    background: #F1F1F1;
+}
+@media screen and (max-width: 667px) {
+    .post-wrapper{
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .post-img{
+        /*height:300px;*/
+        /*width:100px;*/
+    }
+}
+.post-img{
+    height:400px;
+    width:400px;
+}
+.post-cat{
+    font-size:14px;
+    padding: 3px;
+    background: red;
+    color:whitesmoke;
+    border:1px solid whitesmoke;
+}
+.post-cat:hover{
+    color:red;
+    transition: 0.7s ease;
+    text-decoration: none;
+    background: whitesmoke;
+    border:1px solid red;
+}
+
+.post-tag{
+    font-family: 'Playfair Display', serif;
+    opacity: 0.8;
+    color:whitesmoke;
+}
+.post-tag:hover{
+    opacity: 0.6;
+}
+.comments-length{
+    border-bottom:1px solid darkblue;
+}
+.count-comments{
+    font-family: 'Asap', sans-serif;
+    font-weight: 100;
+}
+.comment-user-name{
+
+}
+.user-img{
+    width:75px;
+    height: 75px;
+}
+.category-img{
+    width: 200px;
+    height: 200px;
+}
+/*.post-tag{*/
+    /*font-size:14px;*/
+    /*padding: 5px;*/
+    /*background: grey;*/
+    /*color:whitesmoke;*/
+    /*border:1px solid whitesmoke;*/
+    /*border-radius: 50%;*/
+/*}*/
+/*.post-tag:hover{*/
+    /*color:grey;*/
+    /*transition: 0.7s ease;*/
+    /*text-decoration: none;*/
+    /*background: whitesmoke;*/
+    /*border:1px solid grey;*/
+/*}*/

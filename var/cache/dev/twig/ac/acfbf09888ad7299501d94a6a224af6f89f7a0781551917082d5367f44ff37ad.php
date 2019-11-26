@@ -89,104 +89,84 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
         echo twig_include($this->env, $context, "main/layouts/header.html.twig");
         echo "
 
-    <h3 class=\"text-dark mt-2 ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3>
-    <hr>
-
     ";
-        // line 11
+        // line 8
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
-            // line 12
+            // line 9
             echo "        <div class=\"d-flex justify-content-center\">
             <a href=\"";
-            // line 13
+            // line 10
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
             echo "\" class=\"admin-route text-dark  anton-font text-center mt-4\">Admin Panel</a><br />
         </div>
     ";
         }
-        // line 16
+        // line 13
         echo "
     ";
-        // line 17
+        // line 14
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 18
+            // line 15
             echo "
     ";
         }
-        // line 20
+        // line 17
         echo "
-    <h2 class=\"text-center\">";
-        // line 21
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 21, $this->source); })()), "category", [], "any", false, false, false, 21), "html", null, true);
-        echo "</h2>
+    <h1 class=\"text-center anton-font\">";
+        // line 18
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 18, $this->source); })()), "category", [], "any", false, false, false, 18), "html", null, true);
+        echo "</h1>
+    <hr class=\"bg-danger\">
+
     ";
-        // line 22
+        // line 21
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 22, $this->source); })()), "posts", [], "any", false, false, false, 22));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 21, $this->source); })()), "posts", [], "any", false, false, false, 21));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
-            // line 23
-            echo "        <a href=\"/main/showPost/";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 23), "html", null, true);
-            echo "\" id=\"post-link\">
-            <div class=\"d-flex justify-content-center flex-column news-wrapper mt-3\">
-                <div class=\"news-title\">
-                    <h1>";
-            // line 26
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 26), "html", null, true);
-            echo "</h1>
-                    <hr>
-                </div>
-                <div class=\"col-4\">
-                    <img src=\"";
+            // line 22
+            echo "    <div class=\"container news-wrapper mt-3\">
+    <div class=\"row\">
+    <div class=\"col-4\">
+    <img src=\"";
+            // line 25
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["post"], "img", [], "any", false, false, false, 25))), "html", null, true);
+            echo "\" alt=\"img\" class=\"category-img img-fluid\">
+    </div>
+
+    <div class=\"col-8\">
+    ";
             // line 30
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, $context["post"], "img", [], "any", false, false, false, 30))), "html", null, true);
-            echo "\" alt=\"img\" class=\"news-img\">
-                </div>
-                <div class=\"news-content\">
-                    <p href=\"#\">Desc:";
-            // line 33
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 33), "html", null, true);
+            echo "    ";
+            // line 31
+            echo "    ";
+            // line 32
+            echo "    <a href=\"/main/showPost/";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 32), "html", null, true);
+            echo "\" id=\"post-link\">
+    <div class=\"news-title\">
+    <h3>";
+            // line 34
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "title", [], "any", false, false, false, 34), "html", null, true);
+            echo "</h3>
+    <hr>
+    </div>
+    <div class=\"news-content\">
+    <p href=\"#\">";
+            // line 38
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "description", [], "any", false, false, false, 38), "html", null, true);
             echo "</p>
-                </div>
-                <div class=\"news-content\">
-                    <p href=\"#\">";
-            // line 36
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "content", [], "any", false, false, false, 36), "html", null, true);
-            echo "</p>
-                </div>
-                ";
-            // line 39
-            echo "                    ";
-            // line 40
-            echo "                ";
-            // line 41
-            echo "                ";
-            $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, $context["post"], "tags", [], "any", false, false, false, 41));
-            foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
-                // line 42
-                echo "                    <a href=\"/main/show-tag/";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "slug", [], "any", false, false, false, 42), "html", null, true);
-                echo "\"><span class=\"badge badge-secondary col-1\">";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "tag", [], "any", false, false, false, 42), "html", null, true);
-                echo "</span></a>
-                ";
-            }
-            $_parent = $context['_parent'];
-            unset($context['_seq'], $context['_iterated'], $context['_key'], $context['tag'], $context['_parent'], $context['loop']);
-            $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 44
-            echo "            </div>
-        </a>
+    </div>
+    </a>
+    </div>
+    </div>
+    </div>
     ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['post'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 45
         echo "
-
-
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -208,7 +188,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 
     public function getDebugInfo()
     {
-        return array (  187 => 47,  179 => 44,  168 => 42,  163 => 41,  161 => 40,  159 => 39,  154 => 36,  148 => 33,  142 => 30,  135 => 26,  128 => 23,  124 => 22,  120 => 21,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  169 => 45,  156 => 38,  149 => 34,  143 => 32,  141 => 31,  139 => 30,  132 => 25,  127 => 22,  123 => 21,  117 => 18,  114 => 17,  110 => 15,  108 => 14,  105 => 13,  99 => 10,  96 => 9,  94 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -220,9 +200,6 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 {% block body %}
     {{ include('main/layouts/header.html.twig') }}
 
-    <h3 class=\"text-dark mt-2 ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3>
-    <hr>
-
     {% if is_granted('ROLE_ADMIN') %}
         <div class=\"d-flex justify-content-center\">
             <a href=\"{{ path('admin') }}\" class=\"admin-route text-dark  anton-font text-center mt-4\">Admin Panel</a><br />
@@ -233,34 +210,33 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 
     {% endif %}
 
-    <h2 class=\"text-center\">{{ category.category }}</h2>
+    <h1 class=\"text-center anton-font\">{{ category.category }}</h1>
+    <hr class=\"bg-danger\">
+
     {% for post in category.posts %}
-        <a href=\"/main/showPost/{{ post.slug }}\" id=\"post-link\">
-            <div class=\"d-flex justify-content-center flex-column news-wrapper mt-3\">
-                <div class=\"news-title\">
-                    <h1>{{ post.title }}</h1>
-                    <hr>
-                </div>
-                <div class=\"col-4\">
-                    <img src=\"{{ asset('uploads/' ~ post.img) }}\" alt=\"img\" class=\"news-img\">
-                </div>
-                <div class=\"news-content\">
-                    <p href=\"#\">Desc:{{ post.description }}</p>
-                </div>
-                <div class=\"news-content\">
-                    <p href=\"#\">{{ post.content }}</p>
-                </div>
-                {#{% for category in post.category %}#}
-                    {#<h2>{{ category.categ }}</h2>#}
-                {#{% endfor %}#}
-                {% for tag in post.tags %}
-                    <a href=\"/main/show-tag/{{ tag.slug }}\"><span class=\"badge badge-secondary col-1\">{{ tag.tag }}</span></a>
-                {% endfor %}
-            </div>
-        </a>
+    <div class=\"container news-wrapper mt-3\">
+    <div class=\"row\">
+    <div class=\"col-4\">
+    <img src=\"{{ asset('uploads/' ~ post.img) }}\" alt=\"img\" class=\"category-img img-fluid\">
+    </div>
+
+    <div class=\"col-8\">
+    {#{% for category in post.category %}#}
+    {#<a href=\"/main/show-category/{{ category.slug }}\" class=\"post-category mb-1\">{{ category.category }}</a>#}
+    {#{% endfor %}#}
+    <a href=\"/main/showPost/{{ post.slug }}\" id=\"post-link\">
+    <div class=\"news-title\">
+    <h3>{{ post.title }}</h3>
+    <hr>
+    </div>
+    <div class=\"news-content\">
+    <p href=\"#\">{{ post.description }}</p>
+    </div>
+    </a>
+    </div>
+    </div>
+    </div>
     {% endfor %}
-
-
 
 {% endblock %}", "main/show-category.html.twig", "/var/www/Symfony-4-blog/templates/main/show-category.html.twig");
     }

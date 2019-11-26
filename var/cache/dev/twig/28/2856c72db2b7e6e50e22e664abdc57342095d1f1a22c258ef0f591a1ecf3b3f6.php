@@ -59,7 +59,7 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 11
             echo "                    <li class=\"nav-item nav-category-li\">
-                        <a class=\"nav-link nav-category text-dark raleway-font\" href=\"/main/show-category/";
+                        <a class=\"nav-link nav-category text-dark raleway-font ml-3\" href=\"/main/show-category/";
             // line 12
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, false, 12), "html", null, true);
             echo "\">
@@ -143,7 +143,7 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
                 </li>
                 {% for category in categories %}
                     <li class=\"nav-item nav-category-li\">
-                        <a class=\"nav-link nav-category text-dark raleway-font\" href=\"/main/show-category/{{ category.slug }}\">
+                        <a class=\"nav-link nav-category text-dark raleway-font ml-3\" href=\"/main/show-category/{{ category.slug }}\">
                             {{ category.category }}
                             <hr class=\"red-hr\">
                         </a>

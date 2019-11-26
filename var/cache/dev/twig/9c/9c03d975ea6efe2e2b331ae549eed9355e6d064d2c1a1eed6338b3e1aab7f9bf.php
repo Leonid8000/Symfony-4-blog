@@ -89,9 +89,11 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         echo twig_include($this->env, $context, "main/layouts/header.html.twig");
         echo "
 
-    <h3 class=\"text-dark mt-2 ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3>
-    <hr>
-
+    ";
+        // line 9
+        echo "    ";
+        // line 10
+        echo "
     ";
         // line 11
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_ADMIN")) {
@@ -116,16 +118,16 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         // line 20
         echo "
 <div class=\"d-flex justify-content-center flex-column post-wrapper\">
-    <h1 class=\"text-center anton-font\">";
-        // line 22
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 22, $this->source); })()), "title", [], "any", false, false, false, 22), "html", null, true);
-        echo "</h1>
     <div class=\"d-flex justify-content-center mt-2 mb-2\">
         <img src=\"";
-        // line 24
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 24, $this->source); })()), "img", [], "any", false, false, false, 24))), "html", null, true);
-        echo "\" alt=\"img\" class=\"post-img\">
+        // line 23
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 23, $this->source); })()), "img", [], "any", false, false, false, 23))), "html", null, true);
+        echo "\" alt=\"img\" class=\"post-img img-fluid\">
     </div>
+    <h1 class=\"text-center anton-font\">";
+        // line 25
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 25, $this->source); })()), "title", [], "any", false, false, false, 25), "html", null, true);
+        echo "</h1>
     <p>";
         // line 26
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 26, $this->source); })()), "content", [], "any", false, false, false, 26), "html", null, true);
@@ -139,7 +141,7 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
             // line 29
             echo "      <a href=\"/main/show-category/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, false, 29), "html", null, true);
-            echo "\" class=\"post-category col-lg-1 col-3 text-center\">
+            echo "\" class=\"post-cat col-lg-1 col-sm-2 text-center\">
           ";
             // line 30
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 30), "html", null, true);
@@ -158,11 +160,11 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 34, $this->source); })()), "tags", [], "any", false, false, false, 34));
         foreach ($context['_seq'] as $context["_key"] => $context["tag"]) {
             // line 35
-            echo "    <a href=\"/main/show-tag/";
+            echo "        <span class=\"\"> <a href=\"/main/show-tag/";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "slug", [], "any", false, false, false, 35), "html", null, true);
-            echo "\"><span class=\"badge badge-secondary col-lg-1 col-3\">";
+            echo "\" class=\"post-tag badge badge-secondary col-lg-1 col-3\">";
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["tag"], "tag", [], "any", false, false, false, 35), "html", null, true);
-            echo "</span></a>
+            echo "</a></span>
     ";
         }
         $_parent = $context['_parent'];
@@ -176,70 +178,75 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
                     <div class=\"panel panel-info\">
                         <div class=\"panel-body\">
 
+";
+        // line 45
+        echo "                            <h4 class=\"mt-2 raleway-font\">LEAVE A COMMENT</h4>
+                            <hr>
+                            <p class=\"comments-length font-weight-bold\"><span class=\"count-comments\">";
+        // line 47
+        echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 47, $this->source); })()), "coments", [], "any", false, false, false, 47)), "html", null, true);
+        echo "</span> Comments </p>
                             ";
-        // line 44
+        // line 48
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 45
-            echo "                               <h4>";
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["author"]) || array_key_exists("author", $context) ? $context["author"] : (function () { throw new RuntimeError('Variable "author" does not exist.', 45, $this->source); })()), "firstName", [], "any", false, false, false, 45), "html", null, true);
+            // line 49
+            echo "                               <h4 class=\"comment-user-name raleway-font\">";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["author"]) || array_key_exists("author", $context) ? $context["author"] : (function () { throw new RuntimeError('Variable "author" does not exist.', 49, $this->source); })()), "firstName", [], "any", false, false, false, 49), "html", null, true);
             echo "</h4>
                                 ";
-            // line 47
+            // line 51
             echo "                                <form method=\"POST\">
-                                    <div class=\"panel-heading\">
-                                        Comment panel
-                                    </div>
-                                    <textarea class=\"form-control\" placeholder=\"write a comment...\" name=\"coment\" rows=\"3\" required></textarea>
+                                    <textarea class=\"form-control\" placeholder=\"Start the discussion…\" name=\"coment\" rows=\"3\" required></textarea>
                                     <br>
                                     <button type=\"submit\" class=\"btn btn-info pull-right\">Post</button>
                                 </form>
                             ";
         }
-        // line 56
+        // line 57
         echo "
-
-                                <h3>All coments: ";
-        // line 58
-        echo twig_escape_filter($this->env, twig_length_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 58, $this->source); })()), "coments", [], "any", false, false, false, 58)), "html", null, true);
-        echo "</h3>
                                 ";
-        // line 59
+        // line 58
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 59, $this->source); })()), "coments", [], "any", false, false, false, 59));
+        $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["post"]) || array_key_exists("post", $context) ? $context["post"] : (function () { throw new RuntimeError('Variable "post" does not exist.', 58, $this->source); })()), "coments", [], "any", false, false, false, 58));
         foreach ($context['_seq'] as $context["_key"] => $context["coment"]) {
-            // line 60
+            // line 59
             echo "                            <div class=\"clearfix\"></div>
                             <hr>
                             <ul class=\"media-list\">
                                 <li class=\"media\">
                                     <a href=\"#\" class=\"pull-left\">
-                                        <img src=\"https://bootdey.com/img/Content/user_1.jpg\" alt=\"\" class=\"img-circle\">
+                                        <img src=\"";
+            // line 64
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("uploads/user.png"), "html", null, true);
+            echo "\" alt=\"\" class=\"img-circle img-fluid user-img mr-1\">
                                     </a>
                                     <div class=\"media-body\">
                                 <span class=\"text-muted pull-right\">
                                     <small class=\"text-muted\">30 min ago</small>
                                 </span>
 
-                                          <h4><strong class=\"text-success\">";
-            // line 72
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coment"], "author", [], "any", false, false, false, 72), "html", null, true);
-            echo "</strong></h4>
+                                          <h5><strong class=\"text-success\">";
+            // line 71
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coment"], "author", [], "any", false, false, false, 71), "html", null, true);
+            echo "</strong></h5>
                                         ";
-            // line 73
-            if (twig_get_attribute($this->env, $this->source, $context["coment"], "isDeleted", [], "any", false, false, false, 73)) {
-                // line 74
+            // line 72
+            if (twig_get_attribute($this->env, $this->source, $context["coment"], "isDeleted", [], "any", false, false, false, 72)) {
+                // line 73
                 echo "                                            <span class=\"fa fa-close\"></span> deleted
                                         ";
             } else {
-                // line 76
+                // line 75
                 echo "                                            <p>";
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coment"], "coment", [], "any", false, false, false, 76), "html", null, true);
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["coment"], "coment", [], "any", false, false, false, 75), "html", null, true);
                 echo "</p>
                                         ";
             }
-            // line 78
+            // line 77
             echo "
                                         ";
+            // line 79
+            echo "                                        ";
             // line 80
             echo "                                        ";
             // line 81
@@ -251,16 +258,18 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
             // line 84
             echo "                                        ";
             // line 85
-            echo "                                        ";
-            // line 86
             echo "
-                                        <span class=\"pl-2 article-details\">
-                                <span class=\"js-like-article-count\">0</span>
-                                    <a href=\"#\" class=\"fa fa-heart-o like-article js-like-article\"></a>
-                                            ";
+                                        ";
+            // line 87
+            echo "                                ";
+            // line 88
+            echo "                                    ";
+            // line 89
+            echo "                                            ";
+            // line 90
+            echo "                                ";
             // line 91
-            echo "                                </span>
-
+            echo "
                                     </div>
                                 </li>
                             </ul>
@@ -269,7 +278,7 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['coment'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 97
+        // line 96
         echo "
                         </div>
                     </div>
@@ -300,7 +309,7 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
 
     public function getDebugInfo()
     {
-        return array (  273 => 97,  262 => 91,  256 => 86,  254 => 85,  252 => 84,  250 => 83,  248 => 82,  246 => 81,  244 => 80,  241 => 78,  235 => 76,  231 => 74,  229 => 73,  225 => 72,  211 => 60,  207 => 59,  203 => 58,  199 => 56,  188 => 47,  183 => 45,  181 => 44,  172 => 37,  161 => 35,  157 => 34,  154 => 33,  145 => 30,  140 => 29,  136 => 28,  131 => 26,  126 => 24,  121 => 22,  117 => 20,  113 => 18,  111 => 17,  108 => 16,  102 => 13,  99 => 12,  97 => 11,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  282 => 96,  272 => 91,  270 => 90,  268 => 89,  266 => 88,  264 => 87,  261 => 85,  259 => 84,  257 => 83,  255 => 82,  253 => 81,  251 => 80,  249 => 79,  246 => 77,  240 => 75,  236 => 73,  234 => 72,  230 => 71,  220 => 64,  213 => 59,  209 => 58,  206 => 57,  198 => 51,  193 => 49,  191 => 48,  187 => 47,  183 => 45,  174 => 37,  163 => 35,  159 => 34,  156 => 33,  147 => 30,  142 => 29,  138 => 28,  133 => 26,  129 => 25,  124 => 23,  119 => 20,  115 => 18,  113 => 17,  110 => 16,  104 => 13,  101 => 12,  99 => 11,  96 => 10,  94 => 9,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -312,8 +321,8 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
 {% block body %}
     {{ include('main/layouts/header.html.twig') }}
 
-    <h3 class=\"text-dark mt-2 ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3>
-    <hr>
+    {#<h3 class=\"text-dark mt-2 ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3>#}
+    {#<hr>#}
 
     {% if is_granted('ROLE_ADMIN') %}
         <div class=\"d-flex justify-content-center\">
@@ -326,20 +335,20 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
     {% endif %}
 
 <div class=\"d-flex justify-content-center flex-column post-wrapper\">
-    <h1 class=\"text-center anton-font\">{{ post.title }}</h1>
     <div class=\"d-flex justify-content-center mt-2 mb-2\">
-        <img src=\"{{ asset('uploads/' ~ post.img) }}\" alt=\"img\" class=\"post-img\">
+        <img src=\"{{ asset('uploads/' ~ post.img) }}\" alt=\"img\" class=\"post-img img-fluid\">
     </div>
+    <h1 class=\"text-center anton-font\">{{ post.title }}</h1>
     <p>{{ post.content }}</p>
 
     {% for category in post.category %}
-      <a href=\"/main/show-category/{{ category.slug }}\" class=\"post-category col-lg-1 col-3 text-center\">
+      <a href=\"/main/show-category/{{ category.slug }}\" class=\"post-cat col-lg-1 col-sm-2 text-center\">
           {{ category.category }}
       </a>
     {% endfor %}
 
     {% for tag in post.tags %}
-    <a href=\"/main/show-tag/{{ tag.slug }}\"><span class=\"badge badge-secondary col-lg-1 col-3\">{{ tag.tag }}</span></a>
+        <span class=\"\"> <a href=\"/main/show-tag/{{ tag.slug }}\" class=\"post-tag badge badge-secondary col-lg-1 col-3\">{{ tag.tag }}</a></span>
     {% endfor %}
     <div class=\"container\">
         <div class=\"row bootstrap snippets\">
@@ -348,35 +357,34 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
                     <div class=\"panel panel-info\">
                         <div class=\"panel-body\">
 
+{# Coments section #}
+                            <h4 class=\"mt-2 raleway-font\">LEAVE A COMMENT</h4>
+                            <hr>
+                            <p class=\"comments-length font-weight-bold\"><span class=\"count-comments\">{{ post.coments |length }}</span> Comments </p>
                             {% if is_granted('ROLE_USER') %}
-                               <h4>{{ author.firstName }}</h4>
+                               <h4 class=\"comment-user-name raleway-font\">{{ author.firstName }}</h4>
                                 {# COMENT FORM #}
                                 <form method=\"POST\">
-                                    <div class=\"panel-heading\">
-                                        Comment panel
-                                    </div>
-                                    <textarea class=\"form-control\" placeholder=\"write a comment...\" name=\"coment\" rows=\"3\" required></textarea>
+                                    <textarea class=\"form-control\" placeholder=\"Start the discussion…\" name=\"coment\" rows=\"3\" required></textarea>
                                     <br>
                                     <button type=\"submit\" class=\"btn btn-info pull-right\">Post</button>
                                 </form>
                             {% endif %}
 
-
-                                <h3>All coments: {{ post.coments |length }}</h3>
                                 {% for coment in post.coments %}
                             <div class=\"clearfix\"></div>
                             <hr>
                             <ul class=\"media-list\">
                                 <li class=\"media\">
                                     <a href=\"#\" class=\"pull-left\">
-                                        <img src=\"https://bootdey.com/img/Content/user_1.jpg\" alt=\"\" class=\"img-circle\">
+                                        <img src=\"{{ asset('uploads/user.png') }}\" alt=\"\" class=\"img-circle img-fluid user-img mr-1\">
                                     </a>
                                     <div class=\"media-body\">
                                 <span class=\"text-muted pull-right\">
                                     <small class=\"text-muted\">30 min ago</small>
                                 </span>
 
-                                          <h4><strong class=\"text-success\">{{ coment.author }}</strong></h4>
+                                          <h5><strong class=\"text-success\">{{ coment.author }}</strong></h5>
                                         {% if coment.isDeleted %}
                                             <span class=\"fa fa-close\"></span> deleted
                                         {% else %}
@@ -391,11 +399,11 @@ class __TwigTemplate_8fbafcd76f4129442c20742ba70c6e4a76ee17db37803d1497ff848181a
                                         {#</span>#}
                                         {#</div>#}
 
-                                        <span class=\"pl-2 article-details\">
-                                <span class=\"js-like-article-count\">0</span>
-                                    <a href=\"#\" class=\"fa fa-heart-o like-article js-like-article\"></a>
+                                        {#<span class=\"pl-2 article-details\">#}
+                                {#<span class=\"js-like-article-count\">0</span>#}
+                                    {#<a href=\"#\" class=\"fa fa-heart-o like-article js-like-article\"></a>#}
                                             {#{{ path('article_toggle_heart', {slug: slug} )}}#}
-                                </span>
+                                {#</span>#}
 
                                     </div>
                                 </li>

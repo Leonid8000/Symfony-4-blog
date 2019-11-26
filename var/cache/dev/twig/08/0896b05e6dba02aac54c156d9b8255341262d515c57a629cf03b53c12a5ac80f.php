@@ -122,7 +122,7 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
         <link href=\"https://fonts.googleapis.com/css?family=Anton|Lobster|Playfair+Display&display=swap\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap\" rel=\"stylesheet\">
         <link href=\"http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
-        <link href=\"https://fonts.googleapis.com/css?family=Asap|Maven+Pro|Raleway&display=swap\" rel=\"stylesheet\">
+        <link href=\"https://fonts.googleapis.com/css?family=Asap|Maven+Pro|Raleway|Red+Hat+Display&display=swap\" rel=\"stylesheet\">
     ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -208,7 +208,7 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
         <link href=\"https://fonts.googleapis.com/css?family=Anton|Lobster|Playfair+Display&display=swap\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap\" rel=\"stylesheet\">
         <link href=\"http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
-        <link href=\"https://fonts.googleapis.com/css?family=Asap|Maven+Pro|Raleway&display=swap\" rel=\"stylesheet\">
+        <link href=\"https://fonts.googleapis.com/css?family=Asap|Maven+Pro|Raleway|Red+Hat+Display&display=swap\" rel=\"stylesheet\">
     {% endblock %}
 </head>
 <body>
