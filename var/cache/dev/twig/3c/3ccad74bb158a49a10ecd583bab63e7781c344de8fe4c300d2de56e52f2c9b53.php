@@ -41,11 +41,11 @@ class __TwigTemplate_cfc21f12f891a11b7973195b5df43294097bd113873b18f7d15ad23a6b5
 
         // line 1
         echo "<footer class=\"main-footer\">
-    <a class=\"nav-link text-center\" href=\"";
+    <a class=\"nav-link d-flex justify-content-center\" href=\"";
         // line 2
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
         echo "\"><h3 class=\"text-dark ml-3 text-left home-logo\">NEWS<span class=\"text-light\">BLOG</span></h3> <span class=\"sr-only\">(current)</span></a>
-    <p class=\"asap-font copyright d-flex justify-content-end\">Copyright © 2019 Leonid Web technology corporation. All rights reserved.</p>
+    <p class=\"asap-font copyright d-flex justify-content-center\">Copyright © 2019 Leonid Web technology corporation. All rights reserved.</p>
 </footer>
 ";
         
@@ -74,8 +74,8 @@ class __TwigTemplate_cfc21f12f891a11b7973195b5df43294097bd113873b18f7d15ad23a6b5
     public function getSourceContext()
     {
         return new Source("<footer class=\"main-footer\">
-    <a class=\"nav-link text-center\" href=\"{{ path('index') }}\"><h3 class=\"text-dark ml-3 text-left home-logo\">NEWS<span class=\"text-light\">BLOG</span></h3> <span class=\"sr-only\">(current)</span></a>
-    <p class=\"asap-font copyright d-flex justify-content-end\">Copyright © 2019 Leonid Web technology corporation. All rights reserved.</p>
+    <a class=\"nav-link d-flex justify-content-center\" href=\"{{ path('index') }}\"><h3 class=\"text-dark ml-3 text-left home-logo\">NEWS<span class=\"text-light\">BLOG</span></h3> <span class=\"sr-only\">(current)</span></a>
+    <p class=\"asap-font copyright d-flex justify-content-center\">Copyright © 2019 Leonid Web technology corporation. All rights reserved.</p>
 </footer>
 ", "main/layouts/footer.html.twig", "/var/www/Symfony-4-blog/templates/main/layouts/footer.html.twig");
     }
