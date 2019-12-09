@@ -25,6 +25,7 @@ return [
     'post/show' => [['slug'], ['_controller' => 'App\\Controller\\MainController::show'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/main/showPost']], [], []],
     'category/show' => [['slug'], ['_controller' => 'App\\Controller\\MainController::showCategoryPosts'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/main/show-category']], [], []],
     'tag/show' => [['slug'], ['_controller' => 'App\\Controller\\MainController::showTagPosts'], [], [['variable', '/', '[^/]++', 'slug', true], ['text', '/main/show-tag']], [], []],
+    'greenshock' => [[], ['_controller' => 'App\\Controller\\MainController::greenShockPage'], [], [['text', '/greenshock']], [], []],
     'posts' => [[], ['_controller' => 'App\\Controller\\PostController::index'], [], [['text', '/admin/posts']], [], []],
     'create/post' => [[], ['_controller' => 'App\\Controller\\PostController::create'], [], [['text', '/admin/post/create']], [], []],
     'post/delete' => [['id'], ['_controller' => 'App\\Controller\\PostController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/admin/post/delete']], [], []],

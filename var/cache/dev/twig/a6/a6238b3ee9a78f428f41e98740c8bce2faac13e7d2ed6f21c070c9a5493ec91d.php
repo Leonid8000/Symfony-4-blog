@@ -125,7 +125,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
             echo "
                     <div class=\"col-lg-4 mt-2\">
 
-                        <div class=\"card\" style=\"width: 23rem;\">
+                        <div class=\"card main-card\">
                             <a href=\"/main/showPost/";
             // line 26
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 26), "html", null, true);
@@ -256,7 +256,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
 
                     <div class=\"col-lg-4 mt-2\">
 
-                        <div class=\"card\" style=\"width: 23rem;\">
+                        <div class=\"card main-card\">
                             <a href=\"/main/showPost/{{ post.slug }}\">
                                 <img src=\"{{ asset('uploads/' ~ post.img) }}\" class=\"card-img-top\" alt=\"...\" style=\"height: 18rem;\">
                             </a>

@@ -108,4 +108,14 @@ class MainController extends AbstractController
             'categories' => $categories
         ]);
     }
+
+    /**
+     * @Route("greenshock", name="greenshock",)
+     */
+    public function greenShockPage(){
+
+        return $this->render('greenshock.html.twig', [
+
+        ]);
+    }
 }

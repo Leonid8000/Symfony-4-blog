@@ -1,3 +1,6 @@
+body{
+/*{cursor: url(myBall.cur),auto;}*/
+}
 a{
     font-family: 'Anton', sans-serif;
 }
@@ -167,6 +170,25 @@ nav{
     margin-left:10%;
     margin-right:10%;
     padding:10px;
+}
+
+.login-link, .sign-up-link{
+    font-size: 15px;
+    font-family: 'Asap', sans-serif;
+    color: red;
+}
+.login-link:hover, .sign-up-link:hover{
+    text-decoration: none;
+    transition: ease 0.5s;
+    color: firebrick;
+}
+.login-link:hover{
+
+
+}
+
+.sign-up-link{
+
 }
 
 #post-link{
@@ -397,5 +419,80 @@ background: red;
 .copyright{
     color:mintcream;
     font-size:12px;
+}
+/* For JS */
+.pos-fix{
+    background: red;
+    transition: 0.7s ease;
+}
+.pos-dark{
+    background: black;
+    transition: 0.7s ease;
+}
+.grey-bg{
+    background: grey;
+    transition: 0.7s ease;
+}
+.color-light{
+    color: whitesmoke;
+}
+.color-dark{
+    color: black;
+    transition: 0.7s ease;
+}
 
+/* Green Shock Page */
+.h1-green{
+    font-size: 5em;
+    width: 25%;
+    color: firebrick;
+    line-height: 1em;
+}
+.btn-gasp{
+    background: none;
+    border: 1px solid black;
+    font-weight: bold;
+    font-size: 1.7em;
+    padding: 0.5em 1em;
+    cursor: pointer;
+}
+
+.panel{
+    position: absolute;
+    width: 55%;
+    bottom: 0;
+    right: 0;
+    background: #EAEAEA;
+    box-sizing: border-box;
+    padding: 15% 7%;
+    /*height: 100vh;*/
+    transform: scaleY(0);
+    transform-origin: bottom;
+}
+
+.img-gasp{
+    width: 120px;
+    float: left;
+    margin-right: 50px;
+    opacity: 0;
+    transform: translateY(-200px);
+}
+
+.p-gasp{
+    font-size: 1.9em;
+    width: 80%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.box{
+    border: 5px solid lightgray;
+    width: 65%;
+    height: 40%;
+    position: absolute;
+    left: -7%;
+    top: 15%;
+    opacity: 0;
+    z-index: -1;
+    transform: scale(0);
 }

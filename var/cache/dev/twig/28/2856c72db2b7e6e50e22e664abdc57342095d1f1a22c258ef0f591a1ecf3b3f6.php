@@ -86,7 +86,7 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
                 <a href=\"";
             // line 22
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
-            echo "\" class=\"btn btn-dark m-3\">Log Out</a>
+            echo "\" class=\"login-link m-3\">Log Out</a>
             </div>
         ";
         } else {
@@ -95,11 +95,11 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
                 <a href=\"";
             // line 26
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
-            echo "\" class=\"btn btn-dark m-2\">Login</a>
+            echo "\" class=\"login-link mr-2\">Login</a>
                 <a href=\"";
             // line 27
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
-            echo "\" class=\"btn btn-dark m-2\">Sign Up</a>
+            echo "\" class=\"sign-up-link\">Sign Up</a>
             </li>
         ";
         }
@@ -153,12 +153,12 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
         </div>
         {% if is_granted('ROLE_USER') %}
             <div class=\"d-flex justify-content-end\">
-                <a href=\"{{ path('app_logout') }}\" class=\"btn btn-dark m-3\">Log Out</a>
+                <a href=\"{{ path('app_logout') }}\" class=\"login-link m-3\">Log Out</a>
             </div>
         {% else %}
             <li class=\"d-flex justify-content-end\">
-                <a href=\"{{ path('app_login') }}\" class=\"btn btn-dark m-2\">Login</a>
-                <a href=\"{{ path('register') }}\" class=\"btn btn-dark m-2\">Sign Up</a>
+                <a href=\"{{ path('app_login') }}\" class=\"login-link mr-2\">Login</a>
+                <a href=\"{{ path('register') }}\" class=\"sign-up-link\">Sign Up</a>
             </li>
         {% endif %}
 </nav>

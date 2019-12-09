@@ -46,14 +46,41 @@ if(tag){
         }
     });
 }
-// //Reset poll result
-// const poll = document.getElementById('poll_reset');
-// poll.addEventListener('click', funk = () =>{
-//     if(confirm('Are you sure?')){
-//         fetch(`/admin/results/delete`,{
-//             method: 'DELETE'
-//         }).then(res => window.location.reload());
+
+// const navCtegories = document.getElementById('nav-category');
 //
-//     }
+// window.addEventListener('scroll', () => {
+//     $('.section-home').addClass('pos-fix');
 // });
 
+// $(document).ready(function(){
+//     var scroll_pos = 0;
+//     $(document).scroll(function() {
+//         scroll_pos = $(this).scrollTop();
+//         // if(scroll_pos > 50 || scroll_pos == 100) {
+//         //     $(".section-home").css('background-color', 'blue');
+//         // }
+//         if(scroll_pos >= 200) {
+//             $(".section-home").addClass('pos-dark');
+//             $(".card-body").addClass('grey-bg');
+//             $(".card-text").addClass('color-light');
+//         } else {
+//             $(".section-home").removeClass('pos-dark');
+//             $(".card-body").removeClass('grey-bg');
+//             $(".card-text").removeClass('color-light');
+//             // $(".card-text").addClass('color-dark');
+//         }
+//     });
+// });
+
+
+//Green Shock
+document.getElementById('cta').addEventListener('click', ()=>{
+
+    TweenMax.to('.panel', 1, {scaleY: 1, height: '100vh',  ease: Circ.easeInOut});
+    // ease: Power3.easeOut
+    TweenMax.to('#img-gasp', 1, {opacity: 1, y:0, delay: 1});
+    TweenMax.to('.p-gasp', 1, {opacity: 1, y:20, delay: 1.4});
+    TweenMax.to('.box', 3, {opacity: 1, scale:1, ease: Elastic.easeOut.config(1,0.3)});
+
+});

@@ -17,31 +17,36 @@
     {% endif %}
 
     <h2 class="text-center anton-font mt-4">{{ tag.tag }}</h2>
-
-    {% for post in tag.post %}
-        <div class="container news-wrapper mt-3">
+        <div class="container posts">
             <div class="row">
-                <div class="col-4">
-                    <img src="{{ asset('uploads/' ~ post.img) }}" alt="img" class="category-img img-fluid">
+        {% for post in tag.post %}
+            <div class="col-lg-4">
+
+                <div class="card main-card">
+                    <a href="/main/showPost/{{ post.slug }}">
+                        <img src="{{ asset('uploads/' ~ post.img) }}" class="card-img-top" alt="..." style="height: 18rem;">
+                    </a>
+                    <div class="card-body" style="height: 10rem;">
+                        <a href="/main/showPost/{{ post.slug }}">
+                            <p class="card-text red-hart-font text-center post-title">{{ post.title }}</p>
+                        </a>
+                        <p class="text-grey time-text text-center red-hart-font">14.11.2018 | <b class="text-dark maven-font">Phil Shackleton</b></p>
+                    </div>
                 </div>
 
-                <div class="col-8">
-                    {#{% for category in post.category %}#}
-                    {#<a href="/main/show-category/{{ category.slug }}" class="post-category mb-1">{{ category.category }}</a>#}
-                    {#{% endfor %}#}
-                    <a href="/main/showPost/{{ post.slug }}" id="post-link">
-                        <div class="news-title">
-                            <h3>{{ post.title }}</h3>
-                            <hr>
-                        </div>
-                        <div class="news-content">
-                            <p href="#">{{ post.description }}</p>
-                        </div>
-                    </a>
-                </div>
+            </div>
+        {% endfor %}
             </div>
         </div>
-    {% endfor %}
+
+        <hr>
 </section>
+    {#<div class="d-flex justify-content-center">#}
+        {#<div class="navigation">#}
+            {#{{ knp_pagination_render(posts) }}#}
+        {#</div>#}
+    {#</div>#}
+    {{ include('main/layouts/footer.html.twig') }}
 
 {% endblock %}
+
