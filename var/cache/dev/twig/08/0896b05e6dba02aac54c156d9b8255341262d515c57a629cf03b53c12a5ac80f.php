@@ -66,7 +66,7 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
         $this->displayBlock('body', $context, $blocks);
         // line 21
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 27
+        // line 66
         echo "</body>
 </html>
 ";
@@ -164,15 +164,57 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo "\" crossorigin=\"anonymous\"></script>
+    <script src=\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js\"></script>
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js\"></script>
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js\"></script>
+    <script src=\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js\"></script>
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js\"></script>
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js\"></script>
     <script src=\"";
-        // line 23
+        // line 29
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/circletype.min.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 30
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/script.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 24
+        // line 31
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
-    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js\"></script>
+
+
+    <script>
+//        let rule = CSSRulePlugin.getRule('.first-span:after');
+
+//        gsap.from('.anim1', { stagger: 0.7});
+//        gsap.to(rule, { cssRule: {scaleY: 0}, duration:1});
+        gsap.from('.first-img', {opacity:0, duration: 1, y: -50, delay:1.3, ease: Power1.easeOut});
+        gsap.from('.first-h1', {opacity:0, duration: 1, y: 30, delay:1.1, ease: Power2.easeOut});
+        gsap.from('.first-p', {opacity:0, duration: 1, y: 30, delay:1.2, ease: Power2.easeOut});
+//        gsap.from('.third-img', {opacity:0, delay:1.2, scale:0, ease: Power2.easeOut});
+
+let tl = new TimelineMax({onUpdate:updatePercentage});
+const controller = new ScrollMagic.Controller();
+tl.from('.second-content', .5, {x: 200, opacity: 0});
+tl.from('.second-img', 1, {x: 100, opacity: 0});
+tl.from('.second-hr', 1, {width:0}, '=-.5');
+
+const scene = new ScrollMagic.Scene({
+    triggerElement: '.second-post',
+    triggerHook: 'onLeave',
+    duration: '100%'
+})
+        .setPin('.second-post')
+        .setTween(tl)
+            .addTo(controller);
+
+function updatePercentage(){
+    tl.progress();
+    console.log(tl.progress());
+}
+    </script>
+
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -189,7 +231,7 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
 
     public function getDebugInfo()
     {
-        return array (  173 => 24,  169 => 23,  164 => 22,  154 => 21,  136 => 20,  120 => 12,  116 => 11,  111 => 10,  101 => 9,  82 => 6,  70 => 27,  68 => 21,  66 => 20,  62 => 18,  60 => 9,  54 => 6,  47 => 1,);
+        return array (  183 => 31,  179 => 30,  175 => 29,  164 => 22,  154 => 21,  136 => 20,  120 => 12,  116 => 11,  111 => 10,  101 => 9,  82 => 6,  70 => 66,  68 => 21,  66 => 20,  62 => 18,  60 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -216,9 +258,48 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
 {% block body %}{% endblock %}
 {% block javascripts %}
     <script src=\"{{ asset('js/jquery-3.3.1.min.js') }}\" crossorigin=\"anonymous\"></script>
+    <script src=\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js\"></script>
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js\"></script>
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js\"></script>
+    <script src=\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js\"></script>
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js\"></script>
+    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js\"></script>
+    <script src=\"{{ asset('js/circletype.min.js') }}\"></script>
     <script src=\"{{ asset('js/script.js') }}\"></script>
     <script src=\"{{ asset('js/bootstrap.min.js') }}\"></script>
-    <script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js\"></script>
+
+
+    <script>
+//        let rule = CSSRulePlugin.getRule('.first-span:after');
+
+//        gsap.from('.anim1', { stagger: 0.7});
+//        gsap.to(rule, { cssRule: {scaleY: 0}, duration:1});
+        gsap.from('.first-img', {opacity:0, duration: 1, y: -50, delay:1.3, ease: Power1.easeOut});
+        gsap.from('.first-h1', {opacity:0, duration: 1, y: 30, delay:1.1, ease: Power2.easeOut});
+        gsap.from('.first-p', {opacity:0, duration: 1, y: 30, delay:1.2, ease: Power2.easeOut});
+//        gsap.from('.third-img', {opacity:0, delay:1.2, scale:0, ease: Power2.easeOut});
+
+let tl = new TimelineMax({onUpdate:updatePercentage});
+const controller = new ScrollMagic.Controller();
+tl.from('.second-content', .5, {x: 200, opacity: 0});
+tl.from('.second-img', 1, {x: 100, opacity: 0});
+tl.from('.second-hr', 1, {width:0}, '=-.5');
+
+const scene = new ScrollMagic.Scene({
+    triggerElement: '.second-post',
+    triggerHook: 'onLeave',
+    duration: '100%'
+})
+        .setPin('.second-post')
+        .setTween(tl)
+            .addTo(controller);
+
+function updatePercentage(){
+    tl.progress();
+    console.log(tl.progress());
+}
+    </script>
+
 {% endblock %}
 </body>
 </html>

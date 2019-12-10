@@ -1,12 +1,14 @@
- <nav class="navbar navbar-expand-lg navbar-dark ">
+ <nav class="navbar navbar-expand-lg navbar-dark " id="nav">
         <button class="navbar-toggler bg-dark" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarText">
             <ul class="navbar-nav ">
+
                 <li class="nav-item active">
                     <a class="nav-link" href="{{ path('index') }}"><h3 class="text-dark ml-3 text-left home-logo">NEWS<span class="yellow-text">BLOG</span></h3> <span class="sr-only">(current)</span></a>
                 </li>
+
                 {% for category in categories %}
                     <li class="nav-item nav-category-li">
                         <a class="nav-link nav-category text-dark raleway-font ml-3" href="/main/show-category/{{ category.slug }}">
@@ -18,11 +20,11 @@
             </ul>
         </div>
         {% if is_granted('ROLE_USER') %}
-            <div class="d-flex justify-content-end">
+            <div class="d-flex justify-content-end log-out">
                 <a href="{{ path('app_logout') }}" class="login-link m-3">Log Out</a>
             </div>
         {% else %}
-            <li class="d-flex justify-content-end">
+            <li class="d-flex justify-content-end log-out">
                 <a href="{{ path('app_login') }}" class="login-link mr-2">Login</a>
                 <a href="{{ path('register') }}" class="sign-up-link">Sign Up</a>
             </li>

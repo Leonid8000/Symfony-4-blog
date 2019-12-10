@@ -1,3 +1,56 @@
+// Navbar with Logo and Categories animation
+window.onload = function() {
+    $('#nav').show().css('opacity','1');
+    $('.first-hr').css('width','100%');
+};
+
+$(window).on('scroll', ()=>{
+    if($(window).scrollTop()){
+        $('#nav').addClass('black')
+        $('#to-top').addClass('block')
+    }else{
+        $('#nav').removeClass('block')
+    }
+});
+// third-img
+// First post animation
+    gsap.from('#first-post', {opacity:0, duration: 1});
+
+// Circle type
+new CircleType(document.getElementById('demo1'))
+    .radius(384);
+
+if( window.pageYOffset > 902 ) {
+    // $(".third-img").addClass('scale2');
+    alert(window.pageYOffset);
+}
+
+
+
+$(document).ready(function(){
+    let scroll_pos = 0;
+    $(document).scroll(function() {
+        scroll_pos = $(this).scrollTop();
+        if(scroll_pos > 300) {
+            $("#navbarText").addClass('nav-fix');
+            $(".log-out").addClass('log-fix');
+            $(".third-img").css('scale', '2');
+        }
+        // if(scroll_pos >= 200) {
+        //     $(".section-home").addClass('pos-dark');
+        //     $(".card-body").addClass('grey-bg');
+        //     $(".card-text").addClass('color-light');
+        // } else {
+        //     $(".section-home").removeClass('pos-dark');
+        //     $(".card-body").removeClass('grey-bg');
+        //     $(".card-text").removeClass('color-light');
+            // $(".card-text").addClass('color-dark');
+        // }
+    });
+});
+
+
+
 // Delete category
 const category = document.getElementById('category_table');
 
@@ -82,5 +135,11 @@ document.getElementById('cta').addEventListener('click', ()=>{
     TweenMax.to('#img-gasp', 1, {opacity: 1, y:0, delay: 1});
     TweenMax.to('.p-gasp', 1, {opacity: 1, y:20, delay: 1.4});
     TweenMax.to('.box', 3, {opacity: 1, scale:1, ease: Elastic.easeOut.config(1,0.3)});
-
 });
+let nav = document.getElementById('nav');
+// window.onload(nav).css('height', '100%');
+
+// document.getElementById('nav').addEventListener("DOMContentLoaded", () => {
+//     nav.css('height', '100%');
+// });
+

@@ -29,6 +29,11 @@ class MainController extends AbstractController
         $posts = $paginator->paginate($allPosts,$request->query->getInt('page', 1),6);
 
         $first = $this->getDoctrine()->getRepository(Post::class)->findOneBy([]);
+//        $second = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id'=>'9']);
+        $second = $this->getDoctrine()->getRepository(Post::class)->find(9);
+        $third = $this->getDoctrine()->getRepository(Post::class)->find(10);
+//        $third = $this->getDoctrine()->getRepository(Post::class)->findOneBy([]);
+//        $fourth = $this->getDoctrine()->getRepository(Post::class)->findOneBy([]);
 
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
         
@@ -36,6 +41,8 @@ class MainController extends AbstractController
             'categories' => $categories,
             'posts' => $posts,
             'first' => $first,
+            'second' => $second,
+            'third' => $third,
         ]);
     }
     /**
