@@ -7,9 +7,21 @@ window.onload = function() {
 $(window).on('scroll', ()=>{
     if($(window).scrollTop()){
         $('#nav').addClass('black')
-        $('#to-top').addClass('block')
     }else{
-        $('#nav').removeClass('block')
+        $('#nav').removeClass('black')
+    }
+});
+
+$(document).scroll(function() {
+    var y = $(this).scrollTop();
+    if (y > 500) {
+        // $('.post-2').fadeIn();
+        // $('.post-2').addClass('.op-1');
+        $('.post-2').css('opacity','1');
+    } else {
+        // $('.post-2').fadeOut();
+        // $('.post-2').removeClass('.op-1');
+        $('.post-2').css('opacity','1');
     }
 });
 // third-img
@@ -137,9 +149,6 @@ document.getElementById('cta').addEventListener('click', ()=>{
     TweenMax.to('.box', 3, {opacity: 1, scale:1, ease: Elastic.easeOut.config(1,0.3)});
 });
 let nav = document.getElementById('nav');
-// window.onload(nav).css('height', '100%');
 
-// document.getElementById('nav').addEventListener("DOMContentLoaded", () => {
-//     nav.css('height', '100%');
-// });
+
 

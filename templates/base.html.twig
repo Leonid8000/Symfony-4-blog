@@ -10,6 +10,9 @@
         <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ asset('css/style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+        {# AOS CSS #}
+        <link rel="stylesheet" href="{{ asset('css/aos.scss') }}">
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
         <link href="https://fonts.googleapis.com/css?family=Anton|Lobster|Playfair+Display&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap" rel="stylesheet">
         <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
@@ -29,9 +32,17 @@
     <script src="{{ asset('js/circletype.min.js') }}"></script>
     <script src="{{ asset('js/script.js') }}"></script>
     <script src="{{ asset('js/bootstrap.min.js') }}"></script>
+    {# AOS js#}
+    <script src="{{ asset('js/aos.js') }}"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 
 
     <script>
+        // AOS animation
+        AOS.init({
+            duration: 2000,
+            offset: 200
+        });
 //        let rule = CSSRulePlugin.getRule('.first-span:after');
 
 //        gsap.from('.anim1', { stagger: 0.7});
@@ -41,6 +52,7 @@
         gsap.from('.first-p', {opacity:0, duration: 1, y: 30, delay:1.2, ease: Power2.easeOut});
 //        gsap.from('.third-img', {opacity:0, delay:1.2, scale:0, ease: Power2.easeOut});
 
+//Post 3 Scroll animation
 let tl = new TimelineMax({onUpdate:updatePercentage});
 const controller = new ScrollMagic.Controller();
 tl.from('.second-content', .5, {x: 200, opacity: 0});
@@ -58,7 +70,7 @@ const scene = new ScrollMagic.Scene({
 
 function updatePercentage(){
     tl.progress();
-    console.log(tl.progress());
+//    console.log(tl.progress());
 }
     </script>
 

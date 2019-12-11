@@ -32,6 +32,7 @@ class MainController extends AbstractController
 //        $second = $this->getDoctrine()->getRepository(Post::class)->findOneBy(['id'=>'9']);
         $second = $this->getDoctrine()->getRepository(Post::class)->find(9);
         $third = $this->getDoctrine()->getRepository(Post::class)->find(10);
+        $fourth = $this->getDoctrine()->getRepository(Post::class)->find(11);
 //        $third = $this->getDoctrine()->getRepository(Post::class)->findOneBy([]);
 //        $fourth = $this->getDoctrine()->getRepository(Post::class)->findOneBy([]);
 
@@ -43,6 +44,7 @@ class MainController extends AbstractController
             'first' => $first,
             'second' => $second,
             'third' => $third,
+            'fourth' => $fourth,
         ]);
     }
     /**

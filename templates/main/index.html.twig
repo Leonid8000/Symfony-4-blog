@@ -30,8 +30,6 @@
                         <hr class="bg-danger first-hr">
                         <p class="maven-font first-p anim1">
                             <span class="first-span">{{ first.description }}</span>
-                            <span class="first-span">{{ first.description }}</span>
-                            <span class="first-span">{{ first.description }}</span>
                         </p>
                     </div>
                 </div>
@@ -39,21 +37,29 @@
     </a>
     </section>
 
-    {#<section class="third-post">#}
-        {#<a href="/main/showPost/{{ third.slug }}" id="post-link">#}
-            {#<h1 class="text-dark asap-font third-h1 text-center">{{ third.title }}</h1>#}
-            {#<div class="third-img d-flex justify-content-center">#}
-                {#<img src="{{ asset('uploads/' ~ third.img) }}" alt="img" class="img-fluid">#}
-            {#</div>#}
+    <section class="post-2 justify-content-center" data-aos="fade-in">
+        <div class=" show-on-scroll " id="firstBox">
+            <a href="/main/showPost/{{ third.slug }}" id="post-link">
+                <h1 class="text-dark asap-font d-flex justify-content-center" data-aos="fade-right"
+                    data-aos-duration="3000">{{ third.title }}</h1>
+                <img src="{{ asset('uploads/' ~ third.img) }}" alt="img" class="img-fluid post-2-img " data-aos="fade-up"
+                     data-aos-duration="3000">
+                <span class="third-span" data-aos="fade-left">{{ third.description }}</span>
+            </a>
+        </div>
+    </section>
 
-            {#<div class="first-content">#}
-                {#<p class="maven-font third-p text-center">#}
-                    {#<span class="third-span">{{ third.description }}</span>#}
-                {#</p>#}
-            {#</div>#}
+    <section class="post-3" style="background-image: url({{ asset('uploads/' ~ fourth.img) }});" data-aos="fade-in">
+        <div class="">
+            <a href="/main/showPost/{{ fourth.slug }}" id="post-link">
+                <h1 class="maven-font" data-aos="fade-left">{{ fourth.title }}</h1>
+                {#<img src="{{ asset('uploads/' ~ fourth.img) }}" alt="img" class="img-fluid" data-aos="fade-up"#}
+                     {#data-aos-duration="3000">#}
+                <span class="" data-aos="fade-right">{{ fourth.description }}</span>
+            </a>
+        </div>
+    </section>
 
-        {#</a>#}
-    {#</section>#}
 
     <section class="second-post" id="second-post">
         <a href="/main/showPost/{{ second.slug }}" id="post-link">
@@ -63,7 +69,7 @@
                         <h1 class="text-dark asap-font second-h1">{{ second.title }}</h1>
                         <hr class="bg-danger second-hr">
                         <p class="maven-font second-p">
-                            <span class="second-span">"{{ second.description }}descriptiondescriptiondescriptiondescription description"</span>
+                            <span class="second-span anton-font-font">"{{ second.description }}descriptiondescriptiondescripti description"</span>
                             <span class="second-hr"></span>
                         </p>
                     </div>
@@ -78,32 +84,6 @@
 
     {#<button id="to-top">to top</button>#}
 
-    {#------------------#}
-
-        {#<div class="container posts">#}
-            {#<div class="row">#}
-                {#{% for post in posts %}#}
-
-                    {#<div class="col-lg-4 mt-2">#}
-
-                        {#<div class="card main-card">#}
-                            {#<a href="/main/showPost/{{ post.slug }}">#}
-                                {#<img src="{{ asset('uploads/' ~ post.img) }}" class="card-img-top" alt="..." style="height: 18rem;">#}
-                            {#</a>#}
-                            {#<div class="card-body" style="height: 10rem;">#}
-                                {#<a href="/main/showPost/{{ post.slug }}">#}
-                                    {#<p class="card-text red-hart-font text-center post-title">{{ post.title }}</p>#}
-                                {#</a>#}
-                                {#<p class="text-grey time-text text-center red-hart-font">14.11.2018 | <b class="text-dark maven-font">Phil Shackleton</b></p>#}
-                            {#</div>#}
-                        {#</div>#}
-
-                    {#</div>#}
-
-                {#{% endfor %}#}
-            {#</div>#}
-        {#</div>#}
-
     {#</section>#}
     {#<div class="d-flex justify-content-center">#}
         {#<div class="navigation">#}
@@ -112,25 +92,6 @@
     {#</div>#}
     {{ include('main/layouts/footer.html.twig') }}
 
-    {# First post #}
-    {#<section class="first-post" id="first-post">#}
-        {#<a href="/main/showPost/{{ first.slug }}" id="post-link">#}
-            {#<div class="container first">#}
-                {#<div class="row">#}
 
-                    {#<div class="col-lg-7 col-sm-10  p-0">#}
-                        {#<img src="{{ asset('uploads/' ~ first.img) }}" alt="img" class="img-fluid">#}
-                    {#</div>#}
-
-                    {#<div class="col-lg-5 col-sm-12">#}
-                        {#<h1 class="text-dark asap-font">{{ first.title }}</h1>#}
-                        {#<hr class="bg-danger">#}
-                        {#<p class="maven-font">{{ first.description }}We are proud to announce that we have just launched Work in the Web 2020 — our fifth and most ambitious event so far.</p>#}
-                    {#</div>#}
-                {#</div>#}
-            {#</div>#}
-        {#</a>#}
-    {#</section>#}
-    {#------------------#}
 
 {% endblock %}

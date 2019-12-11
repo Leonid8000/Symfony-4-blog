@@ -141,14 +141,6 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
         // line 32
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["first"]) || array_key_exists("first", $context) ? $context["first"] : (function () { throw new RuntimeError('Variable "first" does not exist.', 32, $this->source); })()), "description", [], "any", false, false, false, 32), "html", null, true);
         echo "</span>
-                            <span class=\"first-span\">";
-        // line 33
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["first"]) || array_key_exists("first", $context) ? $context["first"] : (function () { throw new RuntimeError('Variable "first" does not exist.', 33, $this->source); })()), "description", [], "any", false, false, false, 33), "html", null, true);
-        echo "</span>
-                            <span class=\"first-span\">";
-        // line 34
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["first"]) || array_key_exists("first", $context) ? $context["first"] : (function () { throw new RuntimeError('Variable "first" does not exist.', 34, $this->source); })()), "description", [], "any", false, false, false, 34), "html", null, true);
-        echo "</span>
                         </p>
                     </div>
                 </div>
@@ -156,61 +148,81 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
     </a>
     </section>
 
-    ";
-        // line 43
-        echo "        ";
+    <section class=\"post-2 justify-content-center\" data-aos=\"fade-in\">
+        <div class=\" show-on-scroll \" id=\"firstBox\">
+            <a href=\"/main/showPost/";
+        // line 42
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["third"]) || array_key_exists("third", $context) ? $context["third"] : (function () { throw new RuntimeError('Variable "third" does not exist.', 42, $this->source); })()), "slug", [], "any", false, false, false, 42), "html", null, true);
+        echo "\" id=\"post-link\">
+                <h1 class=\"text-dark asap-font d-flex justify-content-center\" data-aos=\"fade-right\"
+                    data-aos-duration=\"3000\">";
         // line 44
-        echo "            ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["third"]) || array_key_exists("third", $context) ? $context["third"] : (function () { throw new RuntimeError('Variable "third" does not exist.', 44, $this->source); })()), "title", [], "any", false, false, false, 44), "html", null, true);
+        echo "</h1>
+                <img src=\"";
         // line 45
-        echo "            ";
-        // line 46
-        echo "                ";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["third"]) || array_key_exists("third", $context) ? $context["third"] : (function () { throw new RuntimeError('Variable "third" does not exist.', 45, $this->source); })()), "img", [], "any", false, false, false, 45))), "html", null, true);
+        echo "\" alt=\"img\" class=\"img-fluid post-2-img \" data-aos=\"fade-up\"
+                     data-aos-duration=\"3000\">
+                <span class=\"third-span\" data-aos=\"fade-left\">";
         // line 47
-        echo "            ";
-        // line 48
-        echo "
-            ";
-        // line 50
-        echo "                ";
-        // line 51
-        echo "                    ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["third"]) || array_key_exists("third", $context) ? $context["third"] : (function () { throw new RuntimeError('Variable "third" does not exist.', 47, $this->source); })()), "description", [], "any", false, false, false, 47), "html", null, true);
+        echo "</span>
+            </a>
+        </div>
+    </section>
+
+    <section class=\"post-3\" style=\"background-image: url(";
         // line 52
-        echo "                ";
-        // line 53
-        echo "            ";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["fourth"]) || array_key_exists("fourth", $context) ? $context["fourth"] : (function () { throw new RuntimeError('Variable "fourth" does not exist.', 52, $this->source); })()), "img", [], "any", false, false, false, 52))), "html", null, true);
+        echo ");\" data-aos=\"fade-in\">
+        <div class=\"\">
+            <a href=\"/main/showPost/";
         // line 54
-        echo "
-        ";
-        // line 56
-        echo "    ";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["fourth"]) || array_key_exists("fourth", $context) ? $context["fourth"] : (function () { throw new RuntimeError('Variable "fourth" does not exist.', 54, $this->source); })()), "slug", [], "any", false, false, false, 54), "html", null, true);
+        echo "\" id=\"post-link\">
+                <h1 class=\"maven-font\" data-aos=\"fade-left\">";
+        // line 55
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["fourth"]) || array_key_exists("fourth", $context) ? $context["fourth"] : (function () { throw new RuntimeError('Variable "fourth" does not exist.', 55, $this->source); })()), "title", [], "any", false, false, false, 55), "html", null, true);
+        echo "</h1>
+                ";
         // line 57
-        echo "
+        echo "                     ";
+        // line 58
+        echo "                <span class=\"\" data-aos=\"fade-right\">";
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["fourth"]) || array_key_exists("fourth", $context) ? $context["fourth"] : (function () { throw new RuntimeError('Variable "fourth" does not exist.', 58, $this->source); })()), "description", [], "any", false, false, false, 58), "html", null, true);
+        echo "</span>
+            </a>
+        </div>
+    </section>
+
+
     <section class=\"second-post\" id=\"second-post\">
         <a href=\"/main/showPost/";
-        // line 59
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["second"]) || array_key_exists("second", $context) ? $context["second"] : (function () { throw new RuntimeError('Variable "second" does not exist.', 59, $this->source); })()), "slug", [], "any", false, false, false, 59), "html", null, true);
+        // line 65
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["second"]) || array_key_exists("second", $context) ? $context["second"] : (function () { throw new RuntimeError('Variable "second" does not exist.', 65, $this->source); })()), "slug", [], "any", false, false, false, 65), "html", null, true);
         echo "\" id=\"post-link\">
             <div class=\"container-fluid\">
                 <div class=\"row\">
                     <div class=\"second-content col-lg-6\">
                         <h1 class=\"text-dark asap-font second-h1\">";
-        // line 63
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["second"]) || array_key_exists("second", $context) ? $context["second"] : (function () { throw new RuntimeError('Variable "second" does not exist.', 63, $this->source); })()), "title", [], "any", false, false, false, 63), "html", null, true);
+        // line 69
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["second"]) || array_key_exists("second", $context) ? $context["second"] : (function () { throw new RuntimeError('Variable "second" does not exist.', 69, $this->source); })()), "title", [], "any", false, false, false, 69), "html", null, true);
         echo "</h1>
                         <hr class=\"bg-danger second-hr\">
                         <p class=\"maven-font second-p\">
-                            <span class=\"second-span\">\"";
-        // line 66
-        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["second"]) || array_key_exists("second", $context) ? $context["second"] : (function () { throw new RuntimeError('Variable "second" does not exist.', 66, $this->source); })()), "description", [], "any", false, false, false, 66), "html", null, true);
-        echo "descriptiondescriptiondescriptiondescription description\"</span>
+                            <span class=\"second-span anton-font-font\">\"";
+        // line 72
+        echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["second"]) || array_key_exists("second", $context) ? $context["second"] : (function () { throw new RuntimeError('Variable "second" does not exist.', 72, $this->source); })()), "description", [], "any", false, false, false, 72), "html", null, true);
+        echo "descriptiondescriptiondescripti description\"</span>
                             <span class=\"second-hr\"></span>
                         </p>
                     </div>
 
                     <div class=\"second-img col-lg-6\">
                         <img src=\"";
-        // line 72
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["second"]) || array_key_exists("second", $context) ? $context["second"] : (function () { throw new RuntimeError('Variable "second" does not exist.', 72, $this->source); })()), "img", [], "any", false, false, false, 72))), "html", null, true);
+        // line 78
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl(("uploads/" . twig_get_attribute($this->env, $this->source, (isset($context["second"]) || array_key_exists("second", $context) ? $context["second"] : (function () { throw new RuntimeError('Variable "second" does not exist.', 78, $this->source); })()), "img", [], "any", false, false, false, 78))), "html", null, true);
         echo "\" alt=\"img\" class=\"anim1\">
                     </div>
                 </div>
@@ -219,99 +231,27 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
     </section>
 
     ";
-        // line 84
-        echo "            ";
-        // line 85
-        echo "                ";
         // line 86
         echo "
-                    ";
-        // line 88
-        echo "
-                        ";
-        // line 90
-        echo "                            ";
-        // line 91
-        echo "                                ";
-        // line 92
-        echo "                            ";
-        // line 93
-        echo "                            ";
-        // line 94
-        echo "                                ";
-        // line 95
-        echo "                                    ";
-        // line 96
-        echo "                                ";
-        // line 97
-        echo "                                ";
-        // line 98
-        echo "                            ";
-        // line 99
-        echo "                        ";
-        // line 100
-        echo "
-                    ";
-        // line 102
-        echo "
-                ";
-        // line 104
-        echo "            ";
-        // line 105
-        echo "        ";
-        // line 106
-        echo "
     ";
-        // line 108
+        // line 88
         echo "    ";
-        // line 109
+        // line 89
         echo "        ";
-        // line 110
+        // line 90
         echo "            ";
-        // line 111
+        // line 91
         echo "        ";
-        // line 112
+        // line 92
         echo "    ";
-        // line 113
+        // line 93
         echo "    ";
         echo twig_include($this->env, $context, "main/layouts/footer.html.twig");
         echo "
 
-    ";
-        // line 116
-        echo "    ";
-        // line 117
-        echo "        ";
-        // line 118
-        echo "            ";
-        // line 119
-        echo "                ";
-        // line 120
-        echo "
-                    ";
-        // line 122
-        echo "                        ";
-        // line 123
-        echo "                    ";
-        // line 124
-        echo "
-                    ";
-        // line 126
-        echo "                        ";
-        // line 127
-        echo "                        ";
-        // line 128
-        echo "                        ";
-        // line 129
-        echo "                    ";
-        // line 130
-        echo "                ";
-        // line 131
-        echo "            ";
-        // line 132
-        echo "        ";
-        // line 133
-        echo "    ";
+
+
+";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -332,7 +272,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
 
     public function getDebugInfo()
     {
-        return array (  314 => 133,  312 => 132,  310 => 131,  308 => 130,  306 => 129,  304 => 128,  302 => 127,  300 => 126,  297 => 124,  295 => 123,  293 => 122,  290 => 120,  288 => 119,  286 => 118,  284 => 117,  282 => 116,  276 => 113,  274 => 112,  272 => 111,  270 => 110,  268 => 109,  266 => 108,  263 => 106,  261 => 105,  259 => 104,  256 => 102,  253 => 100,  251 => 99,  249 => 98,  247 => 97,  245 => 96,  243 => 95,  241 => 94,  239 => 93,  237 => 92,  235 => 91,  233 => 90,  230 => 88,  227 => 86,  225 => 85,  223 => 84,  213 => 72,  204 => 66,  198 => 63,  191 => 59,  187 => 57,  185 => 56,  182 => 54,  180 => 53,  178 => 52,  176 => 51,  174 => 50,  171 => 48,  169 => 47,  167 => 46,  165 => 45,  163 => 44,  161 => 43,  150 => 34,  146 => 33,  142 => 32,  136 => 29,  129 => 25,  121 => 20,  118 => 19,  116 => 18,  112 => 16,  110 => 15,  107 => 14,  101 => 11,  98 => 10,  96 => 9,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  248 => 93,  246 => 92,  244 => 91,  242 => 90,  240 => 89,  238 => 88,  235 => 86,  225 => 78,  216 => 72,  210 => 69,  203 => 65,  192 => 58,  190 => 57,  186 => 55,  182 => 54,  177 => 52,  169 => 47,  164 => 45,  160 => 44,  155 => 42,  142 => 32,  136 => 29,  129 => 25,  121 => 20,  118 => 19,  116 => 18,  112 => 16,  110 => 15,  107 => 14,  101 => 11,  98 => 10,  96 => 9,  90 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -369,8 +309,6 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
                         <hr class=\"bg-danger first-hr\">
                         <p class=\"maven-font first-p anim1\">
                             <span class=\"first-span\">{{ first.description }}</span>
-                            <span class=\"first-span\">{{ first.description }}</span>
-                            <span class=\"first-span\">{{ first.description }}</span>
                         </p>
                     </div>
                 </div>
@@ -378,21 +316,29 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
     </a>
     </section>
 
-    {#<section class=\"third-post\">#}
-        {#<a href=\"/main/showPost/{{ third.slug }}\" id=\"post-link\">#}
-            {#<h1 class=\"text-dark asap-font third-h1 text-center\">{{ third.title }}</h1>#}
-            {#<div class=\"third-img d-flex justify-content-center\">#}
-                {#<img src=\"{{ asset('uploads/' ~ third.img) }}\" alt=\"img\" class=\"img-fluid\">#}
-            {#</div>#}
+    <section class=\"post-2 justify-content-center\" data-aos=\"fade-in\">
+        <div class=\" show-on-scroll \" id=\"firstBox\">
+            <a href=\"/main/showPost/{{ third.slug }}\" id=\"post-link\">
+                <h1 class=\"text-dark asap-font d-flex justify-content-center\" data-aos=\"fade-right\"
+                    data-aos-duration=\"3000\">{{ third.title }}</h1>
+                <img src=\"{{ asset('uploads/' ~ third.img) }}\" alt=\"img\" class=\"img-fluid post-2-img \" data-aos=\"fade-up\"
+                     data-aos-duration=\"3000\">
+                <span class=\"third-span\" data-aos=\"fade-left\">{{ third.description }}</span>
+            </a>
+        </div>
+    </section>
 
-            {#<div class=\"first-content\">#}
-                {#<p class=\"maven-font third-p text-center\">#}
-                    {#<span class=\"third-span\">{{ third.description }}</span>#}
-                {#</p>#}
-            {#</div>#}
+    <section class=\"post-3\" style=\"background-image: url({{ asset('uploads/' ~ fourth.img) }});\" data-aos=\"fade-in\">
+        <div class=\"\">
+            <a href=\"/main/showPost/{{ fourth.slug }}\" id=\"post-link\">
+                <h1 class=\"maven-font\" data-aos=\"fade-left\">{{ fourth.title }}</h1>
+                {#<img src=\"{{ asset('uploads/' ~ fourth.img) }}\" alt=\"img\" class=\"img-fluid\" data-aos=\"fade-up\"#}
+                     {#data-aos-duration=\"3000\">#}
+                <span class=\"\" data-aos=\"fade-right\">{{ fourth.description }}</span>
+            </a>
+        </div>
+    </section>
 
-        {#</a>#}
-    {#</section>#}
 
     <section class=\"second-post\" id=\"second-post\">
         <a href=\"/main/showPost/{{ second.slug }}\" id=\"post-link\">
@@ -402,7 +348,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
                         <h1 class=\"text-dark asap-font second-h1\">{{ second.title }}</h1>
                         <hr class=\"bg-danger second-hr\">
                         <p class=\"maven-font second-p\">
-                            <span class=\"second-span\">\"{{ second.description }}descriptiondescriptiondescriptiondescription description\"</span>
+                            <span class=\"second-span anton-font-font\">\"{{ second.description }}descriptiondescriptiondescripti description\"</span>
                             <span class=\"second-hr\"></span>
                         </p>
                     </div>
@@ -417,32 +363,6 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
 
     {#<button id=\"to-top\">to top</button>#}
 
-    {#------------------#}
-
-        {#<div class=\"container posts\">#}
-            {#<div class=\"row\">#}
-                {#{% for post in posts %}#}
-
-                    {#<div class=\"col-lg-4 mt-2\">#}
-
-                        {#<div class=\"card main-card\">#}
-                            {#<a href=\"/main/showPost/{{ post.slug }}\">#}
-                                {#<img src=\"{{ asset('uploads/' ~ post.img) }}\" class=\"card-img-top\" alt=\"...\" style=\"height: 18rem;\">#}
-                            {#</a>#}
-                            {#<div class=\"card-body\" style=\"height: 10rem;\">#}
-                                {#<a href=\"/main/showPost/{{ post.slug }}\">#}
-                                    {#<p class=\"card-text red-hart-font text-center post-title\">{{ post.title }}</p>#}
-                                {#</a>#}
-                                {#<p class=\"text-grey time-text text-center red-hart-font\">14.11.2018 | <b class=\"text-dark maven-font\">Phil Shackleton</b></p>#}
-                            {#</div>#}
-                        {#</div>#}
-
-                    {#</div>#}
-
-                {#{% endfor %}#}
-            {#</div>#}
-        {#</div>#}
-
     {#</section>#}
     {#<div class=\"d-flex justify-content-center\">#}
         {#<div class=\"navigation\">#}
@@ -451,26 +371,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
     {#</div>#}
     {{ include('main/layouts/footer.html.twig') }}
 
-    {# First post #}
-    {#<section class=\"first-post\" id=\"first-post\">#}
-        {#<a href=\"/main/showPost/{{ first.slug }}\" id=\"post-link\">#}
-            {#<div class=\"container first\">#}
-                {#<div class=\"row\">#}
 
-                    {#<div class=\"col-lg-7 col-sm-10  p-0\">#}
-                        {#<img src=\"{{ asset('uploads/' ~ first.img) }}\" alt=\"img\" class=\"img-fluid\">#}
-                    {#</div>#}
-
-                    {#<div class=\"col-lg-5 col-sm-12\">#}
-                        {#<h1 class=\"text-dark asap-font\">{{ first.title }}</h1>#}
-                        {#<hr class=\"bg-danger\">#}
-                        {#<p class=\"maven-font\">{{ first.description }}We are proud to announce that we have just launched Work in the Web 2020 — our fifth and most ambitious event so far.</p>#}
-                    {#</div>#}
-                {#</div>#}
-            {#</div>#}
-        {#</a>#}
-    {#</section>#}
-    {#------------------#}
 
 {% endblock %}", "main/index.html.twig", "/var/www/Symfony-4-blog/templates/main/index.html.twig");
     }

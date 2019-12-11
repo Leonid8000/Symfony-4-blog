@@ -58,15 +58,15 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
     ";
         // line 9
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 18
+        // line 21
         echo "</head>
 <body>
 ";
-        // line 20
+        // line 23
         $this->displayBlock('body', $context, $blocks);
-        // line 21
+        // line 24
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 66
+        // line 78
         echo "</body>
 </html>
 ";
@@ -119,6 +119,12 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
         // line 12
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/bootstrap.css"), "html", null, true);
         echo "\">
+        ";
+        // line 14
+        echo "        <link rel=\"stylesheet\" href=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/aos.scss"), "html", null, true);
+        echo "\">
+        <link rel=\"stylesheet\" href=\"https://unpkg.com/aos@next/dist/aos.css\" />
         <link href=\"https://fonts.googleapis.com/css?family=Anton|Lobster|Playfair+Display&display=swap\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap\" rel=\"stylesheet\">
         <link href=\"http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
@@ -132,7 +138,7 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
 
     }
 
-    // line 20
+    // line 23
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -150,7 +156,7 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
 
     }
 
-    // line 21
+    // line 24
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -160,7 +166,7 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 22
+        // line 25
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo "\" crossorigin=\"anonymous\"></script>
@@ -171,20 +177,31 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js\"></script>
     <script src=\"";
-        // line 29
+        // line 32
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/circletype.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 30
+        // line 33
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/script.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 31
+        // line 34
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
+    ";
+        // line 36
+        echo "    <script src=\"";
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/aos.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"https://unpkg.com/aos@next/dist/aos.js\"></script>
 
 
     <script>
+        // AOS animation
+        AOS.init({
+            duration: 2000,
+            offset: 200
+        });
 //        let rule = CSSRulePlugin.getRule('.first-span:after');
 
 //        gsap.from('.anim1', { stagger: 0.7});
@@ -194,6 +211,7 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
         gsap.from('.first-p', {opacity:0, duration: 1, y: 30, delay:1.2, ease: Power2.easeOut});
 //        gsap.from('.third-img', {opacity:0, delay:1.2, scale:0, ease: Power2.easeOut});
 
+//Post 3 Scroll animation
 let tl = new TimelineMax({onUpdate:updatePercentage});
 const controller = new ScrollMagic.Controller();
 tl.from('.second-content', .5, {x: 200, opacity: 0});
@@ -211,7 +229,7 @@ const scene = new ScrollMagic.Scene({
 
 function updatePercentage(){
     tl.progress();
-    console.log(tl.progress());
+//    console.log(tl.progress());
 }
     </script>
 
@@ -231,7 +249,7 @@ function updatePercentage(){
 
     public function getDebugInfo()
     {
-        return array (  183 => 31,  179 => 30,  175 => 29,  164 => 22,  154 => 21,  136 => 20,  120 => 12,  116 => 11,  111 => 10,  101 => 9,  82 => 6,  70 => 66,  68 => 21,  66 => 20,  62 => 18,  60 => 9,  54 => 6,  47 => 1,);
+        return array (  193 => 36,  189 => 34,  185 => 33,  181 => 32,  170 => 25,  160 => 24,  142 => 23,  124 => 14,  120 => 12,  116 => 11,  111 => 10,  101 => 9,  82 => 6,  70 => 78,  68 => 24,  66 => 23,  62 => 21,  60 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -248,6 +266,9 @@ function updatePercentage(){
         <link rel=\"stylesheet\" href=\"{{ asset('css/font-awesome.min.css') }}\">
         <link rel=\"stylesheet\" type=\"text/css\" href=\"{{ asset('css/style.css') }}\">
         <link rel=\"stylesheet\" href=\"{{ asset('css/bootstrap.css') }}\">
+        {# AOS CSS #}
+        <link rel=\"stylesheet\" href=\"{{ asset('css/aos.scss') }}\">
+        <link rel=\"stylesheet\" href=\"https://unpkg.com/aos@next/dist/aos.css\" />
         <link href=\"https://fonts.googleapis.com/css?family=Anton|Lobster|Playfair+Display&display=swap\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap\" rel=\"stylesheet\">
         <link href=\"http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
@@ -267,9 +288,17 @@ function updatePercentage(){
     <script src=\"{{ asset('js/circletype.min.js') }}\"></script>
     <script src=\"{{ asset('js/script.js') }}\"></script>
     <script src=\"{{ asset('js/bootstrap.min.js') }}\"></script>
+    {# AOS js#}
+    <script src=\"{{ asset('js/aos.js') }}\"></script>
+    <script src=\"https://unpkg.com/aos@next/dist/aos.js\"></script>
 
 
     <script>
+        // AOS animation
+        AOS.init({
+            duration: 2000,
+            offset: 200
+        });
 //        let rule = CSSRulePlugin.getRule('.first-span:after');
 
 //        gsap.from('.anim1', { stagger: 0.7});
@@ -279,6 +308,7 @@ function updatePercentage(){
         gsap.from('.first-p', {opacity:0, duration: 1, y: 30, delay:1.2, ease: Power2.easeOut});
 //        gsap.from('.third-img', {opacity:0, delay:1.2, scale:0, ease: Power2.easeOut});
 
+//Post 3 Scroll animation
 let tl = new TimelineMax({onUpdate:updatePercentage});
 const controller = new ScrollMagic.Controller();
 tl.from('.second-content', .5, {x: 200, opacity: 0});
@@ -296,7 +326,7 @@ const scene = new ScrollMagic.Scene({
 
 function updatePercentage(){
     tl.progress();
-    console.log(tl.progress());
+//    console.log(tl.progress());
 }
     </script>
 

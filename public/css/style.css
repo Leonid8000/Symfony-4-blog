@@ -546,22 +546,22 @@ background: red;
     padding: 10px 50px;
     box-shadow: 0 8px 8px -8px #333;
 }
-
+/* First Post */
 .first-post{
     background: #F1F1F1;
     margin-top: 7%;
     height: 90vh;
+    /*overflow: hidden;*/
 }
 .first-post img{
     width: 80%;
 }
 
-/* First Post */
 .first-content{
 
 }
 .first-post h1{
-    font-size:70px;
+    font-size:65px;
 }
 
 .first-content p{
@@ -579,7 +579,7 @@ background: red;
     position: relative;
     box-sizing: border-box;
     margin: 0;
-    padding-top:12%;
+    padding-top:5%;
 }
 
 .second-post img{
@@ -668,3 +668,55 @@ section .scroll div{
 .block{
     display: block;
 }
+.post-2{
+    /*opacity:0;*/
+    transition:1.5s ease;
+}
+
+.op-1{
+    opacity: 1;
+}
+.post-2 img{
+/*opacity:0;*/
+}
+/**/
+#stage {
+    background: #262626;
+}
+
+.post-2, .post-3{
+    width:100%;
+    height: 100vh;
+    display:flex;
+    /*justify-content: flex-start;*/
+}
+.post-2{
+    /*justify-content: flex-start;*/
+
+}
+.post-3{
+    background: #F1F1F1;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: 50% 100%;
+}
+
+.post-3 h1{
+    position: absolute;
+    font-size: 72px;
+    text-transform: uppercase;
+    top: 10%;
+    left:50%;
+    /*color:snow;*/
+    font-family: 'Anton', sans-serif;
+}
+.post-3 span{
+    position: absolute;
+    top: 20%;
+    left:50%;
+    font-family: 'Anton', sans-serif;
+}
+
+
+
+
