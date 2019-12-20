@@ -66,7 +66,7 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
         $this->displayBlock('body', $context, $blocks);
         // line 26
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 148
+        // line 142
         echo "</body>
 </html>
 ";
@@ -190,34 +190,33 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
         echo "\"></script>
     <script src=\"";
         // line 37
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/script.js"), "html", null, true);
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/deleting.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
         // line 38
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/script.js"), "html", null, true);
+        echo "\"></script>
+    <script src=\"";
+        // line 39
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
 ";
-        // line 40
-        echo "    ";
         // line 41
         echo "    <script src=\"https://unpkg.com/aos@next/dist/aos.js\"></script>
 ";
         // line 43
         echo "    <script src=\"https://unpkg.com/@barba/core\"></script>
+
     <script>
-        // AOS animation
+// AOS animation
+//  1 Post animation
         AOS.init({
             duration: 2000,
             offset: 200
         });
-//        let rule = CSSRulePlugin.getRule('.first-span:after');
-
-//        gsap.from('.anim1', { stagger: 0.7});
-//        gsap.to(rule, { cssRule: {scaleY: 0}, duration:1});
         gsap.from('.first-img', {opacity:0, duration: 1, y: -50, delay:1.3, ease: Power1.easeOut});
         gsap.from('.first-h1', {opacity:0, duration: 1, y: 30, delay:1.1, ease: Power2.easeOut});
         gsap.from('.first-p', {opacity:0, duration: 1, y: 30, delay:1.2, ease: Power2.easeOut});
-//        gsap.from('.third-img', {opacity:0, delay:1.2, scale:0, ease: Power2.easeOut});
 
 //Post 3 Scroll animation
 let tl = new TimelineMax({onUpdate:updatePercentage});
@@ -239,7 +238,6 @@ function updatePercentage(){
     tl.progress();
 //    console.log(tl.progress());
 }
-
 // Barba js
         Barba.Pjax.start();
 
@@ -292,11 +290,9 @@ function updatePercentage(){
                 });
             }
         });
-
         /**
          * Next step, you have to tell Barba to use the new Transition
          */
-
         Barba.Pjax.getTransition = function() {
             /**
              * Here you can use your own logic!
@@ -323,7 +319,7 @@ function updatePercentage(){
 
     public function getDebugInfo()
     {
-        return array (  206 => 43,  203 => 41,  201 => 40,  197 => 38,  193 => 37,  188 => 36,  180 => 29,  175 => 27,  165 => 26,  147 => 25,  129 => 15,  124 => 14,  120 => 12,  116 => 11,  111 => 10,  101 => 9,  82 => 6,  70 => 148,  68 => 26,  66 => 25,  62 => 23,  60 => 9,  54 => 6,  47 => 1,);
+        return array (  208 => 43,  205 => 41,  201 => 39,  197 => 38,  193 => 37,  188 => 36,  180 => 29,  175 => 27,  165 => 26,  147 => 25,  129 => 15,  124 => 14,  120 => 12,  116 => 11,  111 => 10,  101 => 9,  82 => 6,  70 => 142,  68 => 26,  66 => 25,  62 => 23,  60 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -364,27 +360,24 @@ function updatePercentage(){
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js\"></script>
 {# Circle , Bootstrap and my script #}
     <script src=\"{{ asset('js/circletype.min.js') }}\"></script>
+    <script src=\"{{ asset('js/deleting.js') }}\"></script>
     <script src=\"{{ asset('js/script.js') }}\"></script>
     <script src=\"{{ asset('js/bootstrap.min.js') }}\"></script>
 {# AOS js#}
-    {#<script src=\"{{ asset('js/aos.js') }}\"></script>#}
     <script src=\"https://unpkg.com/aos@next/dist/aos.js\"></script>
 {# Barba js #}
     <script src=\"https://unpkg.com/@barba/core\"></script>
+
     <script>
-        // AOS animation
+// AOS animation
+//  1 Post animation
         AOS.init({
             duration: 2000,
             offset: 200
         });
-//        let rule = CSSRulePlugin.getRule('.first-span:after');
-
-//        gsap.from('.anim1', { stagger: 0.7});
-//        gsap.to(rule, { cssRule: {scaleY: 0}, duration:1});
         gsap.from('.first-img', {opacity:0, duration: 1, y: -50, delay:1.3, ease: Power1.easeOut});
         gsap.from('.first-h1', {opacity:0, duration: 1, y: 30, delay:1.1, ease: Power2.easeOut});
         gsap.from('.first-p', {opacity:0, duration: 1, y: 30, delay:1.2, ease: Power2.easeOut});
-//        gsap.from('.third-img', {opacity:0, delay:1.2, scale:0, ease: Power2.easeOut});
 
 //Post 3 Scroll animation
 let tl = new TimelineMax({onUpdate:updatePercentage});
@@ -406,7 +399,6 @@ function updatePercentage(){
     tl.progress();
 //    console.log(tl.progress());
 }
-
 // Barba js
         Barba.Pjax.start();
 
@@ -459,11 +451,9 @@ function updatePercentage(){
                 });
             }
         });
-
         /**
          * Next step, you have to tell Barba to use the new Transition
          */
-
         Barba.Pjax.getTransition = function() {
             /**
              * Here you can use your own logic!

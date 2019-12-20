@@ -18,7 +18,6 @@ return [
         '/admin/category' => [[['_route' => 'category', '_controller' => 'App\\Controller\\CategoryController::index'], null, null, null, false, false, null]],
         '/admin/category/create' => [[['_route' => 'category/create', '_controller' => 'App\\Controller\\CategoryController::create'], null, null, null, false, false, null]],
         '/' => [[['_route' => 'index', '_controller' => 'App\\Controller\\MainController::index'], null, null, null, false, false, null]],
-        '/greenshock' => [[['_route' => 'greenshock', '_controller' => 'App\\Controller\\MainController::greenShockPage'], null, null, null, false, false, null]],
         '/admin/posts' => [[['_route' => 'posts', '_controller' => 'App\\Controller\\PostController::index'], null, null, null, false, false, null]],
         '/admin/post/create' => [[['_route' => 'create/post', '_controller' => 'App\\Controller\\PostController::create'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],

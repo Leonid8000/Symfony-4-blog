@@ -126,7 +126,7 @@ class __TwigTemplate_99dfb406599ea2b6ae37fd323ccef4b673ac7ba82cbcfa19a416b9ad12a
         $context['_seq'] = twig_ensure_traversable(twig_get_attribute($this->env, $this->source, (isset($context["tag"]) || array_key_exists("tag", $context) ? $context["tag"] : (function () { throw new RuntimeError('Variable "tag" does not exist.', 22, $this->source); })()), "post", [], "any", false, false, false, 22));
         foreach ($context['_seq'] as $context["_key"] => $context["post"]) {
             // line 23
-            echo "            <div class=\"col-lg-4\">
+            echo "            <div class=\"col-lg-4 mt-2\">
 
                 <div class=\"card main-card\" data-aos=\"fade-in\">
                     <a href=\"/main/showPost/";
@@ -226,7 +226,7 @@ class __TwigTemplate_99dfb406599ea2b6ae37fd323ccef4b673ac7ba82cbcfa19a416b9ad12a
         <div class=\"container posts\">
             <div class=\"row\">
         {% for post in tag.post %}
-            <div class=\"col-lg-4\">
+            <div class=\"col-lg-4 mt-2\">
 
                 <div class=\"card main-card\" data-aos=\"fade-in\">
                     <a href=\"/main/showPost/{{ post.slug }}\">

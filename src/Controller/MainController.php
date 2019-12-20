@@ -34,7 +34,7 @@ class MainController extends AbstractController
         $third = $this->getDoctrine()->getRepository(Post::class)->find(10);
         $fourth = $this->getDoctrine()->getRepository(Post::class)->find(11);
 //        $third = $this->getDoctrine()->getRepository(Post::class)->findOneBy([]);
-//        $fourth = $this->getDoctrine()->getRepository(Post::class)->findOneBy([]);
+
 
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
         
@@ -57,7 +57,6 @@ class MainController extends AbstractController
         $categories = $this->getDoctrine()->getRepository(Category::class)->findAll();
 
         $coments = $comentRepository->findBy(['post' => $post]);
-//        $postId = $this->getDoctrine()->getRepository->findBy(['post' => $post]);
 
         $author = $this->getUser();
         if($author){
@@ -115,16 +114,6 @@ class MainController extends AbstractController
             'tag' => $tag,
             'tags' => $tags,
             'categories' => $categories
-        ]);
-    }
-
-    /**
-     * @Route("greenshock", name="greenshock",)
-     */
-    public function greenShockPage(){
-
-        return $this->render('greenshock.html.twig', [
-
         ]);
     }
 }

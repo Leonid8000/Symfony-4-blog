@@ -40,7 +40,7 @@ class __TwigTemplate_1128f49015e135f220c5f3074b6663312b989b249ff543f709e6eed9cbd
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "admin/layouts/header.html.twig"));
 
         // line 1
-        echo "<header>
+        echo "<header class=\"admin-nav\">
     <nav class=\"navbar navbar-expand-lg navbar-light bg-dark\">
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
@@ -51,13 +51,13 @@ class __TwigTemplate_1128f49015e135f220c5f3074b6663312b989b249ff543f709e6eed9cbd
                     <p class=\"nav-link text-light logo\">Admin<span>Panel</span></p>
                 </li>
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link text-light\" href=\"";
+                    <a class=\"nav-link\" href=\"";
         // line 12
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("admin");
         echo "\">Home <span class=\"sr-only\">(current)</span></a>
                 </li>
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link text-light\" href=\"";
+                    <a class=\"nav-link\" href=\"";
         // line 15
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
         echo "\">Blog <span class=\"sr-only\">(current)</span></a>
@@ -66,7 +66,7 @@ class __TwigTemplate_1128f49015e135f220c5f3074b6663312b989b249ff543f709e6eed9cbd
                 ";
         // line 19
         echo "                <li class=\"nav-item\">
-                    <a class=\"nav-link text-light header-navigation\" href=\"#\">Create New</a>
+                    <a class=\"nav-link header-navigation\" href=\"#\">Create New</a>
                 </li>
 
                 ";
@@ -111,7 +111,7 @@ class __TwigTemplate_1128f49015e135f220c5f3074b6663312b989b249ff543f709e6eed9cbd
 
     public function getSourceContext()
     {
-        return new Source("<header>
+        return new Source("<header class=\"admin-nav\">
     <nav class=\"navbar navbar-expand-lg navbar-light bg-dark\">
         <button class=\"navbar-toggler\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
@@ -122,15 +122,15 @@ class __TwigTemplate_1128f49015e135f220c5f3074b6663312b989b249ff543f709e6eed9cbd
                     <p class=\"nav-link text-light logo\">Admin<span>Panel</span></p>
                 </li>
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link text-light\" href=\"{{ path('admin') }}\">Home <span class=\"sr-only\">(current)</span></a>
+                    <a class=\"nav-link\" href=\"{{ path('admin') }}\">Home <span class=\"sr-only\">(current)</span></a>
                 </li>
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link text-light\" href=\"{{ path('index') }}\">Blog <span class=\"sr-only\">(current)</span></a>
+                    <a class=\"nav-link\" href=\"{{ path('index') }}\">Blog <span class=\"sr-only\">(current)</span></a>
                 </li>
 
                 {# Show small screen #}
                 <li class=\"nav-item\">
-                    <a class=\"nav-link text-light header-navigation\" href=\"#\">Create New</a>
+                    <a class=\"nav-link header-navigation\" href=\"#\">Create New</a>
                 </li>
 
                 {% if is_granted('ROLE_ADMIN')  %}

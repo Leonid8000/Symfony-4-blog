@@ -33,98 +33,57 @@
         <span class=""> <a href="/main/show-tag/{{ tag.slug }}" class="post-tag badge badge-secondary col-lg-1 col-3">{{ tag.tag }}</a></span>
     {% endfor %}
 
-{# Coments section #}
+    {# Coments section #}
     <div class="container">
         <div class="row bootstrap snippets">
-    <h4 class="mt-2 raleway-font">LEAVE A COMMENT</h4>
-    <hr>
-    <p class="comments-length font-weight-bold"><span class="count-comments">{{ post.coments |length }}</span> Comments </p>
-    {% if is_granted('ROLE_USER') %}
-        <h4 class="comment-user-name raleway-font">{{ author.firstName }}</h4>
-        {# COMENT FORM #}
-        <form method="POST">
-            <textarea class="form-control" placeholder="Start the discussion…" name="coment" rows="3" required></textarea>
-            <br>
-            <button type="submit" class="btn btn-info pull-right">Post</button>
-        </form>
-    {% endif %}
 
-    {% for coment in post.coments %}
-        <div class="clearfix"></div>
-        <hr>
-        <ul class="media-list">
-            <li class="media">
-                <a href="#" class="pull-left">
+            <div class="col-md-6  col-sm-10">
+                <div class="comment-wrapper">
+                    {#<div class="panel panel-info">#}
+                        <div class="panel-body">
+                    <hr>
+                            <h4 class="mt-2 raleway-font">LEAVE A COMMENT</h4>
+                    <p class="comments-length font-weight-bold"><span class="count-comments">{{ post.coments |length }}</span> Comments </p>
+                    {% if is_granted('ROLE_USER') %}
+                    <h4 class="comment-user-name raleway-font">{{ author.firstName }}</h4>
+                    COMENT FORM
+                    <form method="POST">
+                    <textarea class="form-control" placeholder="Start the discussion…" name="coment" rows="3" required></textarea>
+                    <br>
+                    <button type="submit" class="btn btn-info pull-right">Post</button>
+                    </form>
+                    {% endif %}
+
+                    {% for coment in post.coments %}
+                    <div class="clearfix"></div>
+                    <hr>
+                    <ul class="media-list">
+                    <li class="media">
+                    <a href="#" class="pull-left">
                     <img src="{{ asset('uploads/user.png') }}" alt="" class="img-circle img-fluid user-img mr-1">
-                </a>
-                <div class="media-body">
-                                <span class="text-muted pull-right">
-                                    <small class="text-muted">30 min ago</small>
-                                </span>
+                    </a>
+                    <div class="media-body">
+                    <span class="text-muted pull-right">
+                    <small class="text-muted">30 min ago</small>
+                    </span>
                     <h5><strong class="text-success">{{ coment.author }}</strong></h5>
                     {% if coment.isDeleted %}
-                        <span class="fa fa-close"></span> deleted
+                    <span class="fa fa-close"></span> deleted
                     {% else %}
-                        <p>{{ coment.coment }}</p>
+                    <p>{{ coment.coment }}</p>
                     {% endif %}
+                    </div>
+                    </li>
+                    </ul>
+                    {% endfor %}
+                        </div>
+                    </div>
                 </div>
-            </li>
-        </ul>
-    {% endfor %}
-       </div>
+            </div>
+        </div>
     </div>
-
-    {#<div class="container">#}
-        {#<div class="row bootstrap snippets">#}
-            {#<div class="col-md-6  col-sm-10">#}
-                {#<div class="comment-wrapper">#}
-                    {#<div class="panel panel-info">#}
-                        {#<div class="panel-body">#}
-
-
-                            {#<h4 class="mt-2 raleway-font">LEAVE A COMMENT</h4>#}
-                            {#<hr>#}
-                            {#<p class="comments-length font-weight-bold"><span class="count-comments">{{ post.coments |length }}</span> Comments </p>#}
-                            {#{% if is_granted('ROLE_USER') %}#}
-                               {#<h4 class="comment-user-name raleway-font">{{ author.firstName }}</h4>#}
-                                {# COMENT FORM #}
-                                {#<form method="POST">#}
-                                    {#<textarea class="form-control" placeholder="Start the discussion…" name="coment" rows="3" required></textarea>#}
-                                    {#<br>#}
-                                    {#<button type="submit" class="btn btn-info pull-right">Post</button>#}
-                                {#</form>#}
-                            {#{% endif %}#}
-
-                                {#{% for coment in post.coments %}#}
-                            {#<div class="clearfix"></div>#}
-                            {#<hr>#}
-                            {#<ul class="media-list">#}
-                                {#<li class="media">#}
-                                    {#<a href="#" class="pull-left">#}
-                                        {#<img src="{{ asset('uploads/user.png') }}" alt="" class="img-circle img-fluid user-img mr-1">#}
-                                    {#</a>#}
-                                    {#<div class="media-body">#}
-                                {#<span class="text-muted pull-right">#}
-                                    {#<small class="text-muted">30 min ago</small>#}
-                                {#</span>#}
-                                          {#<h5><strong class="text-success">{{ coment.author }}</strong></h5>#}
-                                        {#{% if coment.isDeleted %}#}
-                                            {#<span class="fa fa-close"></span> deleted#}
-                                        {#{% else %}#}
-                                            {#<p>{{ coment.coment }}</p>#}
-                                        {#{% endif %}#}
-                                    {#</div>#}
-                                {#</li>#}
-                            {#</ul>#}
-                                {#{% endfor %}#}
-
-                        {#</div>#}
-                    {#</div>#}
-                {#</div>#}
-            {#</div>#}
-        {#</div>#}
-    {#</div>#}
 </div>
     </section>
+
 
 {% endblock %}

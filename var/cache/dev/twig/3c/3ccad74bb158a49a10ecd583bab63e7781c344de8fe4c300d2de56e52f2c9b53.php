@@ -39,13 +39,8 @@ class __TwigTemplate_cfc21f12f891a11b7973195b5df43294097bd113873b18f7d15ad23a6b5
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "main/layouts/footer.html.twig"));
 
-        // line 2
-        echo "    ";
-        // line 3
-        echo "    ";
-        // line 5
-        echo "
-<footer>
+        // line 1
+        echo "<footer class=\"mt-2\">
     <section class=\"scroll-section\">
         <div class=\"scroll text1\" >
             <div>
@@ -61,9 +56,7 @@ class __TwigTemplate_cfc21f12f891a11b7973195b5df43294097bd113873b18f7d15ad23a6b5
     </section>
 </footer>
 
-";
-        // line 25
-        echo "
+
 
 
 ";
@@ -82,17 +75,12 @@ class __TwigTemplate_cfc21f12f891a11b7973195b5df43294097bd113873b18f7d15ad23a6b5
 
     public function getDebugInfo()
     {
-        return array (  66 => 25,  47 => 5,  45 => 3,  43 => 2,);
+        return array (  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("{#<footer class=\"main-footer\">#}
-    {#<a class=\"nav-link d-flex justify-content-center\" href=\"{{ path('index') }}\"><h3 class=\"text-dark ml-3 text-left home-logo\">NEWS<span class=\"text-light\">BLOG</span></h3> <span class=\"sr-only\">(current)</span></a>#}
-    {#<p class=\"asap-font copyright d-flex justify-content-center\">Copyright © 2019 Leonid Web technology corporation. All rights reserved.</p>#}
-{#</footer>#}
-
-<footer>
+        return new Source("<footer class=\"mt-2\">
     <section class=\"scroll-section\">
         <div class=\"scroll text1\" >
             <div>
@@ -108,9 +96,6 @@ class __TwigTemplate_cfc21f12f891a11b7973195b5df43294097bd113873b18f7d15ad23a6b5
     </section>
 </footer>
 
-{#<div id=\"demo1\">#}
-{#<h2>Copyright © 2019 Leonid Web technology corporation. All rights reserved.</h2>#}
-{#</div>#}
 
 
 

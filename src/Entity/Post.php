@@ -194,7 +194,7 @@ class Post
         return $this->id;
     }
 
-    public function getTitle(): ?string
+    public function getTitle()
     {
         return $this->title;
     }
@@ -206,7 +206,7 @@ class Post
         return $this;
     }
 
-    public function getSlug(): ?string
+    public function getSlug()
     {
         return $this->slug;
     }
@@ -218,7 +218,7 @@ class Post
         return $this;
     }
 
-    public function getContent(): ?string
+    public function getContent()
     {
         return $this->content;
     }
@@ -230,7 +230,7 @@ class Post
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getDescription()
     {
         return $this->description;
     }

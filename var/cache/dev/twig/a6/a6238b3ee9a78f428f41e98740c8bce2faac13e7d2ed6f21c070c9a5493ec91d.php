@@ -145,8 +145,9 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
             </div>
         </a>
     </section>
-
-    <section class=\"post-2 justify-content-center\" data-aos=\"fade-in\">
+    ";
+        // line 39
+        echo "    <section class=\"post-2 justify-content-center\" data-aos=\"fade-in\">
         <div class=\" show-on-scroll \" id=\"firstBox\">
             <a href=\"/main/showPost/";
         // line 41
@@ -228,29 +229,25 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
     </section>
 
     ";
-        // line 82
-        echo twig_include($this->env, $context, "main/layouts/footer.html.twig");
+        // line 83
         echo "
-
     ";
         // line 85
-        echo "
-    ";
-        // line 87
         echo "    ";
+        // line 86
+        echo "        ";
+        // line 87
+        echo "            ";
         // line 88
         echo "        ";
         // line 89
-        echo "            ";
-        // line 90
-        echo "        ";
-        // line 91
         echo "    ";
-        // line 92
+        // line 90
         echo "
-
-
-
+";
+        // line 91
+        echo twig_include($this->env, $context, "main/layouts/footer.html.twig");
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -272,7 +269,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
 
     public function getDebugInfo()
     {
-        return array (  250 => 92,  248 => 91,  246 => 90,  244 => 89,  242 => 88,  240 => 87,  237 => 85,  232 => 82,  225 => 77,  220 => 75,  212 => 69,  206 => 66,  199 => 62,  196 => 61,  188 => 55,  184 => 54,  180 => 53,  175 => 51,  167 => 46,  162 => 44,  158 => 43,  153 => 41,  140 => 31,  134 => 28,  127 => 24,  120 => 20,  117 => 19,  114 => 17,  110 => 15,  108 => 14,  105 => 13,  99 => 10,  96 => 9,  94 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  249 => 91,  246 => 90,  244 => 89,  242 => 88,  240 => 87,  238 => 86,  236 => 85,  233 => 83,  226 => 77,  221 => 75,  213 => 69,  207 => 66,  200 => 62,  197 => 61,  189 => 55,  185 => 54,  181 => 53,  176 => 51,  168 => 46,  163 => 44,  159 => 43,  154 => 41,  150 => 39,  140 => 31,  134 => 28,  127 => 24,  120 => 20,  117 => 19,  114 => 17,  110 => 15,  108 => 14,  105 => 13,  99 => 10,  96 => 9,  94 => 8,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -314,7 +311,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
             </div>
         </a>
     </section>
-
+    {# Second post #}
     <section class=\"post-2 justify-content-center\" data-aos=\"fade-in\">
         <div class=\" show-on-scroll \" id=\"firstBox\">
             <a href=\"/main/showPost/{{ third.slug }}\" id=\"post-link\">
@@ -358,8 +355,6 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
         </a>
     </section>
 
-    {{ include('main/layouts/footer.html.twig') }}
-
     {#<button id=\"to-top\">to top</button>#}
 
     {#</section>#}
@@ -369,9 +364,7 @@ class __TwigTemplate_63d523afc2fb2a7ce2399cf6ec42944ef518e6486e04444ce50f51cd7b9
         {#</div>#}
     {#</div>#}
 
-
-
-
+{{ include('main/layouts/footer.html.twig') }}
 {% endblock %}", "main/index.html.twig", "/var/www/Symfony-4-blog/templates/main/index.html.twig");
     }
 }
