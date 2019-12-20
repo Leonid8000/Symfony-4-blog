@@ -16,13 +16,13 @@
 
     {% endif %}
 
-    <h2 class="text-center anton-font mt-4">{{ tag.tag }}</h2>
+    <h2 class="text-center anton-font category-h1">{{ tag.tag }}</h2>
         <div class="container posts">
             <div class="row">
         {% for post in tag.post %}
             <div class="col-lg-4">
 
-                <div class="card main-card">
+                <div class="card main-card" data-aos="fade-in">
                     <a href="/main/showPost/{{ post.slug }}">
                         <img src="{{ asset('uploads/' ~ post.img) }}" class="card-img-top" alt="..." style="height: 18rem;">
                     </a>

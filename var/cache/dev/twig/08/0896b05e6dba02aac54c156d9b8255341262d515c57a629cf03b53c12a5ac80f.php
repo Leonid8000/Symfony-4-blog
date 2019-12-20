@@ -58,15 +58,15 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
     ";
         // line 9
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 21
+        // line 23
         echo "</head>
 <body>
 ";
-        // line 23
+        // line 25
         $this->displayBlock('body', $context, $blocks);
-        // line 24
+        // line 26
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 78
+        // line 148
         echo "</body>
 </html>
 ";
@@ -124,11 +124,16 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
         echo "        <link rel=\"stylesheet\" href=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/aos.scss"), "html", null, true);
         echo "\">
+        <link rel=\"stylesheet\" href=\"";
+        // line 15
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("css/normalize.min.css"), "html", null, true);
+        echo "\">
         <link rel=\"stylesheet\" href=\"https://unpkg.com/aos@next/dist/aos.css\" />
         <link href=\"https://fonts.googleapis.com/css?family=Anton|Lobster|Playfair+Display&display=swap\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap\" rel=\"stylesheet\">
         <link href=\"http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Asap|Maven+Pro|Raleway|Red+Hat+Display&display=swap\" rel=\"stylesheet\">
+        <link href=\"https://fonts.googleapis.com/css?family=Rammetto+One&display=swap\" rel=\"stylesheet\">
     ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -138,7 +143,7 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
 
     }
 
-    // line 23
+    // line 25
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -156,7 +161,7 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
 
     }
 
-    // line 24
+    // line 26
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -166,36 +171,39 @@ class __TwigTemplate_d7ca3598a53973627c9182682f76d000441aeeca5bbcf15e032f294f6a7
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 25
+        // line 27
         echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/jquery-3.3.1.min.js"), "html", null, true);
         echo "\" crossorigin=\"anonymous\"></script>
-    <script src=\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js\"></script>
+";
+        // line 29
+        echo "    <script src=\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js\"></script>
     <script src=\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js\"></script>
-    <script src=\"";
-        // line 32
+";
+        // line 36
+        echo "    <script src=\"";
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/circletype.min.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 33
+        // line 37
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/script.js"), "html", null, true);
         echo "\"></script>
     <script src=\"";
-        // line 34
+        // line 38
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/bootstrap.min.js"), "html", null, true);
         echo "\"></script>
-    ";
-        // line 36
-        echo "    <script src=\"";
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("js/aos.js"), "html", null, true);
-        echo "\"></script>
-    <script src=\"https://unpkg.com/aos@next/dist/aos.js\"></script>
-
-
+";
+        // line 40
+        echo "    ";
+        // line 41
+        echo "    <script src=\"https://unpkg.com/aos@next/dist/aos.js\"></script>
+";
+        // line 43
+        echo "    <script src=\"https://unpkg.com/@barba/core\"></script>
     <script>
         // AOS animation
         AOS.init({
@@ -231,6 +239,72 @@ function updatePercentage(){
     tl.progress();
 //    console.log(tl.progress());
 }
+
+// Barba js
+        Barba.Pjax.start();
+
+        var transitionAnimation = Barba.BaseTransition.extend({
+            start: function() {
+                /**
+                 * This function is automatically called as soon the Transition starts
+                 * this.newContainerLoading is a Promise for the loading of the new container
+                 * (Barba.js also comes with an handy Promise polyfill!)
+                 */
+
+                // As soon the loading is finished and the old page is faded out, let's fade the new page
+                Promise
+                        .all([this.newContainerLoading, this.startTransition()])
+                        .then(this.fadeIn.bind(this));
+            },
+
+            startTransition: function() {
+                /**
+                 * this.oldContainer is the HTMLElement of the old Container
+                 */
+
+                return \$(this.oldContainer).animate({ opacity: 0 }).promise();
+            },
+
+            fadeIn: function() {
+                /**
+                 * this.newContainer is the HTMLElement of the new Container
+                 * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
+                 * Please note, newContainer is available just after newContainerLoading is resolved!
+                 */
+
+                var _this = this;
+                var \$el = \$(this.newContainer);
+
+                \$(this.oldContainer).hide();
+
+                \$el.css({
+                    visibility : 'visible',
+                    opacity : 0
+                });
+
+                \$el.animate({ opacity: 1 }, 400, function() {
+                    /**
+                     * Do not forget to call .done() as soon your transition is finished!
+                     * .done() will automatically remove from the DOM the old Container
+                     */
+
+                    _this.done();
+                });
+            }
+        });
+
+        /**
+         * Next step, you have to tell Barba to use the new Transition
+         */
+
+        Barba.Pjax.getTransition = function() {
+            /**
+             * Here you can use your own logic!
+             * For example you can use different Transition based on the current page or link...
+             */
+
+            return transitionAnimation;
+        };
     </script>
 
 ";
@@ -249,7 +323,7 @@ function updatePercentage(){
 
     public function getDebugInfo()
     {
-        return array (  193 => 36,  189 => 34,  185 => 33,  181 => 32,  170 => 25,  160 => 24,  142 => 23,  124 => 14,  120 => 12,  116 => 11,  111 => 10,  101 => 9,  82 => 6,  70 => 78,  68 => 24,  66 => 23,  62 => 21,  60 => 9,  54 => 6,  47 => 1,);
+        return array (  206 => 43,  203 => 41,  201 => 40,  197 => 38,  193 => 37,  188 => 36,  180 => 29,  175 => 27,  165 => 26,  147 => 25,  129 => 15,  124 => 14,  120 => 12,  116 => 11,  111 => 10,  101 => 9,  82 => 6,  70 => 148,  68 => 26,  66 => 25,  62 => 23,  60 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -268,31 +342,35 @@ function updatePercentage(){
         <link rel=\"stylesheet\" href=\"{{ asset('css/bootstrap.css') }}\">
         {# AOS CSS #}
         <link rel=\"stylesheet\" href=\"{{ asset('css/aos.scss') }}\">
+        <link rel=\"stylesheet\" href=\"{{ asset('css/normalize.min.css') }}\">
         <link rel=\"stylesheet\" href=\"https://unpkg.com/aos@next/dist/aos.css\" />
         <link href=\"https://fonts.googleapis.com/css?family=Anton|Lobster|Playfair+Display&display=swap\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Abril+Fatface&display=swap\" rel=\"stylesheet\">
         <link href=\"http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css\" rel=\"stylesheet\">
         <link href=\"https://fonts.googleapis.com/css?family=Asap|Maven+Pro|Raleway|Red+Hat+Display&display=swap\" rel=\"stylesheet\">
+        <link href=\"https://fonts.googleapis.com/css?family=Rammetto+One&display=swap\" rel=\"stylesheet\">
     {% endblock %}
 </head>
 <body>
 {% block body %}{% endblock %}
 {% block javascripts %}
     <script src=\"{{ asset('js/jquery-3.3.1.min.js') }}\" crossorigin=\"anonymous\"></script>
+{# GSAP #}
     <script src=\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.2/TimelineMax.min.js\"></script>
     <script src=\"https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/CSSRulePlugin3.min.js\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/ScrollMagic.min.js\"></script>
     <script src=\"https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.7/plugins/animation.gsap.min.js\"></script>
+{# Circle , Bootstrap and my script #}
     <script src=\"{{ asset('js/circletype.min.js') }}\"></script>
     <script src=\"{{ asset('js/script.js') }}\"></script>
     <script src=\"{{ asset('js/bootstrap.min.js') }}\"></script>
-    {# AOS js#}
-    <script src=\"{{ asset('js/aos.js') }}\"></script>
+{# AOS js#}
+    {#<script src=\"{{ asset('js/aos.js') }}\"></script>#}
     <script src=\"https://unpkg.com/aos@next/dist/aos.js\"></script>
-
-
+{# Barba js #}
+    <script src=\"https://unpkg.com/@barba/core\"></script>
     <script>
         // AOS animation
         AOS.init({
@@ -328,6 +406,72 @@ function updatePercentage(){
     tl.progress();
 //    console.log(tl.progress());
 }
+
+// Barba js
+        Barba.Pjax.start();
+
+        var transitionAnimation = Barba.BaseTransition.extend({
+            start: function() {
+                /**
+                 * This function is automatically called as soon the Transition starts
+                 * this.newContainerLoading is a Promise for the loading of the new container
+                 * (Barba.js also comes with an handy Promise polyfill!)
+                 */
+
+                // As soon the loading is finished and the old page is faded out, let's fade the new page
+                Promise
+                        .all([this.newContainerLoading, this.startTransition()])
+                        .then(this.fadeIn.bind(this));
+            },
+
+            startTransition: function() {
+                /**
+                 * this.oldContainer is the HTMLElement of the old Container
+                 */
+
+                return \$(this.oldContainer).animate({ opacity: 0 }).promise();
+            },
+
+            fadeIn: function() {
+                /**
+                 * this.newContainer is the HTMLElement of the new Container
+                 * At this stage newContainer is on the DOM (inside our #barba-container and with visibility: hidden)
+                 * Please note, newContainer is available just after newContainerLoading is resolved!
+                 */
+
+                var _this = this;
+                var \$el = \$(this.newContainer);
+
+                \$(this.oldContainer).hide();
+
+                \$el.css({
+                    visibility : 'visible',
+                    opacity : 0
+                });
+
+                \$el.animate({ opacity: 1 }, 400, function() {
+                    /**
+                     * Do not forget to call .done() as soon your transition is finished!
+                     * .done() will automatically remove from the DOM the old Container
+                     */
+
+                    _this.done();
+                });
+            }
+        });
+
+        /**
+         * Next step, you have to tell Barba to use the new Transition
+         */
+
+        Barba.Pjax.getTransition = function() {
+            /**
+             * Here you can use your own logic!
+             * For example you can use different Transition based on the current page or link...
+             */
+
+            return transitionAnimation;
+        };
     </script>
 
 {% endblock %}

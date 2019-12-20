@@ -1,13 +1,12 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Index page!{% endblock %}
+{% block title %}Home page!{% endblock %}
 
 {% block body %}
-    {#<section class="section-home">#}
     {{ include('main/layouts/header.html.twig') }}
 
     {% if is_granted('ROLE_ADMIN') %}
-        <div class="d-flex justify-content-center">
+        <div class="d-flex justify-content-center admin-link-block">
             <a href="{{ path('admin') }}" class="admin-route text-dark  anton-font text-center mt-4">Admin Panel</a><br />
         </div>
     {% endif %}
@@ -15,10 +14,10 @@
     {% if is_granted('ROLE_USER') %}
 
     {% endif %}
+
     {# First post #}
     <section class="first-post" id="first-post">
-    <a href="/main/showPost/{{ first.slug }}" id="post-link">
-
+        <a href="/main/showPost/{{ first.slug }}" id="post-link">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-6 first-img">
@@ -29,12 +28,12 @@
                         <h1 class="text-dark asap-font first-h1 anim1">{{ first.title }}</h1>
                         <hr class="bg-danger first-hr">
                         <p class="maven-font first-p anim1">
-                            <span class="first-span">{{ first.description }}</span>
+                            <span class="first-span asap-font">{{ first.description }}</span>
                         </p>
                     </div>
                 </div>
             </div>
-    </a>
+        </a>
     </section>
 
     <section class="post-2 justify-content-center" data-aos="fade-in">
@@ -53,14 +52,12 @@
         <div class="">
             <a href="/main/showPost/{{ fourth.slug }}" id="post-link">
                 <h1 class="maven-font" data-aos="fade-left">{{ fourth.title }}</h1>
-                {#<img src="{{ asset('uploads/' ~ fourth.img) }}" alt="img" class="img-fluid" data-aos="fade-up"#}
-                     {#data-aos-duration="3000">#}
                 <span class="" data-aos="fade-right">{{ fourth.description }}</span>
             </a>
         </div>
     </section>
 
-
+{# Нет адаптивности из-за этого поста #}
     <section class="second-post" id="second-post">
         <a href="/main/showPost/{{ second.slug }}" id="post-link">
             <div class="container-fluid">
@@ -74,13 +71,15 @@
                         </p>
                     </div>
 
-                    <div class="second-img col-lg-6">
-                        <img src="{{ asset('uploads/' ~ second.img) }}" alt="img" class="anim1">
-                    </div>
+                    {#<div class="second-img col-lg-6">#}
+                        <img src="{{ asset('uploads/' ~ second.img) }}" alt="img" class="anim1 img-fluid second-img ">
+                    {#</div>#}
                 </div>
             </div>
         </a>
     </section>
+
+    {{ include('main/layouts/footer.html.twig') }}
 
     {#<button id="to-top">to top</button>#}
 
@@ -90,7 +89,7 @@
             {#{{ knp_pagination_render(posts) }}#}
         {#</div>#}
     {#</div>#}
-    {{ include('main/layouts/footer.html.twig') }}
+
 
 
 

@@ -85,7 +85,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <section class=\"section-home\">
+        echo "    <section class=\"section-home\" >
     ";
         // line 7
         echo twig_include($this->env, $context, "main/layouts/header.html.twig");
@@ -114,7 +114,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
         }
         // line 18
         echo "
-    <h1 class=\"text-center anton-font mt-4\">";
+    <h1 class=\"text-center anton-font category-h1\">";
         // line 19
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["category"]) || array_key_exists("category", $context) ? $context["category"] : (function () { throw new RuntimeError('Variable "category" does not exist.', 19, $this->source); })()), "category", [], "any", false, false, false, 19), "html", null, true);
         echo "</h1>
@@ -129,7 +129,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
             // line 24
             echo "        <div class=\"col-lg-4\">
 
-            <div class=\"card main-card\">
+            <div class=\"card main-card\" data-aos=\"fade-in\">
                 <a href=\"/main/showPost/";
             // line 27
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 27), "html", null, true);
@@ -163,17 +163,42 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
         echo "            </div>
         </div>
     </section>
-    <hr>
+
+
     ";
-        // line 45
-        echo "    ";
         // line 46
         echo "    ";
         // line 47
-        echo "    ";
+        echo "        ";
         // line 48
-        echo "    ";
+        echo "            ";
         // line 49
+        echo "                ";
+        // line 50
+        echo "                    ";
+        // line 51
+        echo "                        ";
+        // line 52
+        echo "                    ";
+        // line 53
+        echo "                ";
+        // line 54
+        echo "            ";
+        // line 55
+        echo "        ";
+        // line 56
+        echo "    ";
+        // line 57
+        echo "    ";
+        // line 58
+        echo "    ";
+        // line 59
+        echo "    ";
+        // line 60
+        echo "    ";
+        // line 61
+        echo "    ";
+        // line 62
         echo "    ";
         echo twig_include($this->env, $context, "main/layouts/footer.html.twig");
         echo "
@@ -198,7 +223,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 
     public function getDebugInfo()
     {
-        return array (  177 => 49,  175 => 48,  173 => 47,  171 => 46,  169 => 45,  163 => 40,  149 => 32,  145 => 31,  139 => 28,  135 => 27,  130 => 24,  126 => 23,  119 => 19,  116 => 18,  112 => 16,  110 => 15,  107 => 14,  101 => 11,  98 => 10,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  202 => 62,  200 => 61,  198 => 60,  196 => 59,  194 => 58,  192 => 57,  190 => 56,  188 => 55,  186 => 54,  184 => 53,  182 => 52,  180 => 51,  178 => 50,  176 => 49,  174 => 48,  172 => 47,  170 => 46,  163 => 40,  149 => 32,  145 => 31,  139 => 28,  135 => 27,  130 => 24,  126 => 23,  119 => 19,  116 => 18,  112 => 16,  110 => 15,  107 => 14,  101 => 11,  98 => 10,  96 => 9,  91 => 7,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -208,7 +233,7 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 {% block title %}Index page!{% endblock %}
 
 {% block body %}
-    <section class=\"section-home\">
+    <section class=\"section-home\" >
     {{ include('main/layouts/header.html.twig') }}
 
     {% if is_granted('ROLE_ADMIN') %}
@@ -221,14 +246,14 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
 
     {% endif %}
 
-    <h1 class=\"text-center anton-font mt-4\">{{ category.category }}</h1>
+    <h1 class=\"text-center anton-font category-h1\">{{ category.category }}</h1>
     <hr class=\"bg-danger\">
         <div class=\"container posts\">
             <div class=\"row\">
     {% for post in category.posts %}
         <div class=\"col-lg-4\">
 
-            <div class=\"card main-card\">
+            <div class=\"card main-card\" data-aos=\"fade-in\">
                 <a href=\"/main/showPost/{{ post.slug }}\">
                     <img src=\"{{ asset('uploads/' ~ post.img) }}\" class=\"card-img-top\" alt=\"...\" style=\"height: 18rem;\">
                 </a>
@@ -245,7 +270,20 @@ class __TwigTemplate_a7a84536abfbeeb1a3ebdf6c98e49762cb3c6c58921f5b49aa66081e842
             </div>
         </div>
     </section>
-    <hr>
+
+
+    {# BARBA STARTS #}
+    {#<div id=\"barba-wrapper\">#}
+        {#<div class=\"barba-container\">#}
+            {#<div class=\"wrapper\">#}
+                {#<div class=\"container bgimage1\">#}
+                    {#<div class=\"title\">#}
+                        {#<h1> h1 is nice </h1>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
     {#<div class=\"d-flex justify-content-center\">#}
     {#<div class=\"navigation\">#}
     {#{{ knp_pagination_render(posts) }}#}

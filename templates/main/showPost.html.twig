@@ -6,18 +6,18 @@
     <section class="section-home">
     {{ include('main/layouts/header.html.twig') }}
 
-    {% if is_granted('ROLE_ADMIN') %}
-        <div class="d-flex justify-content-center">
-            <a href="{{ path('admin') }}" class="admin-route text-dark  anton-font text-center mt-4">Admin Panel</a><br />
-        </div>
-    {% endif %}
+    {#{% if is_granted('ROLE_ADMIN') %}#}
+        {#<div class="d-flex justify-content-center">#}
+            {#<a href="{{ path('admin') }}" class="admin-route text-dark  anton-font text-center mt-4">Admin Panel</a><br />#}
+        {#</div>#}
+    {#{% endif %}#}
 
-    {% if is_granted('ROLE_USER') %}
+    {#{% if is_granted('ROLE_USER') %}#}
 
-    {% endif %}
+    {#{% endif %}#}
 
 <div class="d-flex justify-content-center flex-column post-wrapper">
-    <div class="d-flex justify-content-center mt-2 mb-2">
+    <div class="d-flex justify-content-center category-h1 mb-2">
         <img src="{{ asset('uploads/' ~ post.img) }}" alt="img" class="post-img img-fluid">
     </div>
     <h1 class="text-center anton-font">{{ post.title }}</h1>
@@ -32,72 +32,98 @@
     {% for tag in post.tags %}
         <span class=""> <a href="/main/show-tag/{{ tag.slug }}" class="post-tag badge badge-secondary col-lg-1 col-3">{{ tag.tag }}</a></span>
     {% endfor %}
-    <div class="container">
-        <div class="row bootstrap snippets">
-            <div class="col-md-6  col-sm-10">
-                <div class="comment-wrapper">
-                    <div class="panel panel-info">
-                        <div class="panel-body">
 
 {# Coments section #}
-                            <h4 class="mt-2 raleway-font">LEAVE A COMMENT</h4>
-                            <hr>
-                            <p class="comments-length font-weight-bold"><span class="count-comments">{{ post.coments |length }}</span> Comments </p>
-                            {% if is_granted('ROLE_USER') %}
-                               <h4 class="comment-user-name raleway-font">{{ author.firstName }}</h4>
-                                {# COMENT FORM #}
-                                <form method="POST">
-                                    <textarea class="form-control" placeholder="Start the discussion…" name="coment" rows="3" required></textarea>
-                                    <br>
-                                    <button type="submit" class="btn btn-info pull-right">Post</button>
-                                </form>
-                            {% endif %}
+    <div class="container">
+        <div class="row bootstrap snippets">
+    <h4 class="mt-2 raleway-font">LEAVE A COMMENT</h4>
+    <hr>
+    <p class="comments-length font-weight-bold"><span class="count-comments">{{ post.coments |length }}</span> Comments </p>
+    {% if is_granted('ROLE_USER') %}
+        <h4 class="comment-user-name raleway-font">{{ author.firstName }}</h4>
+        {# COMENT FORM #}
+        <form method="POST">
+            <textarea class="form-control" placeholder="Start the discussion…" name="coment" rows="3" required></textarea>
+            <br>
+            <button type="submit" class="btn btn-info pull-right">Post</button>
+        </form>
+    {% endif %}
 
-                                {% for coment in post.coments %}
-                            <div class="clearfix"></div>
-                            <hr>
-                            <ul class="media-list">
-                                <li class="media">
-                                    <a href="#" class="pull-left">
-                                        <img src="{{ asset('uploads/user.png') }}" alt="" class="img-circle img-fluid user-img mr-1">
-                                    </a>
-                                    <div class="media-body">
+    {% for coment in post.coments %}
+        <div class="clearfix"></div>
+        <hr>
+        <ul class="media-list">
+            <li class="media">
+                <a href="#" class="pull-left">
+                    <img src="{{ asset('uploads/user.png') }}" alt="" class="img-circle img-fluid user-img mr-1">
+                </a>
+                <div class="media-body">
                                 <span class="text-muted pull-right">
                                     <small class="text-muted">30 min ago</small>
                                 </span>
-
-                                          <h5><strong class="text-success">{{ coment.author }}</strong></h5>
-                                        {% if coment.isDeleted %}
-                                            <span class="fa fa-close"></span> deleted
-                                        {% else %}
-                                            <p>{{ coment.coment }}</p>
-                                        {% endif %}
-
-                                        {#<p>{{ coment }}</p>#}
-                                        {# Likes #}
-                                        {#<div class="show-article-title-container d-inline-block pl-3 align-middle">#}
-                                        {#<span class="pl-2 fa fa-heart-o article-details js-like-article">#}
-                                        {#<a href="{{ path('article_toggle_heart', {slug: slug} )}}" class="fa fa-heart-o like-article js-like-article"></a>#}
-                                        {#</span>#}
-                                        {#</div>#}
-
-                                        {#<span class="pl-2 article-details">#}
-                                {#<span class="js-like-article-count">0</span>#}
-                                    {#<a href="#" class="fa fa-heart-o like-article js-like-article"></a>#}
-                                            {#{{ path('article_toggle_heart', {slug: slug} )}}#}
-                                {#</span>#}
-
-                                    </div>
-                                </li>
-                            </ul>
-                                {% endfor %}
-
-                        </div>
-                    </div>
+                    <h5><strong class="text-success">{{ coment.author }}</strong></h5>
+                    {% if coment.isDeleted %}
+                        <span class="fa fa-close"></span> deleted
+                    {% else %}
+                        <p>{{ coment.coment }}</p>
+                    {% endif %}
                 </div>
-            </div>
-        </div>
+            </li>
+        </ul>
+    {% endfor %}
+       </div>
     </div>
+
+    {#<div class="container">#}
+        {#<div class="row bootstrap snippets">#}
+            {#<div class="col-md-6  col-sm-10">#}
+                {#<div class="comment-wrapper">#}
+                    {#<div class="panel panel-info">#}
+                        {#<div class="panel-body">#}
+
+
+                            {#<h4 class="mt-2 raleway-font">LEAVE A COMMENT</h4>#}
+                            {#<hr>#}
+                            {#<p class="comments-length font-weight-bold"><span class="count-comments">{{ post.coments |length }}</span> Comments </p>#}
+                            {#{% if is_granted('ROLE_USER') %}#}
+                               {#<h4 class="comment-user-name raleway-font">{{ author.firstName }}</h4>#}
+                                {# COMENT FORM #}
+                                {#<form method="POST">#}
+                                    {#<textarea class="form-control" placeholder="Start the discussion…" name="coment" rows="3" required></textarea>#}
+                                    {#<br>#}
+                                    {#<button type="submit" class="btn btn-info pull-right">Post</button>#}
+                                {#</form>#}
+                            {#{% endif %}#}
+
+                                {#{% for coment in post.coments %}#}
+                            {#<div class="clearfix"></div>#}
+                            {#<hr>#}
+                            {#<ul class="media-list">#}
+                                {#<li class="media">#}
+                                    {#<a href="#" class="pull-left">#}
+                                        {#<img src="{{ asset('uploads/user.png') }}" alt="" class="img-circle img-fluid user-img mr-1">#}
+                                    {#</a>#}
+                                    {#<div class="media-body">#}
+                                {#<span class="text-muted pull-right">#}
+                                    {#<small class="text-muted">30 min ago</small>#}
+                                {#</span>#}
+                                          {#<h5><strong class="text-success">{{ coment.author }}</strong></h5>#}
+                                        {#{% if coment.isDeleted %}#}
+                                            {#<span class="fa fa-close"></span> deleted#}
+                                        {#{% else %}#}
+                                            {#<p>{{ coment.coment }}</p>#}
+                                        {#{% endif %}#}
+                                    {#</div>#}
+                                {#</li>#}
+                            {#</ul>#}
+                                {#{% endfor %}#}
+
+                        {#</div>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
 </div>
     </section>
 

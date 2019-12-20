@@ -114,7 +114,7 @@ class __TwigTemplate_99dfb406599ea2b6ae37fd323ccef4b673ac7ba82cbcfa19a416b9ad12a
         }
         // line 18
         echo "
-    <h2 class=\"text-center anton-font mt-4\">";
+    <h2 class=\"text-center anton-font category-h1\">";
         // line 19
         echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, (isset($context["tag"]) || array_key_exists("tag", $context) ? $context["tag"] : (function () { throw new RuntimeError('Variable "tag" does not exist.', 19, $this->source); })()), "tag", [], "any", false, false, false, 19), "html", null, true);
         echo "</h2>
@@ -128,7 +128,7 @@ class __TwigTemplate_99dfb406599ea2b6ae37fd323ccef4b673ac7ba82cbcfa19a416b9ad12a
             // line 23
             echo "            <div class=\"col-lg-4\">
 
-                <div class=\"card main-card\">
+                <div class=\"card main-card\" data-aos=\"fade-in\">
                     <a href=\"/main/showPost/";
             // line 26
             echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["post"], "slug", [], "any", false, false, false, 26), "html", null, true);
@@ -222,13 +222,13 @@ class __TwigTemplate_99dfb406599ea2b6ae37fd323ccef4b673ac7ba82cbcfa19a416b9ad12a
 
     {% endif %}
 
-    <h2 class=\"text-center anton-font mt-4\">{{ tag.tag }}</h2>
+    <h2 class=\"text-center anton-font category-h1\">{{ tag.tag }}</h2>
         <div class=\"container posts\">
             <div class=\"row\">
         {% for post in tag.post %}
             <div class=\"col-lg-4\">
 
-                <div class=\"card main-card\">
+                <div class=\"card main-card\" data-aos=\"fade-in\">
                     <a href=\"/main/showPost/{{ post.slug }}\">
                         <img src=\"{{ asset('uploads/' ~ post.img) }}\" class=\"card-img-top\" alt=\"...\" style=\"height: 18rem;\">
                     </a>

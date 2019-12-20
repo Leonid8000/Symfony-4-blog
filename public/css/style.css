@@ -33,6 +33,10 @@ a:hover{
 .red-hart-font{
     font-family: 'Red Hat Display', sans-serif;
 }
+.ram-font{
+    font-family: 'Rammetto One', cursive;
+}
+/*-----------------------------------------------*/
 
 /* Admin panel */
 .logo{
@@ -53,6 +57,9 @@ a:hover{
     text-decoration: none;
     transition: 0.7s;
     background: darkgray;
+}
+.admin-link-block{
+    margin-top:10%;
 }
 /* Header and Sidebar */
 #footer{
@@ -134,6 +141,7 @@ a:hover{
     }
 }
 
+/* Main navbar */
 nav{
     /*box-shadow: 0 8px 8px -8px #333;*/
     /*height: 0;*/
@@ -147,13 +155,6 @@ nav{
     transition: 2s ease;
 }
 
-.form-block{
-    padding:40px;
-    margin-top:50px;
-    border-radius: 10%;
-    background: lightgrey;
-    box-shadow: 2px 2px 2px 2px #222;
-}
 .side-tgl-btn{
     color:gray;
 }
@@ -164,15 +165,42 @@ nav{
     background: gray;
 }
 
+/*----------- Header -----------*/
+/* NEWS BLOG Logo */
 .home-logo{
     font-weight: 800;
     font-size:28px;
     font-family: 'Abril Fatface', cursive;
 }
-.yellow-text{
+.red-text{
     color: red;
     font-family: 'Abril Fatface', cursive;
 }
+.login-link, .sign-up-link{
+    font-size: 15px;
+    font-family: 'Asap', sans-serif;
+    color: red;
+}
+.login-link:hover, .sign-up-link:hover{
+    text-decoration: none;
+    transition: ease 0.5s;
+    color: firebrick;
+}
+/* Header Categories */
+.nav-category-li:hover .red-hr{
+    width:100%;
+    transition:0.5s ease;
+}
+.nav-category{
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size:22px;
+    margin:0;
+}
+/* ----------- end of Header style ----------- */
+
+/* index/Home page */
+/* First post */
 
 /* News */
 .news-wrapper{
@@ -190,17 +218,6 @@ nav{
     margin-left:10%;
     margin-right:10%;
     padding:10px;
-}
-
-.login-link, .sign-up-link{
-    font-size: 15px;
-    font-family: 'Asap', sans-serif;
-    color: red;
-}
-.login-link:hover, .sign-up-link:hover{
-    text-decoration: none;
-    transition: ease 0.5s;
-    color: firebrick;
 }
 
 #post-link{
@@ -281,17 +298,6 @@ background: red;
 .section-home{
     background: #F1F1F1;
 }
-/* NAV Category */
-.nav-category-li:hover .red-hr{
-    width:100%;
-    transition:0.5s ease;
-}
-.nav-category{
-    text-transform: uppercase;
-    font-weight: 400;
-    font-size:22px;
-    margin:0;
-}
 
 .red-border{
     background: red;
@@ -320,15 +326,6 @@ background: red;
 .card:hover img{
     opacity:.8;
     transition:.4s ease;
-}
-
-@media screen and (max-width: 666px) {
-    .card{
-        /*width:12rem;*/
-    }
-    .card-img-top{
-
-    }
 }
 
 /* show Post */
@@ -507,19 +504,6 @@ background: red;
 }
 
 /* Nav css for js */
-.nav-fix{
-    /*position: fixed;*/
-    /*top: 20px;*/
-    /*font-size: 12px;*/
-    /*margin-bottom: 20px;*/
-    /*transition: 1s;*/
-    /*opacity: 0.8;*/
-    /*z-index: 999;*/
-}
-.posts{
-    /*z-index: -1;*/
-}
-
 .log-fix{
     position: fixed;
     right: 10px;
@@ -551,7 +535,6 @@ background: red;
     background: #F1F1F1;
     margin-top: 7%;
     height: 90vh;
-    /*overflow: hidden;*/
 }
 .first-post img{
     width: 80%;
@@ -686,13 +669,12 @@ section .scroll div{
 
 .post-2, .post-3{
     width:100%;
-    height: 100vh;
+    height: 70vh;
     display:flex;
     /*justify-content: flex-start;*/
 }
 .post-2{
     /*justify-content: flex-start;*/
-
 }
 .post-3{
     background: #F1F1F1;
@@ -707,16 +689,53 @@ section .scroll div{
     text-transform: uppercase;
     top: 10%;
     left:50%;
-    /*color:snow;*/
     font-family: 'Anton', sans-serif;
 }
 .post-3 span{
     position: absolute;
-    top: 20%;
+    top: 25%;
     left:50%;
     font-family: 'Anton', sans-serif;
 }
+.second-post img{
+    width: 400px;
+    height: 400px;
+}
+@media screen and (max-width: 320px) {
+    /*.second-post img{*/
+        /*width: 150px;*/
+        /*height: 150px;*/
+    /*}*/
+}
+.category-h1{
+    padding-top: 10vh;
+}
 
-
-
-
+/* Login page */
+.form-block{
+    padding:40px;
+    margin-top:40%;
+    border:none;
+}
+/*.form-block2{*/
+    /*padding:40px;*/
+    /*margin-top:10%;*/
+    /*border:none;*/
+/*}*/
+.form-block input{
+    border: none;
+    border-bottom: 1px solid gray;
+    padding: 10px 10px;
+    background: #F1F1F1;
+    margin: 10px 0;
+}
+.form-block h1{
+    color: red;
+}
+.btn-block{
+    background: red;
+}
+.login-container{
+    background: #F1F1F1;
+    width: 100%;
+}

@@ -40,18 +40,18 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "main/layouts/header.html.twig"));
 
         // line 1
-        echo " <nav class=\"navbar navbar-expand-lg navbar-dark \" id=\"nav\">
+        echo " <nav class=\"navbar navbar-expand-lg navbar-dark nav-wrapper\" id=\"nav\">
         <button class=\"navbar-toggler bg-dark\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarText\">
-            <ul class=\"navbar-nav \">
+            <ul class=\"navbar-nav\">
 
                 <li class=\"nav-item active\">
                     <a class=\"nav-link\" href=\"";
         // line 9
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "\"><h3 class=\"text-dark ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3> <span class=\"sr-only\">(current)</span></a>
+        echo "\"><h3 class=\"text-dark ml-3 text-left home-logo\">NEWS<span class=\"red-text\">BLOG</span></h3> <span class=\"sr-only\">(current)</span></a>
                 </li>
 
                 ";
@@ -60,53 +60,56 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
         $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 12, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
             // line 13
-            echo "                    <li class=\"nav-item nav-category-li\">
+            echo "
+                    <li class=\"nav-item nav-category-li\">
                         <a class=\"nav-link nav-category text-dark raleway-font ml-3\" href=\"/main/show-category/";
-            // line 14
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, false, 14), "html", null, true);
+            // line 15
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "slug", [], "any", false, false, false, 15), "html", null, true);
             echo "\">
                             ";
-            // line 15
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 15), "html", null, true);
+            // line 16
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "category", [], "any", false, false, false, 16), "html", null, true);
             echo "
                             <hr class=\"red-hr\">
                         </a>
                     </li>
+
                 ";
         }
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 20
+        // line 22
         echo "            </ul>
         </div>
         ";
-        // line 22
+        // line 24
         if ($this->extensions['Symfony\Bridge\Twig\Extension\SecurityExtension']->isGranted("ROLE_USER")) {
-            // line 23
+            // line 25
             echo "            <div class=\"d-flex justify-content-end log-out\">
                 <a href=\"";
-            // line 24
+            // line 26
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_logout");
             echo "\" class=\"login-link m-3\">Log Out</a>
             </div>
         ";
         } else {
-            // line 27
+            // line 29
             echo "            <li class=\"d-flex justify-content-end log-out\">
                 <a href=\"";
-            // line 28
+            // line 30
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_login");
             echo "\" class=\"login-link mr-2\">Login</a>
                 <a href=\"";
-            // line 29
+            // line 31
             echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("register");
             echo "\" class=\"sign-up-link\">Sign Up</a>
             </li>
         ";
         }
-        // line 32
+        // line 34
         echo "</nav>
+
 
 ";
         
@@ -129,29 +132,31 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
 
     public function getDebugInfo()
     {
-        return array (  109 => 32,  103 => 29,  99 => 28,  96 => 27,  90 => 24,  87 => 23,  85 => 22,  81 => 20,  70 => 15,  66 => 14,  63 => 13,  59 => 12,  53 => 9,  43 => 1,);
+        return array (  111 => 34,  105 => 31,  101 => 30,  98 => 29,  92 => 26,  89 => 25,  87 => 24,  83 => 22,  71 => 16,  67 => 15,  63 => 13,  59 => 12,  53 => 9,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source(" <nav class=\"navbar navbar-expand-lg navbar-dark \" id=\"nav\">
+        return new Source(" <nav class=\"navbar navbar-expand-lg navbar-dark nav-wrapper\" id=\"nav\">
         <button class=\"navbar-toggler bg-dark\" type=\"button\" data-toggle=\"collapse\" data-target=\"#navbarText\" aria-controls=\"navbarText\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
             <span class=\"navbar-toggler-icon\"></span>
         </button>
         <div class=\"collapse navbar-collapse\" id=\"navbarText\">
-            <ul class=\"navbar-nav \">
+            <ul class=\"navbar-nav\">
 
                 <li class=\"nav-item active\">
-                    <a class=\"nav-link\" href=\"{{ path('index') }}\"><h3 class=\"text-dark ml-3 text-left home-logo\">NEWS<span class=\"yellow-text\">BLOG</span></h3> <span class=\"sr-only\">(current)</span></a>
+                    <a class=\"nav-link\" href=\"{{ path('index') }}\"><h3 class=\"text-dark ml-3 text-left home-logo\">NEWS<span class=\"red-text\">BLOG</span></h3> <span class=\"sr-only\">(current)</span></a>
                 </li>
 
                 {% for category in categories %}
+
                     <li class=\"nav-item nav-category-li\">
                         <a class=\"nav-link nav-category text-dark raleway-font ml-3\" href=\"/main/show-category/{{ category.slug }}\">
                             {{ category.category }}
                             <hr class=\"red-hr\">
                         </a>
                     </li>
+
                 {% endfor %}
             </ul>
         </div>
@@ -166,6 +171,7 @@ class __TwigTemplate_8e4e534ed7d8ff1fa8fa241458eb4a3ea3c1edd8ca2391351fcec07be2b
             </li>
         {% endif %}
 </nav>
+
 
 ", "main/layouts/header.html.twig", "/var/www/Symfony-4-blog/templates/main/layouts/header.html.twig");
     }

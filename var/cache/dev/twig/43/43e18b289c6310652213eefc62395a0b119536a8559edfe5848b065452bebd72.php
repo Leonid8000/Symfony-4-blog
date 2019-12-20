@@ -85,27 +85,26 @@ class __TwigTemplate_0ad3a8d9a1d4020d374bbf7b0b659bcf0ad00c4d2360aad86af9a9bc0ba
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 6
-        echo "    <div class=\"header bg-dark\">
-        <h3 class=\"text-light p-2 anton-font text-center\">Questions Task</h3>
-    </div>
-    <div class=\"container d-flex justify-content-center\">
+        echo "
+    <div class=\"d-flex justify-content-center login-container\">
+    <div class=\"row\">
     <div class=\"form-block\">
         <h1 class=\"text-center anton-font mt-2\">Register</h1>
         <form method=\"post\">
             <input type=\"hidden\" name=\"_csrf_token\" value=\"";
-        // line 13
+        // line 12
         echo twig_escape_filter($this->env, $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderCsrfToken("authenticate"), "html", null, true);
         echo "\">
             ";
-        // line 14
-        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 14, $this->source); })())) {
-            // line 15
+        // line 13
+        if ((isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 13, $this->source); })())) {
+            // line 14
             echo "                <h4 class=\"text-danger font-weight-bold\">";
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 15, $this->source); })()), "messageKey", [], "any", false, false, false, 15), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 15, $this->source); })()), "messageData", [], "any", false, false, false, 15), "security"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\TranslationExtension']->trans(twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 14, $this->source); })()), "messageKey", [], "any", false, false, false, 14), twig_get_attribute($this->env, $this->source, (isset($context["error"]) || array_key_exists("error", $context) ? $context["error"] : (function () { throw new RuntimeError('Variable "error" does not exist.', 14, $this->source); })()), "messageData", [], "any", false, false, false, 14), "security"), "html", null, true);
             echo "</h4>
             ";
         }
-        // line 17
+        // line 16
         echo "
             <label for=\"first_name\" class=\"sr-only\" >Name</label>
             <input type=\"text\" name=\"first_name\" id=\"first_name\" class=\"form-control mb-2\" placeholder=\"Name\" required autofocus>
@@ -117,21 +116,22 @@ class __TwigTemplate_0ad3a8d9a1d4020d374bbf7b0b659bcf0ad00c4d2360aad86af9a9bc0ba
             <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control mb-2\" placeholder=\"Password\" required>
 
             <div class=\"d-flex justify-content-center\">
-                <button class=\"btn btn-dark btn-block anton-font\" type=\"submit\">
+                <button class=\"btn btn-block anton-font color-light\" type=\"submit\">
                     Register
                 </button>
             </div>
         </form>
         </div>
+        </div>
     </div>
 
-    <div class=\"d-flex justify-content-center\">
-        <a href=\"";
+    ";
         // line 37
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("index");
-        echo "\"><button  class=\"btn btn-dark  text-center mt-2\">Go back</button></a>
-    </div>
-
+        echo "        ";
+        // line 38
+        echo "    ";
+        // line 39
+        echo "
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -153,7 +153,7 @@ class __TwigTemplate_0ad3a8d9a1d4020d374bbf7b0b659bcf0ad00c4d2360aad86af9a9bc0ba
 
     public function getDebugInfo()
     {
-        return array (  131 => 37,  109 => 17,  103 => 15,  101 => 14,  97 => 13,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  134 => 39,  132 => 38,  130 => 37,  108 => 16,  102 => 14,  100 => 13,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -163,10 +163,9 @@ class __TwigTemplate_0ad3a8d9a1d4020d374bbf7b0b659bcf0ad00c4d2360aad86af9a9bc0ba
 {% block title %}Hello SecurityController!{% endblock %}
 
 {% block body %}
-    <div class=\"header bg-dark\">
-        <h3 class=\"text-light p-2 anton-font text-center\">Questions Task</h3>
-    </div>
-    <div class=\"container d-flex justify-content-center\">
+
+    <div class=\"d-flex justify-content-center login-container\">
+    <div class=\"row\">
     <div class=\"form-block\">
         <h1 class=\"text-center anton-font mt-2\">Register</h1>
         <form method=\"post\">
@@ -185,17 +184,18 @@ class __TwigTemplate_0ad3a8d9a1d4020d374bbf7b0b659bcf0ad00c4d2360aad86af9a9bc0ba
             <input type=\"password\" name=\"password\" id=\"inputPassword\" class=\"form-control mb-2\" placeholder=\"Password\" required>
 
             <div class=\"d-flex justify-content-center\">
-                <button class=\"btn btn-dark btn-block anton-font\" type=\"submit\">
+                <button class=\"btn btn-block anton-font color-light\" type=\"submit\">
                     Register
                 </button>
             </div>
         </form>
         </div>
+        </div>
     </div>
 
-    <div class=\"d-flex justify-content-center\">
-        <a href=\"{{ path('index') }}\"><button  class=\"btn btn-dark  text-center mt-2\">Go back</button></a>
-    </div>
+    {#<div class=\"d-flex justify-content-center\">#}
+        {#<a href=\"{{ path('index') }}\"><button  class=\"btn btn-dark  text-center mt-2\">Go back</button></a>#}
+    {#</div>#}
 
 {% endblock %}", "security/register.html.twig", "/var/www/Symfony-4-blog/templates/security/register.html.twig");
     }

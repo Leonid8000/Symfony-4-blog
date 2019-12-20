@@ -3,7 +3,7 @@
 {% block title %}Index page!{% endblock %}
 
 {% block body %}
-    <section class="section-home">
+    <section class="section-home" >
     {{ include('main/layouts/header.html.twig') }}
 
     {% if is_granted('ROLE_ADMIN') %}
@@ -16,14 +16,14 @@
 
     {% endif %}
 
-    <h1 class="text-center anton-font mt-4">{{ category.category }}</h1>
+    <h1 class="text-center anton-font category-h1">{{ category.category }}</h1>
     <hr class="bg-danger">
         <div class="container posts">
             <div class="row">
     {% for post in category.posts %}
         <div class="col-lg-4">
 
-            <div class="card main-card">
+            <div class="card main-card" data-aos="fade-in">
                 <a href="/main/showPost/{{ post.slug }}">
                     <img src="{{ asset('uploads/' ~ post.img) }}" class="card-img-top" alt="..." style="height: 18rem;">
                 </a>
@@ -40,7 +40,20 @@
             </div>
         </div>
     </section>
-    <hr>
+
+
+    {# BARBA STARTS #}
+    {#<div id="barba-wrapper">#}
+        {#<div class="barba-container">#}
+            {#<div class="wrapper">#}
+                {#<div class="container bgimage1">#}
+                    {#<div class="title">#}
+                        {#<h1> h1 is nice </h1>#}
+                    {#</div>#}
+                {#</div>#}
+            {#</div>#}
+        {#</div>#}
+    {#</div>#}
     {#<div class="d-flex justify-content-center">#}
     {#<div class="navigation">#}
     {#{{ knp_pagination_render(posts) }}#}

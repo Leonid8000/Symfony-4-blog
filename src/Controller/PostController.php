@@ -2,10 +2,13 @@
 
 namespace App\Controller;
 
+use App\Service\UploaderHelper;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Component\Validator\Constraints\Image;
 
 use App\Entity\Post;
 use App\Entity\Category;
@@ -17,6 +20,8 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+
+use Gedmo\Sluggable\Util\Urlizer;
 
 /**
  * @IsGranted("ROLE_ADMIN")
@@ -34,6 +39,19 @@ class PostController extends AbstractController
             'posts' => $posts,
         ]);
     }
+
+//    /**
+//     * @Route("/admin/upload", name="upload")
+//     */
+//    public function temporaryUploadAction(Request $request){
+//        dd($request->files->get('image'));
+//        $uploadedFile = $request->files->get('image');
+//        $destination = $this->getParameter('kernel.project_dir').'/public/uploads';
+//        $originalName = pathinfo($uploadedFile->getClientOriginalName(), PATHINFO_FILENAME);
+//        $newName = Urlizer::urlize($originalName).'-'.uniqid().'.'.$uploadedFile->guessExtension();
+//        dd($uploadedFile->move($destination, $newName));
+//    }
+
     /**
      * @Route("/admin/post/create", name="create/post")
      */
@@ -79,10 +97,21 @@ class PostController extends AbstractController
      * @Route("/admin/post/edit/{id}", name="admin/post/edit")
      * Method({"GET", "POST"})
      */
-    public function edit(Request $request, $id){
+    public function edit(Request $request, $id, UploaderHelper $uploaderHelper){
+
+        $imageConstraints = [
+            new Image([
+                'maxSize' => '5M'
+            ])
+        ];
+//        if (!$isEdit || !$article->getImageFilename()) {
+//            $imageConstraints[] = new NotNull([
+//                'message' => 'Please upload an image',
+//            ]);
+//        }
 
         $post = $this->getDoctrine()->getRepository(Post::class)->find($id);
-        $upload = new Post();
+
         $form = $this->createFormBuilder($post)
             ->add('title', TextType::class, array('attr' => array('class' => 'form-control')))
             ->add('slug', TextType::class, array('attr' => array('class' => 'form-control')))
@@ -103,9 +132,7 @@ class PostController extends AbstractController
             ->add('img', FileType::class,[
                 'label' => 'Image',
                 'mapped' => false,
-                'required' => false,
-                'constraints' => [
-                ]
+                'constraints' => $imageConstraints
             ])
             ->add('save', SubmitType::class, array(
                 'label' => 'Update',
@@ -113,13 +140,21 @@ class PostController extends AbstractController
             ))
             ->getForm();
 
+
+
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+//            $file = $form->get('img')->getData();
+//            $fileName = md5(uniqid()).'.'.$file->guessExtension();
+//            $file->move($this->getParameter('upload_directory'), $fileName);
+//            $post->setImg($fileName);
+        /** @var UploadedFile $uploadFile */
+        $uploadedFile = $form['img']->getData();
 
-            $file = $form->get('img')->getData();
-            $fileName = md5(uniqid()).'.'.$file->guessExtension();
-            $file->move($this->getParameter('upload_directory'), $fileName);
-            $post->setImg($fileName);
+            if($uploadedFile) {
+         $newName = $uploaderHelper->uploadPostImage($uploadedFile);
+                $post->setImg($newName);
+            }
 
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($form->getData());
